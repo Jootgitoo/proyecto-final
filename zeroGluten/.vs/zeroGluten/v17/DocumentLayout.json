@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\dam-2\\proyecto-final\\zeroGluten\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|d:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\persistence\\dbbroker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|solutionrelative:zerogluten\\persistence\\dbbroker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|d:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|solutionrelative:zerogluten\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
@@ -27,6 +31,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "DBBroker.cs",
+              "DocumentMoniker": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\persistence\\DBBroker.cs",
+              "RelativeDocumentMoniker": "zeroGluten\\persistence\\DBBroker.cs",
+              "ToolTip": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\persistence\\DBBroker.cs",
+              "RelativeToolTip": "zeroGluten\\persistence\\DBBroker.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T20:00:19.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\view\\MainWindow.xaml",
               "RelativeDocumentMoniker": "zeroGluten\\view\\MainWindow.xaml",

@@ -15,15 +15,15 @@
 - nombreAlergia --> varchar(50), not null
 
 ### TABLA PRODUCTO
-- idProducto --> int, not null, auto incremental
+- idProducto --> int, not null, auto incremental, PK
 - nombreProducto --> varchar(50), not null
-- urlImagen --> varchar(255), not null
-- contieneGluten --> boolean, not null // true --> si contiene, false --> no contiene
+- urlImagen --> varchar(2100), not null
+- contieneGluten --> tinyint (bolean), not null // 1(true) --> si contiene, 0(false) --> no contiene
 - precioProducto --> double, not null
 - idTipoProducto --> FK
 
 ### TABLA TIPOPRODUCTO
-- idTipoProducto, int, auto incremental, PK
+- idTipoProducto, int, auto incremental, PK, not null
 - nombreTipoProducto, varchar(50), not null 
 
 ### TABLA RECETA
@@ -32,13 +32,13 @@
 - tiempoPreparacion --> int,  not null
 - urlImagen --> varchar(75), not null
 - descripcion --> varchar(256), not null
-- vegetariano --> boolean, not null // true --> si pueden comerlo, false --> no pueden
-- vegano --> boolean, not null // true --> si pueden comerlo, false --> no pueden
-- sinGluten --> boolean, not null // true --> no tiene gluten, false --> si tiene gluten
+- vegetariano --> boolean, not null //  1(true) --> si puede, 0(false) --> no puede
+- vegano --> boolean, not null // 1(true) --> si puede, 0(false) --> no puede
+- sinGluten --> boolean, not null // 1(true) --> si puede, 0(false) --> no puede
 - instrucciones --> varchar(256), not null
 - calorias --> double, not null
 
-### TABLA RECETAS_PRODUCTO
+### TABLA RECETA_PRODUCTO
 - idReceta --> FK, PK
 - idProducto --> FK, PK
 - cantidad  --> int, not null

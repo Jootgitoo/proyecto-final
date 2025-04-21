@@ -22,8 +22,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="manages\" />
-    <Folder Include="persistence\" />
+    <Folder Include="database\" />
+    <Folder Include="domain\" />
+    <Folder Include="persistence\manages\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="9.3.0" />
   </ItemGroup>
 
   <ItemGroup>
