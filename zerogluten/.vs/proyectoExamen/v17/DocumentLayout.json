@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{CA1A6D56-142A-49EF-BE18-D64339DB86E7}|proyectoExamen\\proyectoExamen.csproj|solutionrelative:proyectoexamen\\view\\ventana-app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CA1A6D56-142A-49EF-BE18-D64339DB86E7}|proyectoExamen\\proyectoExamen.csproj|d:\\dam-2\\proyecto-final\\zerogluten\\proyectoexamen\\view\\ventana-log-in.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{CA1A6D56-142A-49EF-BE18-D64339DB86E7}|proyectoExamen\\proyectoExamen.csproj|D:\\dam-2\\proyecto-final\\zerogluten\\proyectoexamen\\view\\ventana-log-in.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{CA1A6D56-142A-49EF-BE18-D64339DB86E7}|proyectoExamen\\proyectoExamen.csproj|solutionrelative:proyectoexamen\\view\\ventana-log-in.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -37,8 +37,7 @@
               "ToolTip": "D:\\dam-2\\proyecto-final\\zerogluten\\proyectoExamen\\view\\ventana-log-in.xaml",
               "RelativeToolTip": "proyectoExamen\\view\\ventana-log-in.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-07T20:12:35.888Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T20:12:35.888Z"
             },
             {
               "$type": "Document",
