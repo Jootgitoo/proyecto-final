@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="font\MAXWELL-BOLD.ttf" />
+    <None Remove="font\MAXWELL-LIGHT.ttf" />
+    <None Remove="font\MAXWELL-REGULAR.ttf" />
+    <None Remove="images\logo-app.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="font\MAXWELL-BOLD.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="manages\" />
+    <Folder Include="persistence\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="font\MAXWELL-LIGHT.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="font\MAXWELL-REGULAR.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\logo-app.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
