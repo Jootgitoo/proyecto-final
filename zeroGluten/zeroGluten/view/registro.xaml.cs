@@ -23,6 +23,41 @@ namespace zeroGluten.view
         public registro()
         {
             InitializeComponent();
+
+            // Rellenamos el comboBox de la altura
+            for (double altura = 1.10; altura <= 2.15; altura += 0.05)
+            {
+                cbAltura.Items.Add($"{altura:0.00} m");
+            }
+
+            // Rellenamos el comboBox de los pesos
+            for (double peso = 30.00; peso <= 150.00; peso += 0.5)
+            {
+                cbPeso.Items.Add($"{peso:0.00} kg");
+            }
+
+            // Rellenamos el comboBox de las condiciones médicas
+            String[] condiciones = { "Diabetes", "Hipertensión", "Obesidad","Teroides", "Asma", "Alergias", "Artritis", "Ninguna" };
+            foreach(String c in condiciones)
+            {
+                cbCondicionMedica.Items.Add(c);
+            }
+
+            // Rellenadmos el comboBox de nota de la dieta
+            for (int nota = 0; nota <= 10; nota += 1)
+            {
+                cbNotaDieta.Items.Add($"{nota} ptos");
+            }
+
+            // Rellenamos el comboBox de las intolerancias alimenticias
+            String[] intolerancias = { "Lactosa", "Celiaco", "Fructosa", "Histamina", "Sorbitol", "Ninguna" };
+            foreach (String i in intolerancias)
+            {
+                cbEnfermedadesAlimenticias.Items.Add(i);
+            }
+
         }
+
+        
     }
 }

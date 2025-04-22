@@ -55,4 +55,23 @@ public partial class MainWindow : Window
         registro ventanaRegistro = new registro();
         ventanaRegistro.ShowDialog();
     }
+
+
+    /// <summary>
+    /// Comprobamos si el usuario ha escrito bien su nombre y su contraseña
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void btnIniciarSesion_Click(object sender, RoutedEventArgs e)
+    {
+        string nombreUsuario = txtBlockNombreUsuario.Text;
+        string password = txtBlockPassword.Text;
+
+        //Sacamos una lista de todos los usuarios de la bbdd
+
+        //Comprobamos si el nombre de usuario y la contraseña son correctos
+
+        // Si son correctos abrimos la ventana principal
+        // Si no son correctos mostramos un mensaje de error y que vuelva a intentarlo
+    }
 }

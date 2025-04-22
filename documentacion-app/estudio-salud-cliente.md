@@ -1,6 +1,7 @@
 # PREGUNTAS
 ### DATOS PERSONALES
 ¿Cuál es tu nombre? --> Textbox
+¿Cuál es tu primer apellido? --> Textbox
 ¿Cuál es tu fecha de nacimiento? --> DatePiker
 ¿Con que sexo te identificas? --> CheckBox ( maculino, femenino, indiferente)
 
@@ -23,7 +24,7 @@ Si IMC < 18.5 = poco peso. Si IMC > 18.5 y < 24.9 = peso correcto. Si IMC > 25.0
 ¿Tomas medicamentos de forma continua? CheckBox ( si, no)
 - ¿Cuál? --> ComoBox
 
-Describe tu alimentación diaria de forma breve --> ComoBox
+Puntua tu dieta --> ComoBox del 1 al 10
 
 ¿Eres fumador? --> ChechBox ( si, no)
 
