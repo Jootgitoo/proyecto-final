@@ -11,7 +11,7 @@ namespace zeroGluten.persistence
         //ATRIBUTOS
         private static DBBroker _instancia;
         private static MySql.Data.MySqlClient.MySqlConnection conexion;
-        private const String cadenaConexion = "server=localhost;database=gestpro;uid=root;pwd=mysql";
+        private const String cadenaConexion = "server=localhost;database=zeroglutendatabase;uid=root;pwd=mysql";
 
         //--------------------------------------------------------------------------------------------------------------------------------------------------
         //CONSTRUCTORES

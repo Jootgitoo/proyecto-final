@@ -11,14 +11,15 @@
             
             <Image Source="/images/logo-app.png" HorizontalAlignment="Left" Height="436" VerticalAlignment="Center" Width="436" IsEnabled="False"/>
 
-            <TextBox Name="txtBlockNombreUsuario" HorizontalAlignment="Left" Margin="466,119,0,0" TextWrapping="Wrap" Text="Escriba el nombre del usuario" VerticalAlignment="Top" Width="309" BorderBrush="Transparent" Background="Transparent" FontFamily="pack://application:,,,/font/#Maxwell"/>
+            <TextBox Name="txtBlockNombreUsuario" HorizontalAlignment="Left" Margin="466,119,0,0" TextWrapping="Wrap" Text="Escriba el nombre del usuario" VerticalAlignment="Top" Width="309" BorderBrush="Transparent" Background="Transparent" FontFamily="pack://application:,,,/font/#Maxwell" GotFocus="TextBox_GotFocusUsuario"/>
             <Rectangle Fill="Black" Height="1" Width="309" VerticalAlignment="Top" Margin="466,135,0,0" HorizontalAlignment="Left"/>
 
-            <TextBox Name="txtBlockPassword" HorizontalAlignment="Left" Margin="466,219,0,0" TextWrapping="Wrap" Text="Escriba su contraseña" VerticalAlignment="Top" Width="309" BorderBrush="Transparent" Background="Transparent" FontFamily="pack://application:,,,/font/#Maxwell"/>
+            <TextBox Name="txtBlockPassword" HorizontalAlignment="Left" Margin="466,219,0,0" TextWrapping="Wrap" Text="Escriba su contraseña" VerticalAlignment="Top" Width="309" BorderBrush="Transparent" Background="Transparent" FontFamily="pack://application:,,,/font/#Maxwell" GotFocus="TextBox_GotFocusPassword"/>
             <Rectangle Fill="Black" Height="1" Width="309" VerticalAlignment="Top" Margin="466,235,0,0" HorizontalAlignment="Left"/>
 
             <Button Name="btnIniciarSesion" Content="Iniciar Sesion" HorizontalAlignment="Left" Margin="466,299,0,0" VerticalAlignment="Top" Height="29" Width="110" Background="#400101" Foreground="#DEDEDE" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-            <Button Name="btnRegistrarse" Content="Resgistrarse" HorizontalAlignment="Left" Margin="665,299,0,0" VerticalAlignment="Top" Height="29" Width="110" Background="#400101" Foreground="#DEDEDE" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+            <Button Name="btnRegistrarse" Content="Resgistrarse" HorizontalAlignment="Left" Margin="665,299,0,0" VerticalAlignment="Top" Height="29" Width="110" Background="#400101" Foreground="#DEDEDE" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" Click="btnRegistrarse_Click"/>
+            
         </Grid>
     </Viewbox>
 </Window>

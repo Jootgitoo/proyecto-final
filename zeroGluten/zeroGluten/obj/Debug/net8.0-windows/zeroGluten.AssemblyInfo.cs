@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("zeroGluten")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec1538b51b9eda898be1481c242f592d93357400")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+467b84a2862284c764f3e194c8f604108c602364")]
 [assembly: System.Reflection.AssemblyProductAttribute("zeroGluten")]
 [assembly: System.Reflection.AssemblyTitleAttribute("zeroGluten")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
