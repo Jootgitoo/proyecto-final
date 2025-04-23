@@ -88,6 +88,12 @@
                         <!-- Las puntuaciones se llenan de forma dinámica -->
                     </ComboBox>
 
+                    <TextBlock Text="Cuál de las siguientes opciones se parecen más a tu dieta" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                    <ComboBox Name="cbDietas" FontFamily="pack://application:,,,/font/#Maxwell"  FontWeight="Bold">
+                        <!-- Las dietas se llenan de forma dinámica -->
+                    </ComboBox>
+
+
                 </StackPanel>
             </ScrollViewer>
             <Button Name="btnDarAlta" Content="Dar de alta" HorizontalAlignment="Left" Margin="679,391,0,0" VerticalAlignment="Top" Height="29" Width="110" Background="#400101" Foreground="#DEDEDE" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" />

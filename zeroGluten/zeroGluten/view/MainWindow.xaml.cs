@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using zeroGluten.domain;
 using zeroGluten.view;
 
 namespace zeroGluten;
@@ -46,7 +47,7 @@ public partial class MainWindow : Window
 
 
     /// <summary>
-    ///   Se abre la ventana de registro al hacer click en el botón "Registrarse"
+    ///     Se abre la ventana de registro al hacer click en el botón "Registrarse"
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -58,20 +59,44 @@ public partial class MainWindow : Window
 
 
     /// <summary>
-    /// Comprobamos si el usuario ha escrito bien su nombre y su contraseña
+    ///     Comprobamos si el usuario ha escrito bien su nombre y su contraseña para iniciar sesión
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void btnIniciarSesion_Click(object sender, RoutedEventArgs e)
     {
+        //Recogemos los datos de la pantalla
         string nombreUsuario = txtBlockNombreUsuario.Text;
         string password = txtBlockPassword.Text;
 
         //Sacamos una lista de todos los usuarios de la bbdd
+        List<Usuario> listaUsuarios = new List<Usuario>();
+        Usuario user = new Usuario();
+        listaUsuarios = user.obtenerTodosUsuarios();
+
+        //Para salir del bucle cuando encontramos el usuario
+        bool encontrado = false;
 
         //Comprobamos si el nombre de usuario y la contraseña son correctos
+        foreach ( Usuario u in listaUsuarios)
+        {
 
-        // Si son correctos abrimos la ventana principal
-        // Si no son correctos mostramos un mensaje de error y que vuelva a intentarlo
+            if ( u.NombreUsuario.Equals(nombreUsuario) && u.Password.Equals(password))
+            {
+                encontrado = true;
+
+                //FALTA LA ACCION CUANDO ENCONTRAMOS EL USUARIO
+
+                break;
+            }
+            
+        }
+
+        if (!encontrado)
+        {
+            MessageBox.Show("Abriendo cajón para el cambio en efectivo", "Cajon abierto", MessageBoxButton.OK);
+
+        }
+
     }
 }

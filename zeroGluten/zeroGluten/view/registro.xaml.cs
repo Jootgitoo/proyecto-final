@@ -56,8 +56,14 @@ namespace zeroGluten.view
                 cbEnfermedadesAlimenticias.Items.Add(i);
             }
 
+            // Rellenamos el comboBox de los tipos de dieta
+            String[] tiposDieta = { "Sin gluten", "Vegetariana", "Vegana", "Sin lactosa", "Alta en proteina", "Baja en carbohidratos", "Baja en calorias", "Sin azucares", "Comida basura", "Ninguna de las anteriores" };
+            foreach (String d in tiposDieta)
+            {
+                cbDietas.Items.Add(d);
+            }
         }
 
-        
+
     }
 }
