@@ -39,3 +39,5 @@ D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\zeroGlute
 D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\zeroGluten.csproj.Up2Date
 D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\view\registro.g.cs
 D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\view\registro.baml
+D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\view\Productos.g.cs
+D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\view\Productos.baml

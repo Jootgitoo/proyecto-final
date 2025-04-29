@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "D:\\dam-2\\proyecto-final\\zeroGluten\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|d:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|solutionrelative:zerogluten\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|d:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\view\\productos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|solutionrelative:zerogluten\\view\\productos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|d:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\domain\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|solutionrelative:zerogluten\\domain\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|d:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\persistence\\manages\\manageusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|solutionrelative:zerogluten\\persistence\\manages\\manageusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|d:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\view\\productos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|solutionrelative:zerogluten\\view\\productos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,41 +30,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\view\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "zeroGluten\\view\\MainWindow.xaml.cs",
-              "ToolTip": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\view\\MainWindow.xaml.cs",
-              "RelativeToolTip": "zeroGluten\\view\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAmwF4AAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T20:47:20.101Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\domain\\Usuario.cs",
-              "RelativeDocumentMoniker": "zeroGluten\\domain\\Usuario.cs",
-              "ToolTip": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\domain\\Usuario.cs",
-              "RelativeToolTip": "zeroGluten\\domain\\Usuario.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAUwEMAAAAxAAAAAAAAAA==",
+              "Title": "Productos.xaml.cs",
+              "DocumentMoniker": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\view\\Productos.xaml.cs",
+              "RelativeDocumentMoniker": "zeroGluten\\view\\Productos.xaml.cs",
+              "ToolTip": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\view\\Productos.xaml.cs",
+              "RelativeToolTip": "zeroGluten\\view\\Productos.xaml.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAowBQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T18:41:53.359Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-27T19:25:37.721Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ManageUsuario.cs",
-              "DocumentMoniker": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\persistence\\manages\\ManageUsuario.cs",
-              "RelativeDocumentMoniker": "zeroGluten\\persistence\\manages\\ManageUsuario.cs",
-              "ToolTip": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\persistence\\manages\\ManageUsuario.cs",
-              "RelativeToolTip": "zeroGluten\\persistence\\manages\\ManageUsuario.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAApwDEAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T19:51:04.472Z",
+              "DocumentIndex": 0,
+              "Title": "Productos.xaml",
+              "DocumentMoniker": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\view\\Productos.xaml",
+              "RelativeDocumentMoniker": "zeroGluten\\view\\Productos.xaml",
+              "ToolTip": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\view\\Productos.xaml",
+              "RelativeToolTip": "zeroGluten\\view\\Productos.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-26T12:35:19.906Z",
               "EditorCaption": ""
             }
           ]

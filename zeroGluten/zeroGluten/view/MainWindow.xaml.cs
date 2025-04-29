@@ -86,6 +86,8 @@ public partial class MainWindow : Window
                 encontrado = true;
 
                 //FALTA LA ACCION CUANDO ENCONTRAMOS EL USUARIO
+                MessageBox.Show("dentro de la app", "Usuario encontrado", MessageBoxButton.OK);
+
 
                 break;
             }
@@ -94,7 +96,8 @@ public partial class MainWindow : Window
 
         if (!encontrado)
         {
-            MessageBox.Show("Abriendo cajón para el cambio en efectivo", "Cajon abierto", MessageBoxButton.OK);
+            MessageBox.Show("Usuario no encontrado. Escriba correctamente el nombre " +
+                "y la contraseña. Si no está registrado pulse en el botón Registrarse", "Usuario no encontrado", MessageBoxButton.OK);
 
         }
 

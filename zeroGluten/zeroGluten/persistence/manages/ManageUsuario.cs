@@ -43,7 +43,7 @@ namespace zeroGluten.persistence.manages
         /// <returns>
         ///     Devolvemos una lista con todos los usuarios de la bbdd
         /// </returns>
-        public List<Usuario> obtenerTodosUsuarios()
+        public List<Usuario>  obtenerTodosUsuarios()
         {
             List<Usuario> listaUsuarios = new List<Usuario>();
 
