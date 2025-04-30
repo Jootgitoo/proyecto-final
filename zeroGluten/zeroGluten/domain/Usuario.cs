@@ -21,19 +21,19 @@ namespace zeroGluten.domain
         private string password;
         private DateTime fechaNacimiento;
         private string sexo;
-        private double peso;
-        private double altura;
-        private string tipoDieta;
+        
 
-        //-------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------
         //CONSTRUCTORES
         public Usuario()
         {
             mu = new ManageUsuario();
+            this.idUsuario = mu.getLastId(this);
+
         }
 
-        public Usuario(int idUsuario, string nombreUsuario, string primerApellido, string email, string password, DateTime fechaNacimiento, string sexo, double peso, double altura, string tipo_dieta)
-        {
+        public Usuario(int idUsuario, string nombreUsuario, string primerApellido, string email, string password, DateTime fechaNacimiento, string sexo)
+        { 
 
             mu = new ManageUsuario();
 
@@ -44,22 +44,21 @@ namespace zeroGluten.domain
             this.password = password;
             this.fechaNacimiento = fechaNacimiento;
             this.sexo = sexo;
-            this.altura = altura;
-            this.tipoDieta = tipo_dieta;
+            
         }
 
-        public Usuario(string nombreUsuario, string primerApellido, string email, string password, DateTime fechaNacimiento, string sexo, double peso, double altura, string tipo_dieta)
+        public Usuario(string nombreUsuario, string primerApellido, string email, string password, DateTime fechaNacimiento, string sexo)
         {
             mu = new ManageUsuario();
 
+            this.idUsuario = mu.getLastId(this);
             this.nombreUsuario = nombreUsuario;
             this.primerApellido = primerApellido;
             this.email = email;
             this.password = password;
             this.fechaNacimiento = fechaNacimiento;
             this.sexo = sexo;
-            this.altura = altura;
-            this.tipoDieta = tipo_dieta;
+            
         }
 
 //-------------------------------------------------------------------------------------------------
@@ -72,6 +71,11 @@ namespace zeroGluten.domain
             return listaTodosUsuarios;
         }
 
+        public void insertarUsuario()
+        {
+            mu.insertarUsuario(this);
+        }
+
 //-------------------------------------------------------------------------------------------------
         //GETTERS Y SETTERS
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
@@ -81,9 +85,7 @@ namespace zeroGluten.domain
         public string Password { get => password; set => password = value; }
         public DateTime FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
         public string Sexo { get => sexo; set => sexo = value; }
-        public double Peso { get => peso; set => peso = value; }
-        public double Altura { get => altura; set => altura = value; }
-        public string TipoDieta { get => tipoDieta; set => tipoDieta = value; }
+
 
 
     }

@@ -18,6 +18,7 @@ namespace zeroGluten.persistence.manages
             dBBroker = DBBroker.obtenerAgente();
         }
 
+
         /// <summary>
         ///     Obtiene el último id de la tabla usuario
         /// </summary>
@@ -43,7 +44,7 @@ namespace zeroGluten.persistence.manages
         /// <returns>
         ///     Devolvemos una lista con todos los usuarios de la bbdd
         /// </returns>
-        public List<Usuario>  obtenerTodosUsuarios()
+        public List<Usuario> obtenerTodosUsuarios()
         {
             List<Usuario> listaUsuarios = new List<Usuario>();
 
@@ -52,7 +53,7 @@ namespace zeroGluten.persistence.manages
             foreach (List<Object> aux in listaAux)
             {
                 Usuario u = new Usuario();
-                u = new Usuario(Convert.ToInt32(aux[0]), aux[1].ToString(), aux[2].ToString(), aux[3].ToString(), aux[4].ToString(), Convert.ToDateTime(aux[5]), aux[6].ToString(), Convert.ToDouble(aux[7]), Convert.ToDouble(aux[8]), aux[9].ToString());
+                u = new Usuario(Convert.ToInt32(aux[0]), aux[1].ToString(), aux[2].ToString(), aux[3].ToString(), aux[4].ToString(), Convert.ToDateTime(aux[5]), aux[6].ToString()));
                 listaUsuarios.Add(u);
             }
             return listaUsuarios;
@@ -67,10 +68,7 @@ namespace zeroGluten.persistence.manages
         /// </param>
         public void insertarUsuario(Usuario usuario)
         {
-            string peso = Convert.ToString(usuario.Peso, CultureInfo.InvariantCulture);
-            string altura = Convert.ToString(usuario.Altura, CultureInfo.InvariantCulture);
-
-            dBBroker.modifier("INSERT INTO zeroGlutenDatabase.usuario VALUES ("+usuario.IdUsuario+", '"+usuario.NombreUsuario+"', '"+usuario.PrimerApellido+"', '"+usuario.Email+"', '"+usuario.Password+"', '"+usuario.FechaNacimiento.ToString("yyyy-MM-dd")+"', '"+usuario.Sexo+"', '"+peso+"', '"+altura+"', '"+usuario.TipoDieta+ "' )");
+            dBBroker.modifier("INSERT INTO zeroGlutenDatabase.usuario VALUES ("+usuario.IdUsuario+", '"+usuario.NombreUsuario+"', '"+usuario.PrimerApellido+"', '"+usuario.Email+"', '"+usuario.Password+"', '"+usuario.FechaNacimiento.ToString("yyyy-MM-dd")+"', '"+usuario.Sexo+"')");
         }
 
         /// <summary>
