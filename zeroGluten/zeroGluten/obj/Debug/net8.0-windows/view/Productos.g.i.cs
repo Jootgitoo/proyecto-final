@@ -53,7 +53,7 @@ namespace zeroGluten.view {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/zeroGluten;V1.0.0.0;component/view/productos.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/zeroGluten;component/view/productos.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\view\Productos.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

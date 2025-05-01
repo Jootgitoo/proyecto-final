@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Security.Cryptography;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -67,7 +68,7 @@ public partial class MainWindow : Window
     {
         //Recogemos los datos de la pantalla
         string nombreUsuario = txtBlockNombreUsuario.Text;
-        string password = txtBlockPassword.Text;
+        string passwordEncriptada = EncryptSHA256(txtBlockPassword.Text);
 
         //Sacamos una lista de todos los usuarios de la bbdd
         List<Usuario> listaUsuarios = new List<Usuario>();
@@ -81,7 +82,7 @@ public partial class MainWindow : Window
         foreach ( Usuario u in listaUsuarios)
         {
 
-            if ( u.NombreUsuario.Equals(nombreUsuario) && u.Password.Equals(password))
+            if ( u.NombreUsuario.Equals(nombreUsuario) && u.Password.Equals(passwordEncriptada))
             {
                 encontrado = true;
 
@@ -100,5 +101,22 @@ public partial class MainWindow : Window
                 "y/o la contraseña. Si no está registrado pulse en el botón Registrarse", "Usuario no encontrado", MessageBoxButton.OK);
         }
 
+    }
+
+    /// <summary>
+    ///   Método que encripta una cadena de texto con SHA256
+    /// </summary>
+    /// <param name="text"></param>
+    /// <returns>
+    ///     Devolvemos la cadena de texto encriptada
+    /// </returns>
+    static string EncryptSHA256(string text)
+    {
+        using (SHA256 sha256 = SHA256.Create())
+        {
+            byte[] inputBytes = Encoding.UTF8.GetBytes(text);
+            byte[] hashBytes = sha256.ComputeHash(inputBytes);
+            return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+        }
     }
 }

@@ -16,7 +16,6 @@ namespace zeroGluten.domain
         private int idPerfil;
         private double peso;
         private double altura;
-        private string tipoDieta;
         private bool actividadFisica;
         private string frecuenciaActividad;
         private string condicionMedica;
@@ -24,9 +23,12 @@ namespace zeroGluten.domain
         private string puntuacionAlimentacion;
         private bool fumador;
         private string enfermedades;
+        private string intolerancias;
+        private string tipoDieta;
+        private int idUsuario;
 
 
-//-------------------------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------------------------------------
         //CONSTRUCTORES
 
         public Perfil()
@@ -35,43 +37,48 @@ namespace zeroGluten.domain
             this.idPerfil = mp.getLastId(this);
         }
 
-        public Perfil(int idPerfil, double peso, double altura, string tipoDieta, bool actividadFisica, string frecuenciaActividad, string condicionMedica, bool medicacion, string puntuacionAlimentacion, bool fumador, string enfermedades)
+        public Perfil(int idPerfil, double peso, double altura, bool actividadFisica, string frecuenciaActividad, string condicionMedica, bool medicacion, string puntuacionAlimentacion, bool fumador, string enfermedades, string intolerancias, string tipoDieta, int idUsuario)
         {
             mp = new ManagePerfil();
 
-            idPerfil = idPerfil;
-            peso = peso;
-            altura = altura;
-            tipoDieta = tipoDieta;
-            actividadFisica = actividadFisica;
-            frecuenciaActividad = frecuenciaActividad;
-            condicionMedica = condicionMedica;
-            medicacion = medicacion;
-            puntuacionAlimentacion = puntuacionAlimentacion;
-            fumador = fumador;
-            enfermedades = enfermedades;
-            
+            this.idPerfil = idPerfil;
+            this.peso = peso;
+            this.altura = altura;
+            this.actividadFisica = actividadFisica;
+            this.frecuenciaActividad = frecuenciaActividad;
+            this.condicionMedica = condicionMedica;
+            this.medicacion = medicacion;
+            this.puntuacionAlimentacion = puntuacionAlimentacion;
+            this.fumador = fumador;
+            this.enfermedades = enfermedades;
+            this.intolerancias = intolerancias;
+            this.tipoDieta = tipoDieta;
+            this.idUsuario = idUsuario;
+
         }
 
-        public Perfil( double peso, double altura, string tipoDieta, bool actividadFisica, string frecuenciaActividad, string condicionMedica, bool medicacion, string puntuacionAlimentacion, bool fumador, string enfermedades)
+        public Perfil(double peso, double altura, bool actividadFisica, string frecuenciaActividad, string condicionMedica, bool medicacion, string puntuacionAlimentacion, bool fumador, string enfermedades, string intolerancias, string tipoDieta, int idUsuario)
         {
             mp = new ManagePerfil();
 
-            peso = peso;
-            altura = altura;
-            tipoDieta = tipoDieta;
-            actividadFisica = actividadFisica;
-            frecuenciaActividad = frecuenciaActividad;
-            condicionMedica = condicionMedica;
-            medicacion = medicacion;
-            puntuacionAlimentacion = puntuacionAlimentacion;
-            fumador = fumador;
-            enfermedades = enfermedades;
+            this.idPerfil = mp.getLastId(this);
+            this.peso = peso;
+            this.altura = altura;
+            this.actividadFisica = actividadFisica;
+            this.frecuenciaActividad = frecuenciaActividad;
+            this.condicionMedica = condicionMedica;
+            this.medicacion = medicacion;
+            this.puntuacionAlimentacion = puntuacionAlimentacion;
+            this.fumador = fumador;
+            this.enfermedades = enfermedades;
+            this.intolerancias = intolerancias;
+            this.tipoDieta = tipoDieta;
+            this.idUsuario = idUsuario;
 
         }
 
 
-//-------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------------------
         //MÉTODOS
         public List<Perfil> obtenerTodosPerfiles()
         {
@@ -97,6 +104,8 @@ namespace zeroGluten.domain
         public string PuntuacionAlimentacion { get => puntuacionAlimentacion; set => puntuacionAlimentacion = value; }
         public bool Fumador { get => fumador; set => fumador = value; }
         public string Enfermedades { get => enfermedades; set => enfermedades = value; }
+        public int IdUsuario { get => idUsuario; set => idUsuario = value; } 
+        public string Intolerancias { get => intolerancias; set => intolerancias = value; }
 
     }
 }

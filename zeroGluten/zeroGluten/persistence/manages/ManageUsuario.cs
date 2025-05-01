@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.Intrinsics.Arm;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using zeroGluten.domain;
+using zeroGluten.view;
 
 namespace zeroGluten.persistence.manages
 {
@@ -53,7 +56,7 @@ namespace zeroGluten.persistence.manages
             foreach (List<Object> aux in listaAux)
             {
                 Usuario u = new Usuario();
-                u = new Usuario(Convert.ToInt32(aux[0]), aux[1].ToString(), aux[2].ToString(), aux[3].ToString(), aux[4].ToString(), Convert.ToDateTime(aux[5]), aux[6].ToString()));
+                u = new Usuario(Convert.ToInt32(aux[0]), aux[1].ToString(), aux[2].ToString(), aux[3].ToString(), aux[4].ToString(), Convert.ToDateTime(aux[5]), aux[6].ToString());
                 listaUsuarios.Add(u);
             }
             return listaUsuarios;
@@ -68,7 +71,31 @@ namespace zeroGluten.persistence.manages
         /// </param>
         public void insertarUsuario(Usuario usuario)
         {
-            dBBroker.modifier("INSERT INTO zeroGlutenDatabase.usuario VALUES ("+usuario.IdUsuario+", '"+usuario.NombreUsuario+"', '"+usuario.PrimerApellido+"', '"+usuario.Email+"', '"+usuario.Password+"', '"+usuario.FechaNacimiento.ToString("yyyy-MM-dd")+"', '"+usuario.Sexo+"')");
+            string passwordEncriptada = EncryptSHA256(usuario.Password);
+
+           dBBroker.modifier("INSERT INTO zeroGlutenDatabase.usuario (idUsuario, nombreUsuario, primerApellido, email, password, fecha_nacimiento, sexo) " +
+                  "VALUES (" + usuario.IdUsuario + ", '" + usuario.NombreUsuario + "', '" + usuario.PrimerApellido + "', '" +
+                  usuario.Email + "', '" + passwordEncriptada + "', '" + usuario.FechaNacimiento.ToString("yyyy-MM-dd") + "', '" +
+                  usuario.Sexo + "')");
+
+        }
+
+
+        /// <summary>
+        ///   Método que encripta una cadena de texto con SHA256
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>
+        ///     Devolvemos la cadena de texto encriptada
+        /// </returns>
+        static string EncryptSHA256(string text)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] inputBytes = Encoding.UTF8.GetBytes(text);
+                byte[] hashBytes = sha256.ComputeHash(inputBytes);
+                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+            }
         }
 
         /// <summary>
@@ -79,7 +106,7 @@ namespace zeroGluten.persistence.manages
         /// </param>
         public void modificarUsuario(Usuario usuario)
         {
-            dBBroker.modifier("UPDATE zeroGlutenDatabase.usuario SET nombreUsuario = '"+usuario.NombreUsuario+"', primerApellido = '"+usuario.PrimerApellido+"', email = '"+usuario.Email+"', password = '"+usuario.Password+"', fechaNacimiento = '"+usuario.FechaNacimiento.ToString("yyyy-MM-dd")+"', sexo = '"+usuario.Sexo+"', peso = '"+usuario.Peso+"', altura = '"+usuario.Altura+"', tipo_dieta = '"+usuario.TipoDieta+"'  WHERE idUsuario = "+usuario.IdUsuario+" ");
+            dBBroker.modifier("UPDATE zeroGlutenDatabase.usuario SET nombreUsuario = '"+usuario.NombreUsuario+"', primerApellido = '"+usuario.PrimerApellido+"', email = '"+usuario.Email+"', password = '"+usuario.Password+"', fechaNacimiento = '"+usuario.FechaNacimiento.ToString("yyyy-MM-dd")+"', sexo = '"+usuario.Sexo+"' WHERE idUsuario = "+usuario.IdUsuario+" ");
         }
 
 

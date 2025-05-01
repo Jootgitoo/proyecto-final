@@ -197,7 +197,7 @@ namespace zeroGluten.view {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/zeroGluten;V1.0.0.0;component/view/registro.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/zeroGluten;component/view/registro.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\view\registro.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

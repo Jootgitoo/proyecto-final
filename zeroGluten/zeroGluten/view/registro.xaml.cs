@@ -56,7 +56,7 @@ namespace zeroGluten.view
 
 
             // Rellenamos el comboBox de la frecuencia de la actividad fisica
-            String[] frecuencia = { "1 día", "3 días", "5 días", "6 días", "7 días" };
+            String[] frecuencia = { "0 dias", "1 dia", "3 dias", "5 dias", "6 dias", "7 dias" };
             foreach (String f in frecuencia)
             {
                 cbFrecuenciaActividadFisica.Items.Add(f);
@@ -64,8 +64,8 @@ namespace zeroGluten.view
 
 
             // Rellenamos el comboBox de las condiciones médicas
-            String[] condiciones = { "Diabetes", "Hipertensión", "Obesidad","Teroides", "Asma", "Alergias", "Artritis", "Ninguna" };
-            foreach(String c in condiciones)
+            String[] condiciones = { "Diabetes", "Hipertensión", "Obesidad", "Teroides", "Asma", "Alergias", "Artritis", "Ninguna" };
+            foreach (String c in condiciones)
             {
                 cbCondicionMedica.Items.Add(c);
             }
@@ -127,36 +127,82 @@ namespace zeroGluten.view
         /// <param name="e"></param>
         private void btnDarAlta_Click(object sender, RoutedEventArgs e)
         {
-            //Recogemos los datos de la pantalla
-            string nombre = tbNombre.Text;
-            string apellidos = tbApellido.Text;
-            string email = tbEmail.Text;
-            string password = tbPassword.Text;
-            DateTime? fechaStr = dpFechaNacimiento.SelectedDate;
-            string genero = cbGenero.Text;
-            string pesoStr = cbPeso.Text;
-            string alturaStr = cbAltura.Text;
-            string actividadFisica = cbActividadFisica.Text;
-            string frecuenciaActividadFisica = cbFrecuenciaActividadFisica.Text;
-            string condicionMedica = cbCondicionMedica.Text;
-            string medicacion = cbTomasMedicamentos.Text;
-            string notaDietaStr = cbNotaDieta.Text;
-            string fumador = cbFumador.Text;
-            string enfermedades = cbEnfermedades.Text;
-            string intolerancias = cbEnfermedadesAlimenticias.Text;
-            string dieta = cbDietas.Text;
 
-            //Intertamos el usuario en la base de datos
-            Usuario u = new Usuario(nombre, apellidos, email, password, (DateTime)fechaStr, genero);
-            u.insertarUsuario();
+            if ( comprobarCamposRellenos() ) // Si es true entra
+            {
+                string nombre = tbNombre.Text;
+                string apellidos = tbApellido.Text;
+                string email = tbEmail.Text;
+                string password = tbPassword.Text;
+                string fechaStr = dpFechaNacimiento.Text;
+                string sexo = cbGenero.Text;
+                double peso = Convert.ToDouble(cbPeso.Text.Replace(" ", "").Replace("k", "").Replace("g", ""));
+                double altura = Convert.ToDouble(cbAltura.Text.Replace(" ", "").Replace("m", ""));
+                bool actividadFisica = false;
+                if (cbActividadFisica.Text.Equals("Si"))
+                {
+                    actividadFisica = true;
+                }
+                string frecuenciaActividadFisica = cbFrecuenciaActividadFisica.Text;
+                string condicionMedica = cbCondicionMedica.Text;
 
-            //Insertamos el perfil en la base de datos
-            Perfil p = new Perfil(pesoStr, alturaStr, dieta, actividadFisica, frecuenciaActividadFisica, condicionMedica, medicacion, notaDietaStr, fumador, enfermedades);
+                bool medicacion = false;
+                if (cbTomasMedicamentos.Text.Equals("Si"))
+                {
+                    medicacion = true;
+                }
+                string notaDietaStr = cbNotaDieta.Text;
+                bool fumador = false;
+                if (cbFumador.Text.Equals("Si"))
+                {
+                    fumador = true;
+                }
+                string enfermedades = cbEnfermedades.Text;
+                string intolerancias = cbEnfermedadesAlimenticias.Text;
+                string tipoDieta = cbDietas.Text;
 
-            //Si se ha insertado correctamente
-            Productos ventanaProductos = new Productos();
-            ventanaProductos.ShowDialog();
-            //Si no
+                //Intertamos el usuario en la base de datos
+                Usuario u = new Usuario(nombre, apellidos, email, password, DateTime.Parse(fechaStr), sexo);
+                u.insertarUsuario();
+
+                //Insertamos el perfil en la base de datos
+                Perfil p = new Perfil(peso, altura, actividadFisica, frecuenciaActividadFisica, condicionMedica, medicacion, notaDietaStr, fumador, enfermedades, intolerancias, tipoDieta, u.IdUsuario);
+                p.insertarPerfil();
+
+                //Si se ha insertado correctamente
+                Productos ventanaProductos = new Productos();
+                ventanaProductos.ShowDialog();
+                //Si no
+
+
+            }
+            else //Si es false
+            {
+                MessageBox.Show("Rellene todos los campos de forma correcta", "ERROR", MessageBoxButton.OK);
+            }
+
+        }
+
+        /// <summary>
+        ///     Comprobamos que todos los campos del registro están rellenos
+        /// </summary>
+        /// <returns>
+        ///     True --> Todos los campos están rellenos
+        ///     False --> Algún campo no está relleno
+        /// </returns>
+        public bool comprobarCamposRellenos()
+        {
+            if (tbNombre.Text == "" || tbApellido.Text == "" || tbEmail.Text == "" || tbPassword.Text == "" || dpFechaNacimiento.SelectedDate == null || cbGenero.Text == "" ||
+                cbPeso.Text == "" || cbAltura.Text == "" || cbActividadFisica.Text == "" || cbFrecuenciaActividadFisica.Text == "" || cbCondicionMedica.Text == "" ||
+                cbTomasMedicamentos.Text == "" || cbNotaDieta.Text == "" || cbFumador.Text == "" || cbEnfermedades.Text == "" || cbEnfermedadesAlimenticias.Text == "" ||
+                cbDietas.Text == "")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
