@@ -5,7 +5,7 @@
     <Compile Update="view\Productos.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="view\registro.xaml.cs">
+    <Compile Update="view\Registro.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

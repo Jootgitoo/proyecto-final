@@ -80,7 +80,7 @@ namespace zeroGluten.persistence
             MySql.Data.MySqlClient.MySqlCommand com = new MySql.Data.MySqlClient.MySqlCommand(sql, DBBroker.conexion);
             int resultado;
             conectar();
-            resultado = com.ExecuteNonQuery();
+            resultado=com.ExecuteNonQuery();
             desconectar();
             return resultado;
         }

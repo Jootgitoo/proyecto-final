@@ -1,4 +1,4 @@
-﻿<Window x:Class="zeroGluten.view.registro"
+﻿<Window x:Class="zeroGluten.view.Registro"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,97 +6,101 @@
       xmlns:local="clr-namespace:zeroGluten.view"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="registro" Height="450" Width="800">
+      Title="Registro">
 
-    <Viewbox>
-        <Grid Width="799" Height="430" Background="#D9C5B4">
+    <Grid>
 
-            <Image Source="/images/logo-app.png" HorizontalAlignment="Left" Height="436" VerticalAlignment="Center" Width="436" IsEnabled="False"/>
+        <Viewbox>
+            <Grid Width="799" Height="430" Background="#D9C5B4">
 
-            <TextBlock HorizontalAlignment="Left" Margin="470,10,0,0" TextWrapping="Wrap" Text="FORMULARIO DE REGISTRO (PONER BONITO)" VerticalAlignment="Top" Height="32" Width="296"/>
+                <Image Source="/images/logo-app.png" HorizontalAlignment="Left" Height="436" VerticalAlignment="Center" Width="436" IsEnabled="False"/>
 
-
-            <ScrollViewer Margin="436,64,0,68">
-                <StackPanel>
-                    <TextBlock Text="Nombre:" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                    <TextBox Name="tbNombre" Margin="0 0 0 10" FontFamily="pack://application:,,,/font/#Maxwell" />
-
-                    <TextBlock Text="Primer apellido:" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" />
-                    <TextBox x:Name="tbApellido" Margin="0 0 0 10" FontFamily="pack://application:,,,/font/#Maxwell" />
-
-                    <TextBlock Text="Email:" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" />
-                    <TextBox Name="tbEmail" Margin="0 0 0 10" FontFamily="pack://application:,,,/font/#Maxwell" />
-
-                    <TextBlock Text="Contraseña:" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" />
-                    <TextBox x:Name="tbPassword" Margin="0 0 0 10" FontFamily="pack://application:,,,/font/#Maxwell" />
-
-                    <TextBlock Text="Fecha de nacimiento:" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                    <DatePicker Name="dpFechaNacimiento"></DatePicker>
-
-                    <TextBlock Text="Con que género se identifica:" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                    <ComboBox Name="cbGenero" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
-                        <!-- Se genera dinamicamente -->
-                    </ComboBox>
-
-                    <TextBlock Text="Seleccione su peso:" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                    <ComboBox Name="cbPeso" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
-                        <!-- Los pesos se llenan de forma dinámica -->
-                    </ComboBox>
-
-                    <TextBlock Text="Seleccione su altura:" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                    <ComboBox Name="cbAltura" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
-                        <!-- Las alturas se llenan de forma dinámica -->
-                    </ComboBox>
-
-                    <TextBlock Text="Realizas actividad física regularmente:" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                    <ComboBox Name="cbActividadFisica" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
-                        <!-- Las actividad fisicas se llenan de forma dinámica -->
-                    </ComboBox>
-                    
-                    <TextBlock Text="Con que frecuencia: (semanal)" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                    <ComboBox Name="cbFrecuenciaActividadFisica" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
-                        <!-- Las actividad fisicas se llenan de forma dinámica -->
-                    </ComboBox>
-                    
-                    <TextBlock Text="Condiciones médicas conocidas" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                    <ComboBox Name="cbCondicionMedica" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
-                        <!-- Las condiciones meédicas se llenan de forma dinámica -->
-                    </ComboBox>
-
-                    <TextBlock Text="Tomas medicamentos de forma continua" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                    <ComboBox Name="cbTomasMedicamentos" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
-                        <!-- Las opciones se llenan de forma dinámica -->
-                    </ComboBox>
-                    
-                    <TextBlock Text="Del 1 al 10 que puntuación le das a tu alimentacion" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                    <ComboBox Name="cbNotaDieta" FontFamily="pack://application:,,,/font/#Maxwell"  FontWeight="Bold">
-                        <!-- Las puntuaciones se llenan de forma dinámica -->
-                    </ComboBox>
-
-                    <TextBlock Text="Eres fumador" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                    <ComboBox Name="cbFumador" FontFamily="pack://application:,,,/font/#Maxwell"  FontWeight="Bold">
-                        <!-- Las puntuaciones se llenan de forma dinámica -->
-                    </ComboBox>
-                    
-                    <TextBlock Text="Familiares con enfermedades relacionadas con el peso o metabolistmo" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                    <ComboBox Name="cbEnfermedades" FontFamily="pack://application:,,,/font/#Maxwell"  FontWeight="Bold">
-                        <!-- Las puntuaciones se llenan de forma dinámica -->
-                    </ComboBox>
-                    <TextBlock Text="Que enfermedades tienes diagnosticadas en relación con la alimentacion" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                    <ComboBox Name="cbEnfermedadesAlimenticias" FontFamily="pack://application:,,,/font/#Maxwell"  FontWeight="Bold">
-                        <!-- Las puntuaciones se llenan de forma dinámica -->
-                    </ComboBox>
-
-                    <TextBlock Text="Cuál de las siguientes opciones se parecen más a tu dieta" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                    <ComboBox Name="cbDietas" FontFamily="pack://application:,,,/font/#Maxwell"  FontWeight="Bold">
-                        <!-- Las dietas se llenan de forma dinámica -->
-                    </ComboBox>
+                <TextBlock HorizontalAlignment="Left" Margin="470,10,0,0" TextWrapping="Wrap" Text="FORMULARIO DE REGISTRO (PONER BONITO)" VerticalAlignment="Top" Height="32" Width="296"/>
 
 
-                </StackPanel>
-            </ScrollViewer>
-            <Button Name="btnDarAlta" Content="Dar de alta" HorizontalAlignment="Left" Margin="679,391,0,0" VerticalAlignment="Top" Height="29" Width="110" Background="#400101" Foreground="#DEDEDE" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" Click="btnDarAlta_Click" />
+                <ScrollViewer Margin="436,64,0,68">
+                    <StackPanel>
+                        <TextBlock Text="Nombre:" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                        <TextBox Name="tbNombre" Margin="0 0 0 10" FontFamily="pack://application:,,,/font/#Maxwell" />
 
-        </Grid>
-    </Viewbox>
+                        <TextBlock Text="Primer apellido:" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" />
+                        <TextBox x:Name="tbApellido" Margin="0 0 0 10" FontFamily="pack://application:,,,/font/#Maxwell" />
+
+                        <TextBlock Text="Email:" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" />
+                        <TextBox Name="tbEmail" Margin="0 0 0 10" FontFamily="pack://application:,,,/font/#Maxwell" />
+
+                        <TextBlock Text="Contraseña:" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" />
+                        <TextBox x:Name="tbPassword" Margin="0 0 0 10" FontFamily="pack://application:,,,/font/#Maxwell" />
+
+                        <TextBlock Text="Fecha de nacimiento:" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                        <DatePicker Name="dpFechaNacimiento"></DatePicker>
+
+                        <TextBlock Text="Con que género se identifica:" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                        <ComboBox Name="cbGenero" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
+                            <!-- Se genera dinamicamente -->
+                        </ComboBox>
+
+                        <TextBlock Text="Seleccione su peso:" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                        <ComboBox Name="cbPeso" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
+                            <!-- Los pesos se llenan de forma dinámica -->
+                        </ComboBox>
+
+                        <TextBlock Text="Seleccione su altura:" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                        <ComboBox Name="cbAltura" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
+                            <!-- Las alturas se llenan de forma dinámica -->
+                        </ComboBox>
+
+                        <TextBlock Text="Realizas actividad física regularmente:" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                        <ComboBox Name="cbActividadFisica" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
+                            <!-- Las actividad fisicas se llenan de forma dinámica -->
+                        </ComboBox>
+
+                        <TextBlock Text="Con que frecuencia: (semanal)" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                        <ComboBox Name="cbFrecuenciaActividadFisica" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
+                            <!-- Las actividad fisicas se llenan de forma dinámica -->
+                        </ComboBox>
+
+                        <TextBlock Text="Condiciones médicas conocidas" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                        <ComboBox Name="cbCondicionMedica" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
+                            <!-- Las condiciones meédicas se llenan de forma dinámica -->
+                        </ComboBox>
+
+                        <TextBlock Text="Tomas medicamentos de forma continua" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                        <ComboBox Name="cbTomasMedicamentos" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
+                            <!-- Las opciones se llenan de forma dinámica -->
+                        </ComboBox>
+
+                        <TextBlock Text="Del 1 al 10 que puntuación le das a tu alimentacion" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                        <ComboBox Name="cbNotaDieta" FontFamily="pack://application:,,,/font/#Maxwell"  FontWeight="Bold">
+                            <!-- Las puntuaciones se llenan de forma dinámica -->
+                        </ComboBox>
+
+                        <TextBlock Text="Eres fumador" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                        <ComboBox Name="cbFumador" FontFamily="pack://application:,,,/font/#Maxwell"  FontWeight="Bold">
+                            <!-- Las puntuaciones se llenan de forma dinámica -->
+                        </ComboBox>
+
+                        <TextBlock Text="Familiares con enfermedades relacionadas con el peso o metabolistmo" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                        <ComboBox Name="cbEnfermedades" FontFamily="pack://application:,,,/font/#Maxwell"  FontWeight="Bold">
+                            <!-- Las puntuaciones se llenan de forma dinámica -->
+                        </ComboBox>
+                        <TextBlock Text="Que enfermedades tienes diagnosticadas en relación con la alimentacion" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                        <ComboBox Name="cbEnfermedadesAlimenticias" FontFamily="pack://application:,,,/font/#Maxwell"  FontWeight="Bold">
+                            <!-- Las puntuaciones se llenan de forma dinámica -->
+                        </ComboBox>
+
+                        <TextBlock Text="Cuál de las siguientes opciones se parecen más a tu dieta" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                        <ComboBox Name="cbDietas" FontFamily="pack://application:,,,/font/#Maxwell"  FontWeight="Bold">
+                            <!-- Las dietas se llenan de forma dinámica -->
+                        </ComboBox>
+
+
+                    </StackPanel>
+                </ScrollViewer>
+                <Button Name="btnDarAlta" Content="Dar de alta" HorizontalAlignment="Left" Margin="679,391,0,0" VerticalAlignment="Top" Height="29" Width="110" Background="#400101" Foreground="#DEDEDE" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" Click="btnDarAlta_Click" />
+
+            </Grid>
+        </Viewbox>
+
+    </Grid>
 </Window>

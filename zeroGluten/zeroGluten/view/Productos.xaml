@@ -9,6 +9,34 @@
       Title="Productos">
 
     <Grid Background="#D9C5B4">
-        
+        <TabControl TabStripPlacement="Bottom"
+>
+            <TabItem Header="Productos">
+                <Grid Background="#D9C5B4">
+
+                    <TextBlock HorizontalAlignment="Left" Margin="32,20,0,0" TextWrapping="Wrap" Text="Nombre del producto" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Name="tbNombreProducto" HorizontalAlignment="Left" Margin="32,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+                    <TextBlock HorizontalAlignment="Left" Margin="193,20,0,0" TextWrapping="Wrap" Text="Intolerancias" VerticalAlignment="Top"/>
+                    <TextBox Name="tbIntolerancia" HorizontalAlignment="Left" Margin="193,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+
+
+                    <ListView x:Name="lvProductos" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,75,10,10"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="397,20,0,0" TextWrapping="Wrap" Text="Calorias" VerticalAlignment="Top"/>
+
+                </Grid>
+
+
+
+            </TabItem>
+
+
+            <TabItem Header="Recetas">
+                <Grid Background="#D9C5B4">
+                </Grid>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>

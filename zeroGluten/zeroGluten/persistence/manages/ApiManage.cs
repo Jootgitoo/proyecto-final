@@ -1,0 +1,55 @@
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using zeroGluten.domain;
+
+namespace zeroGluten.persistence.manages
+{
+    
+    class ApiManage
+    {
+
+        /// <summary>
+        ///     Obtenemos una lista de productos de la api
+        /// </summary>
+        /// <returns>
+        ///     Lista de objetos Producto de la API
+        /// </returns>
+        /// <exception cref="Exception"></exception>
+        public async Task<List<Producto>> getListaObjetos()
+        {
+            
+            string apiKey = "174c5ea2fee04cd99c92504eaeafffbe";
+            string apiUrl = $"https://api.spoonacular.com/food/products/search?apiKey={apiKey}&query=a&number=5";
+
+            //Nos creamos un "cliente" para hacer una solicitud a la api
+            HttpClient cliente = new HttpClient();
+
+            //Enviamos una solicitud HTTP GET a la API
+            HttpResponseMessage respuesta = await cliente.GetAsync(apiUrl);
+
+            if (respuesta.IsSuccessStatusCode) //Si el codigo devuelto es exitoso
+            {
+
+                //Me devuelve en formato json la respuesta de la API
+                string jsonRespuesta = await respuesta.Content.ReadAsStringAsync();
+
+                //Devuelvo la respuesta deserializada para poder leerlo bien
+                var resultado = JsonConvert.DeserializeObject<RespuestaProductos>(jsonRespuesta);
+                List<Producto> listaProductosDevueltos = resultado.products;
+
+                return listaProductosDevueltos;
+            }
+            else
+            {
+                throw new Exception($"Error: {respuesta.StatusCode} - {respuesta.ReasonPhrase}");
+            }
+        }
+
+    }
+    
+}

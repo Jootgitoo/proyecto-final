@@ -17,11 +17,11 @@ using zeroGluten.domain;
 namespace zeroGluten.view
 {
     /// <summary>
-    /// Lógica de interacción para registro.xaml
+    /// Lógica de interacción para Registro.xaml
     /// </summary>
-    public partial class registro : Window
+    public partial class Registro : Window
     {
-        public registro()
+        public Registro()
         {
             InitializeComponent();
 
@@ -128,7 +128,7 @@ namespace zeroGluten.view
         private void btnDarAlta_Click(object sender, RoutedEventArgs e)
         {
 
-            if ( comprobarCamposRellenos() ) // Si es true entra
+            if (comprobarCamposRellenos()) // Si es true entra
             {
                 string nombre = tbNombre.Text;
                 string apellidos = tbApellido.Text;
@@ -136,6 +136,7 @@ namespace zeroGluten.view
                 string password = tbPassword.Text;
                 string fechaStr = dpFechaNacimiento.Text;
                 string sexo = cbGenero.Text;
+
                 double peso = Convert.ToDouble(cbPeso.Text.Replace(" ", "").Replace("k", "").Replace("g", ""));
                 double altura = Convert.ToDouble(cbAltura.Text.Replace(" ", "").Replace("m", ""));
                 bool actividadFisica = false;
@@ -165,14 +166,15 @@ namespace zeroGluten.view
                 Usuario u = new Usuario(nombre, apellidos, email, password, DateTime.Parse(fechaStr), sexo);
                 u.insertarUsuario();
 
+
                 //Insertamos el perfil en la base de datos
                 Perfil p = new Perfil(peso, altura, actividadFisica, frecuenciaActividadFisica, condicionMedica, medicacion, notaDietaStr, fumador, enfermedades, intolerancias, tipoDieta, u.IdUsuario);
                 p.insertarPerfil();
 
-                //Si se ha insertado correctamente
+                //Abrimos la ventana de productos
                 Productos ventanaProductos = new Productos();
                 ventanaProductos.ShowDialog();
-                //Si no
+
 
 
             }

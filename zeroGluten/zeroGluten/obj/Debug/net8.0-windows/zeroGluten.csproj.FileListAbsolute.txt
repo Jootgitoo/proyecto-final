@@ -41,3 +41,4 @@ D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\view\regi
 D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\view\registro.baml
 D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\view\Productos.g.cs
 D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\view\Productos.baml
+D:\dam-2\proyecto-final\zeroGluten\zeroGluten\bin\Debug\net8.0-windows\Newtonsoft.Json.dll

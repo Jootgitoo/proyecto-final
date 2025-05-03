@@ -69,6 +69,9 @@ namespace zeroGluten.persistence.manages
             int medicacion = 0;
             int fumador = 0;
 
+            string peso = perfil.Peso.ToString(System.Globalization.CultureInfo.InvariantCulture);
+            string altura = perfil.Altura.ToString(System.Globalization.CultureInfo.InvariantCulture);
+
             if (perfil.ActividadFisica.Equals(true))
             {
                 actividadFisica = 1;
@@ -86,11 +89,13 @@ namespace zeroGluten.persistence.manages
             }
 
             dBBroker.modifier("INSERT INTO zeroGlutenDatabase.perfil " +
-                "(idPerfil, peso, altura, actividadFisica, frecuenciaActividadFisica, condicionMedica, medicacion, puntuacionAlimentacion, fumador, enfermedades, intolerancias, tipoDieta, idUsuario) " +
-                "VALUES (" + perfil.IdPerfil + ", " + perfil.Peso + ", " + perfil.Altura + ", " + actividadFisica + ", '" +
+                "(peso, altura, actividadFisica, frecuenciaActividadFisica, condicionMedica, medicacion, " +
+                "puntuacionAlimentacion, fumador, enfermedades, intolerancias, tipoDieta, idUsuario) " +
+                "VALUES (" + peso + ", " + altura + ", " + actividadFisica + ", '" +
                 perfil.FrecuenciaActividad + "', '" + perfil.CondicionMedica + "', " + medicacion + ", '" +
                 perfil.PuntuacionAlimentacion + "', " + fumador + ", '" + perfil.Enfermedades + "', '" +
                 perfil.Intolerancias + "', '" + perfil.TipoDieta + "', " + perfil.IdUsuario + ");");
+
         }
 
 

@@ -54,7 +54,7 @@ public partial class MainWindow : Window
     /// <param name="e"></param>
     private void btnRegistrarse_Click(object sender, RoutedEventArgs e)
     {
-        registro ventanaRegistro = new registro();
+        Registro ventanaRegistro = new Registro();
         ventanaRegistro.ShowDialog();
     }
 
@@ -86,9 +86,9 @@ public partial class MainWindow : Window
             {
                 encontrado = true;
 
-                //----FALTA LA ACCION CUANDO ENCONTRAMOS EL USUARIO-----
-                MessageBox.Show("dentro de la app", "Usuario encontrado", MessageBoxButton.OK);
-                //---------------------------------------------------------------------------------
+                //Abrimos la ventana de productos
+                Productos ventanaProductos = new Productos();
+                ventanaProductos.Show();
 
                 break;
             }
