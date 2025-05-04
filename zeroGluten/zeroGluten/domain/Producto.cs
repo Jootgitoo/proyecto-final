@@ -9,11 +9,15 @@ namespace zeroGluten.domain
 {
     class Producto
     {
+        //ATRIBUTOS
         private int idProducto;
         private string nombre;
         private string urlImagen;
         private string[] listaAlergias; 
         private double precio;
+
+//-------------------------------------------------------------------------------------------------------------------
+        //CONSTRUCTORES
 
         public Producto()
         {
@@ -37,6 +41,9 @@ namespace zeroGluten.domain
             this.listaAlergias = listaAlergias;
             this.precio = precio;
         }
+
+//----------------------------------------------------------------------------------------------------
+        //GETTERS Y SETTERS
 
         [JsonProperty("id")]
         public int IdProducto { get => idProducto; set => idProducto = value; }

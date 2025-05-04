@@ -80,12 +80,23 @@ namespace zeroGluten.domain
 
         //-------------------------------------------------------------------------------------------------
         //MÉTODOS
+
+        /// <summary>
+        ///   Método que obtiene todos los perfiles de la base de datos
+        /// </summary>
+        /// <returns>
+        ///     Lista de perfiles de la base de datos
+        /// </returns>
         public List<Perfil> obtenerTodosPerfiles()
         {
             List<Perfil> listaTodosPerfiles = mp.obtenerTodosPerfiles();
             return listaTodosPerfiles;
         }
 
+
+        /// <summary>
+        ///   Método que inserta un perfil de la base de datos
+        /// </summary>
         public void insertarPerfil()
         {
             mp.insertarPerfil(this);

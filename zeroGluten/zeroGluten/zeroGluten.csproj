@@ -13,6 +13,8 @@
     <None Remove="font\MAXWELL-LIGHT.ttf" />
     <None Remove="font\MAXWELL-REGULAR.ttf" />
     <None Remove="images\logo-app.png" />
+    <None Remove="images\menu\icono-menu.gif" />
+    <None Remove="images\menu\icono-productos.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,7 +40,13 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\logo-app.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\menu\icono-menu.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\menu\icono-productos.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
 

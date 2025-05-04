@@ -1,42 +1,109 @@
 ﻿<Window x:Class="zeroGluten.view.Productos"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:zeroGluten.view"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Productos">
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:zeroGluten.view"
+        mc:Ignorable="d" 
+        d:DesignHeight="450" d:DesignWidth="800"
+        Title="Productos">
 
-    <Grid Background="#D9C5B4">
-        <TabControl TabStripPlacement="Bottom"
->
-            <TabItem Header="Productos">
-                <Grid Background="#D9C5B4">
+    <Grid>
+        <Viewbox>
+            <Grid Background="#D9C5B4" Width="842" Height="457">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="170" />
 
-                    <TextBlock HorizontalAlignment="Left" Margin="32,20,0,0" TextWrapping="Wrap" Text="Nombre del producto" VerticalAlignment="Top" Width="120"/>
-                    <TextBox Name="tbNombreProducto" HorizontalAlignment="Left" Margin="32,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <ColumnDefinition Width="*" />
 
-                    <TextBlock HorizontalAlignment="Left" Margin="193,20,0,0" TextWrapping="Wrap" Text="Intolerancias" VerticalAlignment="Top"/>
-                    <TextBox Name="tbIntolerancia" HorizontalAlignment="Left" Margin="193,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Menú lateral -->
+
+                <StackPanel>
+
+                    <!-- Botón productos -->
+                    <Button Name="btnProductos" Margin="5, 150, 5, 0" Background="#442129" Click="btnProductos_Click" Width="127" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
+                        <Grid>
+                            <Image Source="/images/menu/icono-productos.png" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+                            <TextBlock Text="Productos" Margin="30,0,5,0" VerticalAlignment="Center" Background="Transparent" Foreground="#e9e4dd"/>
+                        </Grid>
+                    </Button>
+
+                    <!-- Botón recetas -->
+                    <Button Name="btnRecetas" Margin="5, 5, 5, 0" Background="#442129" Click="btnRecetas_Click" Width="127" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
+                        <Grid>
+                            <Image Source="/images/menu/icono-recetas.png" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                            <TextBlock Text="Recetas" Margin="25,0,10,0" VerticalAlignment="Center" Background="Transparent" Foreground="#e9e4dd"/>
+                        </Grid>
+                    </Button>
+
+                    <!-- Botón ajustes -->
+                    <Button Margin="5, 220, 5, 0" Background="#442129" Height="23" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
+                        <Grid>
+                            <Image Source="/images/menu/icono-ajustes.png" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-8,0,0,0"/>
+                            <TextBlock Text="Ajustes" Margin="25,0,10,0" VerticalAlignment="Center" Background="Transparent" Foreground="#e9e4dd"/>
+                        </Grid>
+                    </Button>
+
+                </StackPanel>
 
 
+                <!-- Contenido -->
+                <Grid Grid.Column="1" Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
-                    <ListView x:Name="lvProductos" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,75,10,10"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="397,20,0,0" TextWrapping="Wrap" Text="Calorias" VerticalAlignment="Top"/>
+                    <!-- Filtros -->
+                    <Expander Header="Filtros" ExpandDirection="Down" Background="#e9e4dd" Margin="0,0,0,361" Grid.RowSpan="2" IsExpanded="True"  FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
+                        <StackPanel>
+
+                            <!-- Filtros productos -->
+                            <Grid x:Name="filtrosProductos" Visibility="Visible">
+                                <TextBlock HorizontalAlignment="Left" Margin="10,5,0,0" Text="Nombre" Width="120" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                                <TextBox HorizontalAlignment="Left" Margin="10,25,0,0" Width="120" FontFamily="pack://application:,,,/font/#Maxwell"/>
+
+                                <TextBlock HorizontalAlignment="Left" Margin="170,5,0,0" Text="Marca" Width="120" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                                <TextBox HorizontalAlignment="Left" Margin="170,25,0,0" Width="120" FontFamily="pack://application:,,,/font/#Maxwell"/>
+
+                                <TextBlock HorizontalAlignment="Left" Margin="325,5,0,0" Text="Categoria" Width="120" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                                <TextBox HorizontalAlignment="Left" Margin="325,25,0,0" Width="120" FontFamily="pack://application:,,,/font/#Maxwell"/>
+
+                                <TextBlock HorizontalAlignment="Left" Margin="485,5,0,0" Text="Intolerancia" Width="120" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                                <TextBox HorizontalAlignment="Left" Margin="485,25,0,0" Width="120" FontFamily="pack://application:,,,/font/#Maxwell"/>
+                            </Grid>
+
+                            <!-- Filtro recetas -->
+                            <Grid x:Name="filtrosRecetas" Visibility="Collapsed">
+                                <TextBlock HorizontalAlignment="Left" Margin="10,5,0,0" Text="Nombre" Width="120"/>
+                                <TextBox HorizontalAlignment="Left" Margin="10,25,0,0" Width="120"/>
+
+                                <TextBlock HorizontalAlignment="Left" Margin="170,5,0,0" Text="Tiempo" Width="120"/>
+                                <TextBox HorizontalAlignment="Left" Margin="170,25,0,0" Width="120"/>
+
+                                <TextBlock HorizontalAlignment="Left" Margin="325,5,0,0" Text="Ingrediente principal" Width="120"/>
+                                <TextBox HorizontalAlignment="Left" Margin="325,25,0,0" Width="120"/>
+
+                                <TextBlock HorizontalAlignment="Left" Margin="485,5,0,0" Text="Intolerancia" Width="120"/>
+                                <TextBox HorizontalAlignment="Left" Margin="485,25,0,0" Width="120"/>
+                            </Grid>
+
+                        </StackPanel>
+                    </Expander>
+
+
+                    <!-- Productos -->
+                    <Grid Grid.Row="1">
+                        <ListBox x:Name="lbProductos" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,83,0,0" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+                    </Grid>
+
 
                 </Grid>
-
-
-
-            </TabItem>
-
-
-            <TabItem Header="Recetas">
-                <Grid Background="#D9C5B4">
-                </Grid>
-            </TabItem>
-        </TabControl>
-
+                <Image Source="/images/logo-app.png" HorizontalAlignment="Center" Height="98" Margin="0,21,0,0" VerticalAlignment="Top" Width="98"/>
+            </Grid>
+        </Viewbox>
     </Grid>
 </Window>

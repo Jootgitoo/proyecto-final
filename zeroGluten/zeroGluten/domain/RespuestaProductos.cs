@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,8 @@ namespace zeroGluten.domain
 
         //La respuesta de la API viene en formato JSON, cone esta clase
         // "transformamos" ese JSON a una lista de producto 
-        public List<Producto> products { get; set; }
+        [JsonProperty("products")]
+        public List<Producto> listaProductos { get; set; }
         
     }
 }

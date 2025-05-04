@@ -20,11 +20,11 @@ namespace zeroGluten.persistence.manages
         ///     Lista de objetos Producto de la API
         /// </returns>
         /// <exception cref="Exception"></exception>
-        public async Task<List<Producto>> getListaObjetos()
+        public async Task<List<Producto>> getListaProductos()
         {
             
             string apiKey = "174c5ea2fee04cd99c92504eaeafffbe";
-            string apiUrl = $"https://api.spoonacular.com/food/products/search?apiKey={apiKey}&query=a&number=5";
+            string apiUrl = $"https://api.spoonacular.com/food/products/search?apiKey={apiKey}&query=a&number=1";
 
             //Nos creamos un "cliente" para hacer una solicitud a la api
             HttpClient cliente = new HttpClient();
@@ -40,9 +40,47 @@ namespace zeroGluten.persistence.manages
 
                 //Devuelvo la respuesta deserializada para poder leerlo bien
                 var resultado = JsonConvert.DeserializeObject<RespuestaProductos>(jsonRespuesta);
-                List<Producto> listaProductosDevueltos = resultado.products;
+                List<Producto> listaProductosDevueltos = resultado.listaProductos;
 
                 return listaProductosDevueltos;
+            }
+            else
+            {
+                throw new Exception($"Error: {respuesta.StatusCode} - {respuesta.ReasonPhrase}");
+            }
+        }
+
+
+        /// <summary>
+        ///   Obtenemos una lista de recetas de la api
+        /// </summary>
+        /// <returns>
+        ///     Devolvemos una lista Recetas
+        /// </returns>
+        /// <exception cref="Exception"></exception>
+        public async Task<List<Receta>> getListaRecetas()
+        {
+
+            string apiKey = "174c5ea2fee04cd99c92504eaeafffbe";
+            string apiUrl = $"https://api.spoonacular.com/recipes/complexSearch?apiKey={apiKey}&query=a&number=1";
+
+            //Nos creamos un "cliente" para hacer una solicitud a la api
+            HttpClient cliente = new HttpClient();
+
+            //Enviamos una solicitud HTTP GET a la API
+            HttpResponseMessage respuesta = await cliente.GetAsync(apiUrl);
+
+            if (respuesta.IsSuccessStatusCode) //Si el codigo devuelto es exitoso
+            {
+
+                //Me devuelve en formato json la respuesta de la API
+                string jsonRespuesta = await respuesta.Content.ReadAsStringAsync();
+
+                //Devuelvo la respuesta deserializada para poder leerlo bien
+                var resultado = JsonConvert.DeserializeObject<RespuestaRecetas>(jsonRespuesta);
+                List<Receta> listaRecetasDevueltos = resultado.listaRecetas;
+
+                return listaRecetasDevueltos;
             }
             else
             {

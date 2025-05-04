@@ -32,7 +32,7 @@ public partial class MainWindow : Window
     /// <param name="e"></param>
     private void TextBox_GotFocusUsuario(object sender, RoutedEventArgs e)
     {
-        txtBlockNombreUsuario.Clear(); // Limpia el contenido del TextBox
+        txtBlockNombreUsuario.Clear();
     }
 
 
@@ -43,7 +43,7 @@ public partial class MainWindow : Window
     /// <param name="e"></param>
     private void TextBox_GotFocusPassword(object sender, RoutedEventArgs e)
     {
-        txtBlockPassword.Clear(); // Limpia el contenido del TextBox
+        txtBlockPassword.Clear();
     }
 
 
@@ -102,6 +102,7 @@ public partial class MainWindow : Window
         }
 
     }
+
 
     /// <summary>
     ///   Método que encripta una cadena de texto con SHA256

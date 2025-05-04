@@ -16,9 +16,7 @@ using zeroGluten.domain;
 
 namespace zeroGluten.view
 {
-    /// <summary>
-    /// Lógica de interacción para Registro.xaml
-    /// </summary>
+    
     public partial class Registro : Window
     {
         public Registro()
@@ -128,8 +126,9 @@ namespace zeroGluten.view
         private void btnDarAlta_Click(object sender, RoutedEventArgs e)
         {
 
-            if (comprobarCamposRellenos()) // Si es true entra
+            if (comprobarCamposRellenos())
             {
+                //Recogemos los datos de los campos
                 string nombre = tbNombre.Text;
                 string apellidos = tbApellido.Text;
                 string email = tbEmail.Text;
@@ -178,7 +177,7 @@ namespace zeroGluten.view
 
 
             }
-            else //Si es false
+            else 
             {
                 MessageBox.Show("Rellene todos los campos de forma correcta", "ERROR", MessageBoxButton.OK);
             }

@@ -82,23 +82,6 @@ namespace zeroGluten.persistence.manages
 
 
         /// <summary>
-        ///   Método que encripta una cadena de texto con SHA256
-        /// </summary>
-        /// <param name="text"></param>
-        /// <returns>
-        ///     Devolvemos la cadena de texto encriptada
-        /// </returns>
-        static string EncryptSHA256(string text)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] inputBytes = Encoding.UTF8.GetBytes(text);
-                byte[] hashBytes = sha256.ComputeHash(inputBytes);
-                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
-            }
-        }
-
-        /// <summary>
         ///    Método que modifica un usuario de la base de datos
         /// </summary>
         /// <param name="usuario">
@@ -120,6 +103,24 @@ namespace zeroGluten.persistence.manages
         {
             dBBroker.modifier("DELETE FROM zeroGlutenDatabase.usuario WHERE idUsuario = " + usuario.IdUsuario + " ");
 
+        }
+
+
+        /// <summary>
+        ///   Método que encripta una cadena de texto con SHA256
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>
+        ///     Devolvemos la cadena de texto encriptada
+        /// </returns>
+        static string EncryptSHA256(string text)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] inputBytes = Encoding.UTF8.GetBytes(text);
+                byte[] hashBytes = sha256.ComputeHash(inputBytes);
+                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+            }
         }
     }
 }

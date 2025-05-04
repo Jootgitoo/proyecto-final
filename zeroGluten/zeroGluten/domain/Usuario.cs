@@ -61,9 +61,15 @@ namespace zeroGluten.domain
             
         }
 
-//-------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------------------
         //MÉTODOS
 
+        /// <summary>
+        ///   Método que nos devuelve todos los usuarios de la bbdd
+        /// </summary>
+        /// <returns>
+        ///     Devolvemos una lista con todos los usuarios de la bbdd
+        /// </returns>
         public List<Usuario> obtenerTodosUsuarios()
         {
             List<Usuario> listaTodosUsuarios = mu.obtenerTodosUsuarios();
@@ -71,6 +77,10 @@ namespace zeroGluten.domain
             return listaTodosUsuarios;
         }
 
+
+        /// <summary>
+        ///   Método que nos inserta un usuario de la bbdd
+        /// </summary>
         public void insertarUsuario()
         {
             mu.insertarUsuario(this);
@@ -85,8 +95,6 @@ namespace zeroGluten.domain
         public string Password { get => password; set => password = value; }
         public DateTime FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
         public string Sexo { get => sexo; set => sexo = value; }
-
-
 
     }
 }

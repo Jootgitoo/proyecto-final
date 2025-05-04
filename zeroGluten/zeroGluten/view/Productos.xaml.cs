@@ -31,39 +31,116 @@ namespace zeroGluten.view
             cargarTodosProductos();
         }
 
+
         /// <summary>
-        ///     Hacemos una llamada a la API para obtener una lista de productos
+        ///     Cargamos una lista de productos aleatorios de la API
         /// </summary>
         private async void cargarTodosProductos()
         {
-            //Limpiamos el ResultsListBox
-            lvProductos.Items.Clear();
+            lbProductos.Items.Clear();
 
-            //Mostramos al usuario un mensaje de q estamos cargando (es temporal)
-            lvProductos.Items.Add("Cargando datos...");
+            lbProductos.Items.Add("Cargando datos...");
 
             try
             {
-                //Llamamos al método getListaObjetos para realizar una solicitud a una API REST obteniendo una lista de objetos
-                List<Producto> objetos = await apiManager.getListaObjetos();
+                //Obtenemos una lista de productos de la API
+                List<Producto> listaProductos = await apiManager.getListaProductos();
 
-                //Limpiamos el ResultsListBox para esscribir en el los datos obtenidos de la consulta
-                lvProductos.Items.Clear();
+                lbProductos.Items.Clear();
 
-                //Por cada objeto que haya en objetos(lista de valores extraidos de la api)
-                foreach (var obj in objetos)
+                //Mostramos la lista
+                foreach (Producto p in listaProductos)
                 {
-                    //Escribimos el id y el nombre
-                    lvProductos.Items.Add($"ID: {obj.IdProducto}, Name: {obj.Nombre}");
+                    lbProductos.Items.Add($"ID: {p.IdProducto}, Name: {p.Nombre}");
                 }
 
             }
             catch (Exception ex)
             {
-                lvProductos.Items.Clear();
-                lvProductos.Items.Add($"Error al obtener datos: {ex.Message}");
+                lbProductos.Items.Clear();
+                lbProductos.Items.Add($"Error al obtener datos: {ex.Message}");
             }
 
+        }
+
+
+        /// <summary>
+        ///     Cargamos una lista de recetas aleatorios de la API
+        /// </summary>
+        private async void cargarTodasRecetas()
+        {
+            lbProductos.Items.Clear();
+
+            lbProductos.Items.Add("Cargando datos...");
+
+            try
+            {
+                //Obtenemos una lista de recetas de la API
+                List<Receta> listaRecetas = await apiManager.getListaRecetas();
+
+                lbProductos.Items.Clear();
+
+                //Mostramos la lista
+                foreach (Receta r in listaRecetas)
+                {
+                    lbProductos.Items.Add($"ID: {r.IdReceta}, Name: {r.NombreReceta}");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                lbProductos.Items.Clear();
+                lbProductos.Items.Add($"Error al obtener datos: {ex.Message}");
+            }
+
+        }
+
+
+        /// <summary>
+        ///    Método que muestra los filtros de productos
+        /// </summary>
+        public void MostrarFiltrosProductos()
+        {
+            filtrosRecetas.Visibility = Visibility.Collapsed;
+            filtrosProductos.Visibility = Visibility.Visible;
+        }
+
+
+        /// <summary>
+        ///    Método que muestra los filtros de recetas
+        /// </summary>
+        public void MostrarFiltrosRecetas()
+        {
+            filtrosProductos.Visibility = Visibility.Collapsed;
+            filtrosRecetas.Visibility = Visibility.Visible;
+        }
+
+
+        /// <summary>
+        ///    Método que se ejecuta al hacer click en el botón de productos
+        ///    Mostramos los filtros de productos y cargamos todos los productos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnProductos_Click(object sender, RoutedEventArgs e)
+        {
+            MostrarFiltrosProductos();
+            cargarTodosProductos();
+            filtrosProductos.Visibility = Visibility.Visible;
+        }
+
+
+        /// <summary>
+        ///     Método que se ejecuta al hacer click en el botón de recetas
+        ///     Mostramos los filtros de las recetas y cargamos todos las recetas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRecetas_Click(object sender, RoutedEventArgs e)
+        {
+            MostrarFiltrosRecetas();
+            cargarTodasRecetas();
+            filtrosRecetas.Visibility = Visibility.Visible;
         }
     }
 
