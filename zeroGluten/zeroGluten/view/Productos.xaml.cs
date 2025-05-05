@@ -23,6 +23,10 @@ namespace zeroGluten.view
 
         ApiManage apiManager;
 
+        //Para saber que tipo de filtro queremos aplicar
+        //Como la aplicacion por defecto carga los productos, inicializamos la variable en "Productos"
+        string tipoSeleccionado = "Productos";
+
         public Productos()
         {
             InitializeComponent();
@@ -44,7 +48,7 @@ namespace zeroGluten.view
             try
             {
                 //Obtenemos una lista de productos de la API
-                List<Producto> listaProductos = await apiManager.getListaProductos();
+                List<Producto> listaProductos = await apiManager.obtenerTodosProductos();
 
                 lbProductos.Items.Clear();
 
@@ -76,7 +80,7 @@ namespace zeroGluten.view
             try
             {
                 //Obtenemos una lista de recetas de la API
-                List<Receta> listaRecetas = await apiManager.getListaRecetas();
+                List<Receta> listaRecetas = await apiManager.obtenerTodasRecetas();
 
                 lbProductos.Items.Clear();
 
@@ -124,6 +128,7 @@ namespace zeroGluten.view
         /// <param name="e"></param>
         private void btnProductos_Click(object sender, RoutedEventArgs e)
         {
+            tipoSeleccionado = "Productos";
             MostrarFiltrosProductos();
             cargarTodosProductos();
             filtrosProductos.Visibility = Visibility.Visible;
@@ -138,11 +143,46 @@ namespace zeroGluten.view
         /// <param name="e"></param>
         private void btnRecetas_Click(object sender, RoutedEventArgs e)
         {
+            tipoSeleccionado = "Recetas";
             MostrarFiltrosRecetas();
             cargarTodasRecetas();
             filtrosRecetas.Visibility = Visibility.Visible;
         }
-    }
 
-    
+
+        /// <summary>
+        ///     Método que se ejecuta al hacer click en el botón de buscar
+        ///     Llama a un método u a otro dependiendo de lo que quiera buscar el usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+            if (tipoSeleccionado.Equals("Productos"))
+            {
+
+                buscarProductos();
+
+            } else if (tipoSeleccionado.Equals("Recetas"))
+            {
+                buscarRecetas();
+            } 
+        }
+
+        public void buscarProductos()
+        {
+            string nombre = tbNombreProd.Text;
+            string marca = tbMarcaProd.Text;
+            string categoria = tbCategoriaProd.Text;
+            string intolerancia = tbIntoleranciaProd.Text;
+        }
+
+        public void buscarRecetas()
+        {
+            string nombre = tbNombreRecet.Text;
+            string tiempo = tbTiempoRecet.Text;
+            string ingrecientePrincipal = tbIngredientePrincipalRecet.Text;
+            string intolerancia = tbIntoleranciasRecet.Text;
+        }
+    }
 }

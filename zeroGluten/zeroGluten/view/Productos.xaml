@@ -22,8 +22,11 @@
 
                 <StackPanel>
 
+                    <Image Source="/images/logo-app.png"  HorizontalAlignment="Center" Height="98" Margin="0,21,0,0" VerticalAlignment="Top" Width="98"/>
+
+
                     <!-- Botón productos -->
-                    <Button Name="btnProductos" Margin="5, 150, 5, 0" Background="#442129" Click="btnProductos_Click" Width="127" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
+                    <Button Name="btnProductos" Margin="5, 40, 5, 0" Background="#442129" Click="btnProductos_Click" Width="130" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
                         <Grid>
                             <Image Source="/images/menu/icono-productos.png" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"/>
                             <TextBlock Text="Productos" Margin="30,0,5,0" VerticalAlignment="Center" Background="Transparent" Foreground="#e9e4dd"/>
@@ -31,23 +34,35 @@
                     </Button>
 
                     <!-- Botón recetas -->
-                    <Button Name="btnRecetas" Margin="5, 5, 5, 0" Background="#442129" Click="btnRecetas_Click" Width="127" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
+                    <Button Name="btnRecetas" Margin="5, 5, 5, 0" Background="#442129" Click="btnRecetas_Click" Width="130" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
                         <Grid>
                             <Image Source="/images/menu/icono-recetas.png" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-
                             <TextBlock Text="Recetas" Margin="25,0,10,0" VerticalAlignment="Center" Background="Transparent" Foreground="#e9e4dd"/>
                         </Grid>
                     </Button>
 
+                    <!-- Boton buscar-->
+                    <Button x:Name="btnBuscar" Margin="5, 20, 5, 0" Background="#442129" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" Width="130" Click="btnBuscar_Click">
+                        <Grid>
+                            <Image Source="/images/menu/icono-buscar.png" Width="18" Height="19" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <TextBlock Text="Buscar" Margin="25,0,10,0" VerticalAlignment="Center" Background="Transparent" Foreground="#e9e4dd"/>
+                        </Grid>
+                    </Button>
+
                     <!-- Botón ajustes -->
-                    <Button Margin="5, 220, 5, 0" Background="#442129" Height="23" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
+                    <Button Margin="5, 170, 5, 0" Background="#442129" Height="23" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
                         <Grid>
                             <Image Source="/images/menu/icono-ajustes.png" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-8,0,0,0"/>
                             <TextBlock Text="Ajustes" Margin="25,0,10,0" VerticalAlignment="Center" Background="Transparent" Foreground="#e9e4dd"/>
                         </Grid>
                     </Button>
 
+
                 </StackPanel>
+
+
+
+
 
 
                 <!-- Contenido -->
@@ -64,31 +79,31 @@
                             <!-- Filtros productos -->
                             <Grid x:Name="filtrosProductos" Visibility="Visible">
                                 <TextBlock HorizontalAlignment="Left" Margin="10,5,0,0" Text="Nombre" Width="120" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                                <TextBox HorizontalAlignment="Left" Margin="10,25,0,0" Width="120" FontFamily="pack://application:,,,/font/#Maxwell"/>
+                                <TextBox x:Name="tbNombreProd" HorizontalAlignment="Left" Margin="10,25,0,0" Width="120" FontFamily="pack://application:,,,/font/#Maxwell"/>
 
                                 <TextBlock HorizontalAlignment="Left" Margin="170,5,0,0" Text="Marca" Width="120" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                                <TextBox HorizontalAlignment="Left" Margin="170,25,0,0" Width="120" FontFamily="pack://application:,,,/font/#Maxwell"/>
+                                <TextBox Name="tbMarcaProd" HorizontalAlignment="Left" Margin="170,25,0,0" Width="120" FontFamily="pack://application:,,,/font/#Maxwell"/>
 
                                 <TextBlock HorizontalAlignment="Left" Margin="325,5,0,0" Text="Categoria" Width="120" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                                <TextBox HorizontalAlignment="Left" Margin="325,25,0,0" Width="120" FontFamily="pack://application:,,,/font/#Maxwell"/>
+                                <TextBox Name="tbCategoriaProd" HorizontalAlignment="Left" Margin="325,25,0,0" Width="120" FontFamily="pack://application:,,,/font/#Maxwell"/>
 
                                 <TextBlock HorizontalAlignment="Left" Margin="485,5,0,0" Text="Intolerancia" Width="120" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                                <TextBox HorizontalAlignment="Left" Margin="485,25,0,0" Width="120" FontFamily="pack://application:,,,/font/#Maxwell"/>
+                                <TextBox Name="tbIntoleranciaProd" HorizontalAlignment="Left" Margin="485,25,0,0" Width="120" FontFamily="pack://application:,,,/font/#Maxwell"/>
                             </Grid>
 
                             <!-- Filtro recetas -->
                             <Grid x:Name="filtrosRecetas" Visibility="Collapsed">
                                 <TextBlock HorizontalAlignment="Left" Margin="10,5,0,0" Text="Nombre" Width="120"/>
-                                <TextBox HorizontalAlignment="Left" Margin="10,25,0,0" Width="120"/>
+                                <TextBox x:Name="tbNombreRecet" HorizontalAlignment="Left" Margin="10,25,0,0" Width="120"/>
 
                                 <TextBlock HorizontalAlignment="Left" Margin="170,5,0,0" Text="Tiempo" Width="120"/>
-                                <TextBox HorizontalAlignment="Left" Margin="170,25,0,0" Width="120"/>
+                                <TextBox Name="tbTiempoRecet" HorizontalAlignment="Left" Margin="170,25,0,0" Width="120"/>
 
                                 <TextBlock HorizontalAlignment="Left" Margin="325,5,0,0" Text="Ingrediente principal" Width="120"/>
-                                <TextBox HorizontalAlignment="Left" Margin="325,25,0,0" Width="120"/>
+                                <TextBox Name="tbIngredientePrincipalRecet" HorizontalAlignment="Left" Margin="325,25,0,0" Width="120"/>
 
                                 <TextBlock HorizontalAlignment="Left" Margin="485,5,0,0" Text="Intolerancia" Width="120"/>
-                                <TextBox HorizontalAlignment="Left" Margin="485,25,0,0" Width="120"/>
+                                <TextBox Name="tbIntoleranciasRecet" HorizontalAlignment="Left" Margin="485,25,0,0" Width="120"/>
                             </Grid>
 
                         </StackPanel>
@@ -102,7 +117,7 @@
 
 
                 </Grid>
-                <Image Source="/images/logo-app.png" HorizontalAlignment="Center" Height="98" Margin="0,21,0,0" VerticalAlignment="Top" Width="98"/>
+
             </Grid>
         </Viewbox>
     </Grid>

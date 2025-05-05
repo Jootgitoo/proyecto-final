@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\dam-2\\proyecto-final\\zeroGluten\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|d:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\view\\productos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|solutionrelative:zerogluten\\view\\productos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|d:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\view\\productos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|solutionrelative:zerogluten\\view\\productos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|d:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\persistence\\manages\\apimanage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|solutionrelative:zerogluten\\persistence\\manages\\apimanage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +31,44 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Productos.xaml",
+              "DocumentMoniker": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\view\\Productos.xaml",
+              "RelativeDocumentMoniker": "zeroGluten\\view\\Productos.xaml",
+              "ToolTip": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\view\\Productos.xaml",
+              "RelativeToolTip": "zeroGluten\\view\\Productos.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-05T06:33:38.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Productos.xaml.cs",
+              "DocumentMoniker": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\view\\Productos.xaml.cs",
+              "RelativeDocumentMoniker": "zeroGluten\\view\\Productos.xaml.cs",
+              "ToolTip": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\view\\Productos.xaml.cs",
+              "RelativeToolTip": "zeroGluten\\view\\Productos.xaml.cs",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAkwLgAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T06:40:34.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApiManage.cs",
+              "DocumentMoniker": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\persistence\\manages\\ApiManage.cs",
+              "RelativeDocumentMoniker": "zeroGluten\\persistence\\manages\\ApiManage.cs",
+              "ToolTip": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\persistence\\manages\\ApiManage.cs",
+              "RelativeToolTip": "zeroGluten\\persistence\\manages\\ApiManage.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAUwDcAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T06:42:17.65Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -13,8 +13,11 @@
     <None Remove="font\MAXWELL-LIGHT.ttf" />
     <None Remove="font\MAXWELL-REGULAR.ttf" />
     <None Remove="images\logo-app.png" />
+    <None Remove="images\menu\icono-ajustes.png" />
+    <None Remove="images\menu\icono-buscar.png" />
     <None Remove="images\menu\icono-menu.gif" />
     <None Remove="images\menu\icono-productos.png" />
+    <None Remove="images\menu\icono-recetas.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,10 +45,19 @@
     <Resource Include="images\logo-app.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="images\menu\icono-ajustes.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\menu\icono-buscar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="images\menu\icono-menu.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\menu\icono-productos.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\menu\icono-recetas.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
