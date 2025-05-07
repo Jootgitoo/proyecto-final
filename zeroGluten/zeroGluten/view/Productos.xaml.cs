@@ -169,12 +169,37 @@ namespace zeroGluten.view
             } 
         }
 
-        public void buscarProductos()
+        public async void buscarProductos()
         {
             string nombre = tbNombreProd.Text;
-            string marca = tbMarcaProd.Text;
-            string categoria = tbCategoriaProd.Text;
-            string intolerancia = tbIntoleranciaProd.Text;
+            string caloriasMaximas = tbCaloriasMaximas.Text;
+            string proteinasMinimas = tbProteinas.Text;
+            string grasasMaximas = tbGrasas.Text;
+
+            try
+            {
+                lbProductos.Items.Clear();
+                lbProductos.Items.Add("Buscando productos que cumplan las siguientes caracteriasticas");
+
+                //Obtenemos una lista de productos de la API
+                List<Producto> listaProductos = await apiManager.obtenerProductosConFiltros(nombre, caloriasMaximas, proteinasMinimas, grasasMaximas);
+
+
+                lbProductos.Items.Clear();
+
+                //Mostramos la lista
+                foreach (Producto p in listaProductos)
+                {
+                    lbProductos.Items.Add($"ID: {p.IdProducto}, Name: {p.Nombre}");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                lbProductos.Items.Clear();
+                lbProductos.Items.Add($"Error al obtener datos: {ex.Message}");
+            }
+
         }
 
         public void buscarRecetas()
@@ -183,6 +208,16 @@ namespace zeroGluten.view
             string tiempo = tbTiempoRecet.Text;
             string ingrecientePrincipal = tbIngredientePrincipalRecet.Text;
             string intolerancia = tbIntoleranciasRecet.Text;
+        }
+
+        private void btnMinimizar_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void btnCerrar_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

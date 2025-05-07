@@ -5,14 +5,19 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:zeroGluten.view"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Registro">
+      Title="Registro" Height="720" Width="1200" Cursor=""
+      ResizeMode="NoResize"    
+      WindowStartupLocation="CenterScreen"
+      Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None"
+      >
 
     <Grid>
         <Viewbox>
             <Grid Width="799" Height="430" Background="#D9C5B4">
 
-                <Image Source="/images/logo-app.png" HorizontalAlignment="Left" Height="436" VerticalAlignment="Center" Width="436" IsEnabled="False"/>
+                <Image Source="/images/logo-app.png" HorizontalAlignment="Left" Height="430" VerticalAlignment="Center" Width="436" IsEnabled="False"/>
 
                 <TextBlock HorizontalAlignment="Left" Margin="470,10,0,0" TextWrapping="Wrap" Text="FORMULARIO DE REGISTRO (PONER BONITO)" VerticalAlignment="Top" Height="32" Width="296"/>
 
@@ -97,6 +102,9 @@
                     </StackPanel>
                 </ScrollViewer>
                 <Button Name="btnDarAlta" Content="Dar de alta" HorizontalAlignment="Left" Margin="679,391,0,0" VerticalAlignment="Top" Height="29" Width="110" Background="#400101" Foreground="#DEDEDE" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" Click="btnDarAlta_Click" />
+
+                <Button x:Name="btnMinimizar" Content="_" HorizontalAlignment="Left" Margin="734,16,0,0" VerticalAlignment="Top" Click="btnMinimizar_Click"/>
+                <Button Name="btnCerrar" Content="X" HorizontalAlignment="Left" Margin="757,16,0,0" VerticalAlignment="Top" Click="btnCerrar_Click"/>
 
             </Grid>
         </Viewbox>

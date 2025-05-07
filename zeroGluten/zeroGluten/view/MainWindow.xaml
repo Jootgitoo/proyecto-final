@@ -5,10 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:zeroGluten"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="720" Width="1200" Cursor=""
+      ResizeMode="NoResize"    
+      WindowStartupLocation="CenterScreen"
+      Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None">
     <Viewbox>
         <Grid Width="799" Height="430" Background="#D9C5B4">
+
+
             
+
             <Image Source="/images/logo-app.png" HorizontalAlignment="Left" Height="436" VerticalAlignment="Center" Width="436" IsEnabled="False"/>
 
             <TextBox Name="txtBlockNombreUsuario" HorizontalAlignment="Left" Margin="466,119,0,0" TextWrapping="Wrap" Text="Escriba el nombre del usuario" VerticalAlignment="Top" Width="309" BorderBrush="Transparent" Background="Transparent" FontFamily="pack://application:,,,/font/#Maxwell" GotFocus="TextBox_GotFocusUsuario"/>
@@ -20,6 +28,10 @@
             <Button Name="btnIniciarSesion" Content="Iniciar Sesion" HorizontalAlignment="Left" Margin="466,299,0,0" VerticalAlignment="Top" Height="29" Width="110" Background="#400101" Foreground="#DEDEDE" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" Click="btnIniciarSesion_Click"/>
             <Button Name="btnRegistrarse" Content="Resgistrarse" HorizontalAlignment="Left" Margin="665,299,0,0" VerticalAlignment="Top" Height="29" Width="110" Background="#400101" Foreground="#DEDEDE" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" Click="btnRegistrarse_Click"/>
             
+            
+            <Button x:Name="btnMinimizar" Content="_" HorizontalAlignment="Left" Margin="775,10,0,0" VerticalAlignment="Top" Click="btnMinimizar_Click" />
+            <Button Name="btnCerrar" Content="X" HorizontalAlignment="Left" Margin="720,10,0,0" VerticalAlignment="Top" Click="btnCerrar_Click"/>
+
         </Grid>
     </Viewbox>
 </Window>

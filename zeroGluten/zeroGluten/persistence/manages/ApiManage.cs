@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using zeroGluten.domain;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace zeroGluten.persistence.manages
 {
@@ -51,10 +53,29 @@ namespace zeroGluten.persistence.manages
         }
 
 
-        public async Task<List<Producto>> obtenerProductosConFiltros( List<String> listaFiltros )
+        public async Task<List<Producto>> obtenerProductosConFiltros(string nombre, string caloriasMaximas, string proteinasMinimas, string grasasMaximas)
         {
             string apiKey = "174c5ea2fee04cd99c92504eaeafffbe";
-            string apiUrl = $"https://api.spoonacular.com/food/products/search?apiKey={apiKey}&query=a&number=1";
+            string apiUrl = $"https://api.spoonacular.com/food/products/search?";
+
+            if(!string.IsNullOrEmpty(nombre))
+            {
+                apiUrl += $"query={nombre}&";
+            }
+            if (!string.IsNullOrEmpty(caloriasMaximas))
+            {
+                apiUrl += $"maxCalories={caloriasMaximas}&";
+            }
+            if (!string.IsNullOrEmpty(proteinasMinimas))
+            {
+                apiUrl += $"minProtein={proteinasMinimas}&";
+            }
+            if (!string.IsNullOrEmpty(grasasMaximas))
+            {
+                apiUrl += $"maxFat={grasasMaximas}&";
+            }
+
+            apiUrl += $"apiKey={apiKey}&number=1";
 
             //Nos creamos un "cliente" para hacer una solicitud a la api
             HttpClient cliente = new HttpClient();

@@ -120,4 +120,14 @@ public partial class MainWindow : Window
             return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
         }
     }
+
+    private void btnMinimizar_Click(object sender, RoutedEventArgs e)
+    {
+        WindowState = WindowState.Minimized;
+    }
+
+    private void btnCerrar_Click(object sender, RoutedEventArgs e)
+    {
+        Application.Current.Shutdown();
+    }
 }

@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "D:\\dam-2\\proyecto-final\\zerogluten\\zeroGluten\\zeroGluten.csproj": {}
+    "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\zeroGluten.csproj": {}
   },
   "projects": {
-    "D:\\dam-2\\proyecto-final\\zerogluten\\zeroGluten\\zeroGluten.csproj": {
+    "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\zeroGluten.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\dam-2\\proyecto-final\\zerogluten\\zeroGluten\\zeroGluten.csproj",
+        "projectUniqueName": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\zeroGluten.csproj",
         "projectName": "zeroGluten",
-        "projectPath": "D:\\dam-2\\proyecto-final\\zerogluten\\zeroGluten\\zeroGluten.csproj",
+        "projectPath": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\zeroGluten.csproj",
         "packagesPath": "C:\\Users\\JORGE\\.nuget\\packages\\",
         "outputPath": "D:\\dam-2\\proyecto-final\\zerogluten\\zeroGluten\\obj\\",
         "projectStyle": "PackageReference",
