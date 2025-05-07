@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lZILVSdEew4=",
+  "dgSpecHash": "tZv6gkSLpjc=",
   "success": true,
-  "projectFilePath": "D:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\zeroGluten.csproj",
+  "projectFilePath": "D:\\dam-2\\proyecto-final\\zerogluten\\zeroGluten\\zeroGluten.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JORGE\\.nuget\\packages\\bouncycastle.cryptography\\2.5.1\\bouncycastle.cryptography.2.5.1.nupkg.sha512",
     "C:\\Users\\JORGE\\.nuget\\packages\\google.protobuf\\3.30.0\\google.protobuf.3.30.0.nupkg.sha512",
