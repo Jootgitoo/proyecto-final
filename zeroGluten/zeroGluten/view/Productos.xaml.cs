@@ -161,15 +161,19 @@ namespace zeroGluten.view
             if (tipoSeleccionado.Equals("Productos"))
             {
 
-                buscarProductos();
+                buscarProductosPorFiltros();
 
             } else if (tipoSeleccionado.Equals("Recetas"))
             {
-                buscarRecetas();
+                buscarRecetasPorFiltros();
             } 
         }
 
-        public async void buscarProductos()
+
+        /// <summary>
+        ///   Método que busca productos por filtros y los escribe en el listbox
+        /// </summary>
+        public async void buscarProductosPorFiltros()
         {
             string nombre = tbNombreProd.Text;
             string caloriasMaximas = tbCaloriasMaximas.Text;
@@ -179,7 +183,7 @@ namespace zeroGluten.view
             try
             {
                 lbProductos.Items.Clear();
-                lbProductos.Items.Add("Buscando productos que cumplan las siguientes caracteriasticas");
+                lbProductos.Items.Add("Buscando productos que cumplan las siguientes caracteriasticas...");
 
                 //Obtenemos una lista de productos de la API
                 List<Producto> listaProductos = await apiManager.obtenerProductosConFiltros(nombre, caloriasMaximas, proteinasMinimas, grasasMaximas);
@@ -202,19 +206,59 @@ namespace zeroGluten.view
 
         }
 
-        public void buscarRecetas()
+
+        /// <summary>
+        ///   Método que busca recetas por filtros y los escribe en el listbox
+        /// </summary>
+        public async void buscarRecetasPorFiltros()
         {
             string nombre = tbNombreRecet.Text;
-            string tiempo = tbTiempoRecet.Text;
-            string ingrecientePrincipal = tbIngredientePrincipalRecet.Text;
+            string tiempoPreparacion = tbTiempoRecet.Text;
             string intolerancia = tbIntoleranciasRecet.Text;
+            string tipoComida = tbTipoComida.Text;
+
+            try
+            {
+                lbProductos.Items.Clear();
+                lbProductos.Items.Add("Buscando recetas que cumplan las siguientes caracteriasticas...");
+
+                //Obtenemos una lista de productos de la API
+                List<Receta> listaRecetas = await apiManager.obtenerRecetasConFiltros(nombre, tiempoPreparacion, intolerancia, tipoComida);
+
+
+                lbProductos.Items.Clear();
+
+                //Mostramos la lista
+                foreach (Receta r in listaRecetas)
+                {
+                    lbProductos.Items.Add($"ID: {r.IdReceta}, Nombre: {r.NombreReceta}, Sin gluten:{r.SinGluten}");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                lbProductos.Items.Clear();
+                lbProductos.Items.Add($"Error al obtener datos: {ex.Message}");
+            }
         }
 
+
+        /// <summary>
+        ///   Método que minimiza la ventana
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMinimizar_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
 
+
+        /// <summary>
+        ///    Método que cierra el programa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCerrar_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();

@@ -97,14 +97,14 @@
                                 <TextBlock HorizontalAlignment="Left" Margin="10,5,0,0" Text="Nombre" Width="120"/>
                                 <TextBox x:Name="tbNombreRecet" HorizontalAlignment="Left" Margin="10,25,0,0" Width="120"/>
 
-                                <TextBlock HorizontalAlignment="Left" Margin="170,5,0,0" Text="Tiempo" Width="120"/>
+                                <TextBlock HorizontalAlignment="Left" Margin="170,5,0,0" Text="Tiempo de preparacion" Width="120"/>
                                 <TextBox Name="tbTiempoRecet" HorizontalAlignment="Left" Margin="170,25,0,0" Width="120"/>
 
-                                <TextBlock HorizontalAlignment="Left" Margin="325,5,0,0" Text="Ingrediente principal" Width="120"/>
-                                <TextBox Name="tbIngredientePrincipalRecet" HorizontalAlignment="Left" Margin="325,25,0,0" Width="120"/>
+                                <TextBlock HorizontalAlignment="Left" Margin="325,5,0,0" Text="Intolerancias" Width="120"/>
+                                <TextBox Name="tbIntoleranciasRecet" HorizontalAlignment="Left" Margin="325,25,0,0" Width="120"/>
 
-                                <TextBlock HorizontalAlignment="Left" Margin="485,5,0,0" Text="Intolerancia" Width="120"/>
-                                <TextBox Name="tbIntoleranciasRecet" HorizontalAlignment="Left" Margin="485,25,0,0" Width="120"/>
+                                <TextBlock HorizontalAlignment="Left" Margin="485,5,0,0" Text="Tipo de comida" Width="120"/>
+                                <TextBox Name="tbTipoComida" HorizontalAlignment="Left" Margin="485,25,0,0" Width="120"/>
                             </Grid>
 
                         </StackPanel>
