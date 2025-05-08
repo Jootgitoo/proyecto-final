@@ -16,21 +16,76 @@
 
 
             
-
+            <!-- Logo app-->
             <Image Source="/images/logo-app.png" HorizontalAlignment="Left" Height="436" VerticalAlignment="Center" Width="436" IsEnabled="False"/>
 
+            <!-- Parte iniciar sesion -->
             <TextBox Name="txtBlockNombreUsuario" HorizontalAlignment="Left" Margin="466,119,0,0" TextWrapping="Wrap" Text="Escriba el nombre del usuario" VerticalAlignment="Top" Width="309" BorderBrush="Transparent" Background="Transparent" FontFamily="pack://application:,,,/font/#Maxwell" GotFocus="TextBox_GotFocusUsuario"/>
             <Rectangle Fill="Black" Height="1" Width="309" VerticalAlignment="Top" Margin="466,135,0,0" HorizontalAlignment="Left"/>
 
             <TextBox Name="txtBlockPassword" HorizontalAlignment="Left" Margin="466,219,0,0" TextWrapping="Wrap" Text="Escriba su contraseña" VerticalAlignment="Top" Width="309" BorderBrush="Transparent" Background="Transparent" FontFamily="pack://application:,,,/font/#Maxwell" GotFocus="TextBox_GotFocusPassword"/>
             <Rectangle Fill="Black" Height="1" Width="309" VerticalAlignment="Top" Margin="466,235,0,0" HorizontalAlignment="Left"/>
 
+            <!-- Botones -->
             <Button Name="btnIniciarSesion" Content="Iniciar Sesion" HorizontalAlignment="Left" Margin="466,299,0,0" VerticalAlignment="Top" Height="29" Width="110" Background="#400101" Foreground="#DEDEDE" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" Click="btnIniciarSesion_Click"/>
             <Button Name="btnRegistrarse" Content="Resgistrarse" HorizontalAlignment="Left" Margin="665,299,0,0" VerticalAlignment="Top" Height="29" Width="110" Background="#400101" Foreground="#DEDEDE" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" Click="btnRegistrarse_Click"/>
+
+            <!-- Boton de minimizar -->
+                <Button x:Name="btnMinimizar" Width="20" Height="20" Background="Transparent" BorderBrush="Transparent" Foreground="Gray" Content="-" HorizontalAlignment="Left" Margin="754,0,0,0" VerticalAlignment="Top" Click="btnMinimizar_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <!-- Estilo principal -->
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="Gray"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="border" Background="{TemplateBinding Background}"  CornerRadius="17.5">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <!-- Estilo al pasar el raton por encima -->
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="White"/>
+                                            <Setter Property="Foreground" Value="Black"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
             
-            
-            <Button x:Name="btnMinimizar" Content="_" HorizontalAlignment="Left" Margin="775,10,0,0" VerticalAlignment="Top" Click="btnMinimizar_Click" />
-            <Button Name="btnCerrar" Content="X" HorizontalAlignment="Left" Margin="720,10,0,0" VerticalAlignment="Top" Click="btnCerrar_Click"/>
+            <Button Name="btnCerrar" Width="20" Height="20" Content="X" HorizontalAlignment="Left" Margin="779,0,0,0" VerticalAlignment="Top" Click="btnCerrar_Click">
+                <Button.Style>
+                    <!-- Estilo principal -->
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="Gray"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="17.5">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <!-- Estilo al pasar el raton por encima -->
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="#f44336"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
 
         </Grid>
     </Viewbox>

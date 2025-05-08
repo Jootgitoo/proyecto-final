@@ -64,11 +64,7 @@
 
 
                 </StackPanel>
-
-
-
-
-
+                
 
                 <!-- Contenido -->
                 <Grid Grid.Column="1" Margin="10">
@@ -114,16 +110,70 @@
                         </StackPanel>
                     </Expander>
 
-
-                    <!-- Productos -->
+                    <!-- Mostrar productos/recetas -->
                     <Grid Grid.Row="1">
                         <ListBox x:Name="lbProductos" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,86,10,0" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
                     </Grid>
 
-
                 </Grid>
-                <Button Grid.Column="1" x:Name="btnMinimizar" Content="_" HorizontalAlignment="Left" Margin="622,0,0,0" VerticalAlignment="Top" Height="19" Click="btnMinimizar_Click"/>
-                <Button Grid.Column="1" Name="btnCerrar" Content="X" HorizontalAlignment="Left" Margin="644,0,0,0" VerticalAlignment="Top" Click="btnCerrar_Click"/>
+
+                <!-- Botón minimizar -->
+                <Button Grid.Column="1" x:Name="btnMinimizar" Content="-" Width="20" Height="20" HorizontalAlignment="Left" Margin="627,0,0,0" VerticalAlignment="Top"  Click="btnMinimizar_Click">
+                    <Button.Style>
+                        <!-- Estilo principal-->
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="Gray"/>
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border x:Name="border" Background="{TemplateBinding Background}"  CornerRadius="17.5">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <!-- Estilo al pasar el ratón por encima-->
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="border" Property="Background" Value="White"/>
+                                                <Setter Property="Foreground" Value="Black"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <!-- Botón cerrar aplicacion-->
+                <Button Grid.Column="1" Name="btnCerrar" Content="X"  Width="20" Height="20" HorizontalAlignment="Left" Margin="652,0,0,0" VerticalAlignment="Top" Click="btnCerrar_Click">
+                    <Button.Style>
+                        <!-- Estilo principal-->
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="Gray"/>
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="17.5">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <!-- Estilo al pasar el ratón por encima-->
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="border" Property="Background" Value="#f44336"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
 
 
             </Grid>

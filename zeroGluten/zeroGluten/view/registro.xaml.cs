@@ -184,6 +184,7 @@ namespace zeroGluten.view
 
         }
 
+
         /// <summary>
         ///     Comprobamos que todos los campos del registro están rellenos
         /// </summary>
@@ -206,11 +207,23 @@ namespace zeroGluten.view
             }
         }
 
+
+        /// <summary>
+        ///     Método que minimiza la ventana
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMinimizar_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
 
+
+        /// <summary>
+        ///    Método que cierra la aplicación
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCerrar_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();

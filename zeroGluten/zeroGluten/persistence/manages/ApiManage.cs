@@ -53,6 +53,15 @@ namespace zeroGluten.persistence.manages
         }
 
 
+        /// <summary>
+        ///      Obtenemos una lista de productos de la api que cumplan unos requisitos
+        /// </summary>
+        /// <param name="nombre"> Nombre del producto </param>
+        /// <param name="caloriasMaximas"> Calorias maximas del producto </param>
+        /// <param name="proteinasMinimas"> Proteinas minimas del producto </param>
+        /// <param name="grasasMaximas"> Grasas maximas del producto </param>
+        /// <returns> Lista con productos que cumplan las condiciones de los filtros </returns>
+        /// <exception cref="Exception"></exception>
         public async Task<List<Producto>> obtenerProductosConFiltros(string nombre, string caloriasMaximas, string proteinasMinimas, string grasasMaximas)
         {
             string apiKey = "174c5ea2fee04cd99c92504eaeafffbe";
