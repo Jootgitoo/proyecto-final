@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -55,7 +56,67 @@ namespace zeroGluten.view
                 //Mostramos la lista
                 foreach (Producto p in listaProductos)
                 {
-                    lbProductos.Items.Add($"ID: {p.IdProducto}, Name: {p.Nombre}");
+                    Image image = new Image
+                    {
+                        Width = 100,
+                        Height = 100,
+                        Margin = new Thickness(10),
+                        Stretch = Stretch.UniformToFill
+                    };
+
+                    try
+                    {
+                        BitmapImage bitmap = new BitmapImage();
+                        bitmap.BeginInit();
+                        bitmap.UriSource = new Uri(p.UrlImagen);
+                        bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                        bitmap.EndInit();
+
+                        image.Source = bitmap;
+                    }
+                    catch
+                    {
+                        //Imagen por si da error
+                    }
+
+                    StackPanel horizontalPanel = new StackPanel
+                    {
+                        Orientation = Orientation.Horizontal,
+                        Margin = new Thickness(5)
+                    };
+
+                    // Contenedor de texto (en vertical)
+                    StackPanel textPanel = new StackPanel
+                    {
+                        Orientation = Orientation.Vertical,
+                        VerticalAlignment = VerticalAlignment.Center
+                    };
+
+                    // Textos
+                    TextBlock nameText = new TextBlock
+                    {
+                        Text = $"Nombre: {p.Nombre}",
+                        FontWeight = FontWeights.Bold,
+                        FontSize = 14
+                    };
+
+                    TextBlock precioText = new TextBlock
+                    {
+                        Text = $"Precio: {p.Precio:C}", // Formato moneda
+                        FontSize = 12
+                    };
+
+                    // Añadir textos al panel de texto
+                    textPanel.Children.Add(nameText);
+                    textPanel.Children.Add(precioText);
+
+                    // Añadir imagen y panel de texto al panel horizontal
+                    horizontalPanel.Children.Add(image);
+                    horizontalPanel.Children.Add(textPanel);
+
+                    // Añadir todo al ListBox
+                    lbProductos.Items.Add(horizontalPanel);
+
                 }
 
             }
@@ -87,7 +148,94 @@ namespace zeroGluten.view
                 //Mostramos la lista
                 foreach (Receta r in listaRecetas)
                 {
-                    lbProductos.Items.Add($"ID: {r.IdReceta}, Name: {r.NombreReceta}");
+
+                    Image image = new Image
+                    {
+                        Width = 100,
+                        Height = 100,
+                        Margin = new Thickness(10),
+                        Stretch = Stretch.UniformToFill
+                    };
+
+                    try
+                    {
+                        BitmapImage bitmap = new BitmapImage();
+                        bitmap.BeginInit();
+                        bitmap.UriSource = new Uri(r.UrlImagen);
+                        bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                        bitmap.EndInit();
+
+                        image.Source = bitmap;
+                    }
+                    catch
+                    {
+                        //Imagen por si da error
+                    }
+
+
+                    StackPanel horizontalPanel = new StackPanel
+                    {
+                        Orientation = Orientation.Horizontal,
+                        Margin = new Thickness(5)
+                    };
+
+                    // Contenedor de texto (en vertical)
+                    StackPanel textPanel = new StackPanel
+                    {
+                        Orientation = Orientation.Vertical,
+                        VerticalAlignment = VerticalAlignment.Center
+                    };
+
+
+                    // Textos
+                    TextBlock nameText = new TextBlock
+                    {
+                        Text = $"Nombre: {r.NombreReceta}",
+                        FontWeight = FontWeights.Bold,
+                        FontSize = 14
+                    };
+
+                    TextBlock tiempoText = new TextBlock
+                    {
+                        Text = $"Tiempo: {r.TiempoPreparacion} min", // Formato moneda
+                        FontSize = 12
+                    };
+
+                    TextBlock descText = new TextBlock
+                    {
+                        Text = $"Descripcion: {r.Descripcion} ", // Formato moneda
+                        FontSize = 12
+                    };
+
+                    TextBlock sinGluten = new TextBlock
+                    {
+                        Text = $"Sin gluten: {r.SinGluten} ", // Formato moneda
+                        FontSize = 12
+                    };
+
+                    TextBlock vegano = new TextBlock
+                    {
+                        Text = $"Vegano: {r.Vegano} ", // Formato moneda
+                        FontSize = 12
+                    };
+
+                    TextBlock vegetariano = new TextBlock
+                    {
+                        Text = $"Sin gluten: {r.Vegetariano} ", // Formato moneda
+                        FontSize = 12
+                    };
+
+                    textPanel.Children.Add(nameText);
+                    textPanel.Children.Add(tiempoText);
+                    textPanel.Children.Add(descText);
+                    textPanel.Children.Add(sinGluten);
+                    textPanel.Children.Add(vegano);
+                    textPanel.Children.Add(vegetariano);
+
+                    horizontalPanel.Children.Add(image);
+                    horizontalPanel.Children.Add(textPanel);
+
+                    lbProductos.Items.Add(horizontalPanel);
                 }
 
             }
@@ -191,10 +339,72 @@ namespace zeroGluten.view
 
                 lbProductos.Items.Clear();
 
-                //Mostramos la lista
                 foreach (Producto p in listaProductos)
                 {
-                    lbProductos.Items.Add($"ID: {p.IdProducto}, Name: {p.Nombre}");
+                    Image image = new Image
+                    {
+                        Width = 100,
+                        Height = 100,
+                        Margin = new Thickness(10),
+                        Stretch = Stretch.UniformToFill
+                    };
+
+
+                    try
+                    {
+                        BitmapImage bitmap = new BitmapImage();
+                        bitmap.BeginInit();
+                        bitmap.UriSource = new Uri(p.UrlImagen);
+                        bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                        bitmap.EndInit();
+
+                        image.Source = bitmap;
+                    }
+                    catch
+                    {
+                        //Imagen por si da error
+                    }
+
+                    StackPanel horizontalPanel = new StackPanel
+                    {
+                        Orientation = Orientation.Horizontal,
+                        Margin = new Thickness(5)
+                    };
+
+                    // Contenedor de texto (en vertical)
+                    StackPanel textPanel = new StackPanel
+                    {
+                        Orientation = Orientation.Vertical,
+                        VerticalAlignment = VerticalAlignment.Center
+                    };
+
+                    // Textos
+                    TextBlock nameText = new TextBlock
+                    {
+                        Text = $"Nombre: {p.Nombre}",
+                        FontWeight = FontWeights.Bold,
+                        FontSize = 14
+                    };
+
+
+
+                    TextBlock precioText = new TextBlock
+                    {
+                        Text = $"Precio: {p.Precio:C}", // Formato moneda
+                        FontSize = 12
+                    };
+
+                    // Añadir textos al panel de texto
+                    textPanel.Children.Add(nameText);
+                    textPanel.Children.Add(precioText);
+
+                    // Añadir imagen y panel de texto al panel horizontal
+                    horizontalPanel.Children.Add(image);
+                    horizontalPanel.Children.Add(textPanel);
+
+                    // Añadir todo al ListBox
+                    lbProductos.Items.Add(horizontalPanel);
+
                 }
 
             }
@@ -225,13 +435,85 @@ namespace zeroGluten.view
                 //Obtenemos una lista de productos de la API
                 List<Receta> listaRecetas = await apiManager.obtenerRecetasConFiltros(nombre, tiempoPreparacion, intolerancia, tipoComida);
 
-
                 lbProductos.Items.Clear();
 
                 //Mostramos la lista
                 foreach (Receta r in listaRecetas)
                 {
-                    lbProductos.Items.Add($"ID: {r.IdReceta}, Nombre: {r.NombreReceta}, Sin gluten:{r.SinGluten}");
+
+                    Image image = new Image
+                    {
+                        Width = 100,
+                        Height = 100,
+                        Margin = new Thickness(10),
+                        Stretch = Stretch.UniformToFill
+                    };
+
+                    try
+                    {
+                        BitmapImage bitmap = new BitmapImage();
+                        bitmap.BeginInit();
+                        bitmap.UriSource = new Uri(r.UrlImagen);
+                        bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                        bitmap.EndInit();
+
+                        image.Source = bitmap;
+                    }
+                    catch
+                    {
+                        //Imagen por si da error
+                    }
+
+
+                    StackPanel horizontalPanel = new StackPanel
+                    {
+                        Orientation = Orientation.Horizontal,
+                        Margin = new Thickness(5)
+                    };
+
+                    // Contenedor de texto (en vertical)
+                    StackPanel textPanel = new StackPanel
+                    {
+                        Orientation = Orientation.Vertical,
+                        VerticalAlignment = VerticalAlignment.Center
+                    };
+
+
+                    // Textos
+                    TextBlock nameText = new TextBlock
+                    {
+                        Text = $"Nombre: {r.NombreReceta}",
+                        FontWeight = FontWeights.Bold,
+                        FontSize = 14
+                    };
+
+                    TextBlock tiempoText = new TextBlock
+                    {
+                        Text = $"Precio: {r.TiempoPreparacion} min", // Formato moneda
+                        FontSize = 12
+                    };
+
+                    TextBlock descText = new TextBlock
+                    {
+                        Text = $"Descripcion: {r.Descripcion} ", // Formato moneda
+                        FontSize = 12
+                    };
+
+                    TextBlock sinGluten = new TextBlock
+                    {
+                        Text = $"Sin gluten: {r.SinGluten} ", // Formato moneda
+                        FontSize = 12
+                    };
+
+                    textPanel.Children.Add(nameText);
+                    textPanel.Children.Add(tiempoText);
+                    textPanel.Children.Add(descText);
+                    textPanel.Children.Add(sinGluten);
+
+                    horizontalPanel.Children.Add(image);
+                    horizontalPanel.Children.Add(textPanel);
+
+                    lbProductos.Items.Add(horizontalPanel);
                 }
 
             }

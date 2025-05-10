@@ -20,7 +20,7 @@
                 <Image Source="/images/logo-app.png" HorizontalAlignment="Left" Height="430" VerticalAlignment="Center" Width="436" IsEnabled="False"/>
 
                 <!-- Titutlo-->
-                <TextBlock HorizontalAlignment="Left" Margin="438,10,0,0" TextWrapping="Wrap" Text="FORMULARIO DE REGISTRO (PONER BONITO)" VerticalAlignment="Top" Height="32" Width="296"/>
+                <TextBlock HorizontalAlignment="Left" Margin="453,11,0,0" Foreground="#400101" TextWrapping="Wrap" Text="FORMULARIO DE REGISTRO" FontSize="30" VerticalAlignment="Top" Height="32" Width="296" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
 
 
                 <!-- Registro -->
@@ -103,7 +103,7 @@
 
                     </StackPanel>
                 </ScrollViewer>
-                
+
                 <!-- Boton dar de alta -->
                 <Button Name="btnDarAlta" Content="Dar de alta" HorizontalAlignment="Left" Margin="679,391,0,0" VerticalAlignment="Top" Height="29" Width="110" Background="#400101" Foreground="#DEDEDE" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" Click="btnDarAlta_Click" />
 

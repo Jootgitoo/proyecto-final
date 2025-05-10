@@ -15,23 +15,22 @@
         <Grid Width="799" Height="430" Background="#D9C5B4">
 
 
-            
+
             <!-- Logo app-->
             <Image Source="/images/logo-app.png" HorizontalAlignment="Left" Height="436" VerticalAlignment="Center" Width="436" IsEnabled="False"/>
 
             <!-- Parte iniciar sesion -->
-            <TextBox Name="txtBlockNombreUsuario" HorizontalAlignment="Left" Margin="466,119,0,0" TextWrapping="Wrap" Text="Escriba el nombre del usuario" VerticalAlignment="Top" Width="309" BorderBrush="Transparent" Background="Transparent" FontFamily="pack://application:,,,/font/#Maxwell" GotFocus="TextBox_GotFocusUsuario"/>
-            <Rectangle Fill="Black" Height="1" Width="309" VerticalAlignment="Top" Margin="466,135,0,0" HorizontalAlignment="Left"/>
-
-            <TextBox Name="txtBlockPassword" HorizontalAlignment="Left" Margin="466,219,0,0" TextWrapping="Wrap" Text="Escriba su contraseña" VerticalAlignment="Top" Width="309" BorderBrush="Transparent" Background="Transparent" FontFamily="pack://application:,,,/font/#Maxwell" GotFocus="TextBox_GotFocusPassword"/>
-            <Rectangle Fill="Black" Height="1" Width="309" VerticalAlignment="Top" Margin="466,235,0,0" HorizontalAlignment="Left"/>
+            <PasswordBox x:Name="pwBox" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Margin="466,215,0,0" VerticalAlignment="Top" Width="289" Height="20"/>
+            <TextBox Name="txtBlockNombreUsuario" HorizontalAlignment="Left" Margin="466,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="289" BorderBrush="Transparent" Background="Transparent" FontFamily="pack://application:,,,/font/#Maxwell" GotFocus="TextBox_GotFocusUsuario"/>
+            <Rectangle Fill="Black" Height="1" Width="289" VerticalAlignment="Top" Margin="466,135,0,0" HorizontalAlignment="Left"/>
+            <Rectangle Fill="Black" Height="1" Width="289" VerticalAlignment="Top" Margin="466,235,0,0" HorizontalAlignment="Left"/>
 
             <!-- Botones -->
             <Button Name="btnIniciarSesion" Content="Iniciar Sesion" HorizontalAlignment="Left" Margin="466,299,0,0" VerticalAlignment="Top" Height="29" Width="110" Background="#400101" Foreground="#DEDEDE" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" Click="btnIniciarSesion_Click"/>
             <Button Name="btnRegistrarse" Content="Resgistrarse" HorizontalAlignment="Left" Margin="665,299,0,0" VerticalAlignment="Top" Height="29" Width="110" Background="#400101" Foreground="#DEDEDE" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" Click="btnRegistrarse_Click"/>
 
             <!-- Boton de minimizar -->
-                <Button x:Name="btnMinimizar" Width="20" Height="20" Background="Transparent" BorderBrush="Transparent" Foreground="Gray" Content="-" HorizontalAlignment="Left" Margin="754,0,0,0" VerticalAlignment="Top" Click="btnMinimizar_Click">
+            <Button x:Name="btnMinimizar" Width="20" Height="20" Background="Transparent" BorderBrush="Transparent" Foreground="Gray" Content="-" HorizontalAlignment="Left" Margin="754,0,0,0" VerticalAlignment="Top" Click="btnMinimizar_Click">
                 <Button.Style>
                     <Style TargetType="Button">
                         <!-- Estilo principal -->
@@ -58,7 +57,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            
+
             <Button Name="btnCerrar" Width="20" Height="20" Content="X" HorizontalAlignment="Left" Margin="779,0,0,0" VerticalAlignment="Top" Click="btnCerrar_Click">
                 <Button.Style>
                     <!-- Estilo principal -->
@@ -86,6 +85,8 @@
                     </Style>
                 </Button.Style>
             </Button>
+            <Image Source="/images/registrarse/icono-nombreUsuario.png" HorizontalAlignment="Left" Height="21" Margin="755,115,0,0" VerticalAlignment="Top" Width="21"/>
+            <Image Source="/images/registrarse/icono-password.png" HorizontalAlignment="Left" Height="21" Margin="755,214,0,0" VerticalAlignment="Top" Width="21"/>
 
         </Grid>
     </Viewbox>

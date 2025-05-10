@@ -43,7 +43,7 @@ public partial class MainWindow : Window
     /// <param name="e"></param>
     private void TextBox_GotFocusPassword(object sender, RoutedEventArgs e)
     {
-        txtBlockPassword.Clear();
+        pwBox.Clear();
     }
 
 
@@ -68,7 +68,7 @@ public partial class MainWindow : Window
     {
         //Recogemos los datos de la pantalla
         string nombreUsuario = txtBlockNombreUsuario.Text;
-        string passwordEncriptada = EncryptSHA256(txtBlockPassword.Text);
+        string passwordEncriptada = EncryptSHA256(pwBox.Password);
 
         //Sacamos una lista de todos los usuarios de la bbdd
         List<Usuario> listaUsuarios = new List<Usuario>();
