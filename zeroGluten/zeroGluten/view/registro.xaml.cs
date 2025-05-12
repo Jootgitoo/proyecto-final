@@ -24,7 +24,7 @@ namespace zeroGluten.view
             InitializeComponent();
 
             // Rellenamos el comboBox de los generos
-            String[] genero = { "Hombre", "Mujer", "Prefiero no decirlo" };
+            String[] genero = { "Hombre", "Mujer", "-" };
             foreach (String g in genero)
             {
                 cbGenero.Items.Add(g);
@@ -62,7 +62,7 @@ namespace zeroGluten.view
 
 
             // Rellenamos el comboBox de las condiciones médicas
-            String[] condiciones = { "Diabetes", "Hipertensión", "Obesidad", "Teroides", "Asma", "Alergias", "Artritis", "Ninguna" };
+            String[] condiciones = { "Diabetes", "Hipertensión", "Obesidad", "Tiroides", "Asma", "Alergias", "Artritis", "Ninguna" };
             foreach (String c in condiciones)
             {
                 cbCondicionMedica.Items.Add(c);
@@ -228,5 +228,16 @@ namespace zeroGluten.view
         {
             Application.Current.Shutdown();
         }
-    }
+
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            // Cerrar la ventana actual (Registro)
+            this.Close();
+
+            // Crear una nueva instancia de MainWindow y mostrarla
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+
+        }
+}
 }

@@ -99,16 +99,29 @@ namespace zeroGluten.view
                         FontWeight = FontWeights.Bold,
                         FontSize = 14
                     };
+                    textPanel.Children.Add(nameText);
 
-                    TextBlock precioText = new TextBlock
+                    if (p.Precio.Equals("0.00"))
                     {
-                        Text = $"Precio: {p.Precio:C}", // Formato moneda
-                        FontSize = 12
-                    };
+                        TextBlock precioText = new TextBlock
+                        {
+                            Text = "Precio no disponible",
+                            FontSize = 12
+                        };
+                        textPanel.Children.Add(precioText);
+
+                    }
+                    else
+                    {
+                        TextBlock precioText = new TextBlock
+                        {
+                            Text = $"Precio: {p.Precio:C}",
+                            FontSize = 12
+                        };
+                        textPanel.Children.Add(precioText);
+                    }
 
                     // Añadir textos al panel de texto
-                    textPanel.Children.Add(nameText);
-                    textPanel.Children.Add(precioText);
 
                     // Añadir imagen y panel de texto al panel horizontal
                     horizontalPanel.Children.Add(image);
@@ -194,43 +207,89 @@ namespace zeroGluten.view
                         FontWeight = FontWeights.Bold,
                         FontSize = 14
                     };
+                    textPanel.Children.Add(nameText);
+
 
                     TextBlock tiempoText = new TextBlock
                     {
                         Text = $"Tiempo: {r.TiempoPreparacion} min", // Formato moneda
                         FontSize = 12
                     };
+                    textPanel.Children.Add(tiempoText);
+
 
                     TextBlock descText = new TextBlock
                     {
                         Text = $"Descripcion: {r.Descripcion} ", // Formato moneda
                         FontSize = 12
                     };
-
-                    TextBlock sinGluten = new TextBlock
-                    {
-                        Text = $"Sin gluten: {r.SinGluten} ", // Formato moneda
-                        FontSize = 12
-                    };
-
-                    TextBlock vegano = new TextBlock
-                    {
-                        Text = $"Vegano: {r.Vegano} ", // Formato moneda
-                        FontSize = 12
-                    };
-
-                    TextBlock vegetariano = new TextBlock
-                    {
-                        Text = $"Sin gluten: {r.Vegetariano} ", // Formato moneda
-                        FontSize = 12
-                    };
-
-                    textPanel.Children.Add(nameText);
-                    textPanel.Children.Add(tiempoText);
                     textPanel.Children.Add(descText);
-                    textPanel.Children.Add(sinGluten);
-                    textPanel.Children.Add(vegano);
-                    textPanel.Children.Add(vegetariano);
+
+
+                    if (r.SinGluten.Equals("true"))
+                    {
+                        TextBlock sinGluten = new TextBlock
+                        {
+
+                            Text = "Sin gluten", // Formato moneda
+                            FontSize = 12
+                        };
+
+                        textPanel.Children.Add(sinGluten);
+
+                    }
+                    else
+                    {
+                        TextBlock sinGluten = new TextBlock
+                        {
+                            Text = "Con gluten", // Formato moneda
+                            FontSize = 12
+                        };
+                        textPanel.Children.Add(sinGluten);
+                    }
+
+                    if (r.Vegano.Equals("true"))
+                    {
+                        TextBlock vegano = new TextBlock
+                        {
+                            Text = "Vegano", // Formato moneda
+                            FontSize = 12
+                        };
+                    }
+                    else
+                    {
+                        TextBlock vegano = new TextBlock
+                        {
+                            Text = "No vegano", // Formato moneda
+                            FontSize = 12
+                        };
+
+                        textPanel.Children.Add(vegano);
+                    }
+
+                    if( r.Vegetariano.Equals("true"))
+                    {
+
+                        TextBlock vegetariano = new TextBlock
+                        {
+                            Text = "Vegetariano", // Formato moneda
+                            FontSize = 12
+                        };
+
+                        textPanel.Children.Add(vegetariano);
+
+                    }
+                    else
+                    {
+                        TextBlock vegetariano = new TextBlock
+                        {
+                            Text = "No vegetariano", // Formato moneda
+                            FontSize = 12
+                        };
+                        textPanel.Children.Add(vegetariano);
+                    }
+
+
 
                     horizontalPanel.Children.Add(image);
                     horizontalPanel.Children.Add(textPanel);
@@ -339,6 +398,7 @@ namespace zeroGluten.view
 
                 lbProductos.Items.Clear();
 
+                //Mostramos la lista
                 foreach (Producto p in listaProductos)
                 {
                     Image image = new Image
@@ -348,7 +408,6 @@ namespace zeroGluten.view
                         Margin = new Thickness(10),
                         Stretch = Stretch.UniformToFill
                     };
-
 
                     try
                     {
@@ -385,18 +444,29 @@ namespace zeroGluten.view
                         FontWeight = FontWeights.Bold,
                         FontSize = 14
                     };
+                    textPanel.Children.Add(nameText);
 
-
-
-                    TextBlock precioText = new TextBlock
+                    if (p.Precio.Equals("0.00"))
                     {
-                        Text = $"Precio: {p.Precio:C}", // Formato moneda
-                        FontSize = 12
-                    };
+                        TextBlock precioText = new TextBlock
+                        {
+                            Text = "Precio no disponible",
+                            FontSize = 12
+                        };
+                        textPanel.Children.Add(precioText);
+
+                    }
+                    else
+                    {
+                        TextBlock precioText = new TextBlock
+                        {
+                            Text = $"Precio: {p.Precio:C}",
+                            FontSize = 12
+                        };
+                        textPanel.Children.Add(precioText);
+                    }
 
                     // Añadir textos al panel de texto
-                    textPanel.Children.Add(nameText);
-                    textPanel.Children.Add(precioText);
 
                     // Añadir imagen y panel de texto al panel horizontal
                     horizontalPanel.Children.Add(image);
@@ -486,29 +556,89 @@ namespace zeroGluten.view
                         FontWeight = FontWeights.Bold,
                         FontSize = 14
                     };
+                    textPanel.Children.Add(nameText);
+
 
                     TextBlock tiempoText = new TextBlock
                     {
-                        Text = $"Precio: {r.TiempoPreparacion} min", // Formato moneda
+                        Text = $"Tiempo: {r.TiempoPreparacion} min", // Formato moneda
                         FontSize = 12
                     };
+                    textPanel.Children.Add(tiempoText);
+
 
                     TextBlock descText = new TextBlock
                     {
                         Text = $"Descripcion: {r.Descripcion} ", // Formato moneda
                         FontSize = 12
                     };
-
-                    TextBlock sinGluten = new TextBlock
-                    {
-                        Text = $"Sin gluten: {r.SinGluten} ", // Formato moneda
-                        FontSize = 12
-                    };
-
-                    textPanel.Children.Add(nameText);
-                    textPanel.Children.Add(tiempoText);
                     textPanel.Children.Add(descText);
-                    textPanel.Children.Add(sinGluten);
+
+
+                    if (r.SinGluten.Equals("true"))
+                    {
+                        TextBlock sinGluten = new TextBlock
+                        {
+
+                            Text = "Sin gluten", // Formato moneda
+                            FontSize = 12
+                        };
+
+                        textPanel.Children.Add(sinGluten);
+
+                    }
+                    else
+                    {
+                        TextBlock sinGluten = new TextBlock
+                        {
+                            Text = "Con gluten", // Formato moneda
+                            FontSize = 12
+                        };
+                        textPanel.Children.Add(sinGluten);
+                    }
+
+                    if (r.Vegano.Equals("true"))
+                    {
+                        TextBlock vegano = new TextBlock
+                        {
+                            Text = "Vegano", // Formato moneda
+                            FontSize = 12
+                        };
+                    }
+                    else
+                    {
+                        TextBlock vegano = new TextBlock
+                        {
+                            Text = "No vegano", // Formato moneda
+                            FontSize = 12
+                        };
+
+                        textPanel.Children.Add(vegano);
+                    }
+
+                    if (r.Vegetariano.Equals("true"))
+                    {
+
+                        TextBlock vegetariano = new TextBlock
+                        {
+                            Text = "Vegetariano", // Formato moneda
+                            FontSize = 12
+                        };
+
+                        textPanel.Children.Add(vegetariano);
+
+                    }
+                    else
+                    {
+                        TextBlock vegetariano = new TextBlock
+                        {
+                            Text = "No vegetariano", // Formato moneda
+                            FontSize = 12
+                        };
+                        textPanel.Children.Add(vegetariano);
+                    }
+
+
 
                     horizontalPanel.Children.Add(image);
                     horizontalPanel.Children.Add(textPanel);
@@ -522,7 +652,10 @@ namespace zeroGluten.view
                 lbProductos.Items.Clear();
                 lbProductos.Items.Add($"Error al obtener datos: {ex.Message}");
             }
+
         }
+            
+    
 
 
         /// <summary>

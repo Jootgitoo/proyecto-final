@@ -88,6 +88,8 @@
             <Image Source="/images/registrarse/icono-nombreUsuario.png" HorizontalAlignment="Left" Height="21" Margin="755,115,0,0" VerticalAlignment="Top" Width="21"/>
             <Image Source="/images/registrarse/icono-password.png" HorizontalAlignment="Left" Height="21" Margin="755,214,0,0" VerticalAlignment="Top" Width="21"/>
 
+            <TextBlock HorizontalAlignment="Left" Margin="538,25,0,0" Foreground="#400101" TextWrapping="Wrap" Text="BIENVENIDO!" FontSize="30" VerticalAlignment="Top" Height="32" Width="145" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
+
         </Grid>
     </Viewbox>
 </Window>

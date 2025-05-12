@@ -164,6 +164,7 @@
                         </Style>
                     </Button.Style>
                 </Button>
+                <Button Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="436,391,0,0" VerticalAlignment="Top" Height="29" Width="110" Background="#400101" Foreground="#DEDEDE" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" Click="btnVolver_Click"/>
 
             </Grid>
         </Viewbox>

@@ -72,6 +72,7 @@ namespace zeroGluten.domain
 
         [JsonProperty("image")]
         public string UrlImagen { get => urlImagen; set => urlImagen = value; }
+        [JsonProperty("summary")]
         public string Descripcion { get => descripcion; set => descripcion = value; }
         [JsonProperty("vegetarian")]
         public bool Vegetariano { get => vegetariano; set => vegetariano = value; }

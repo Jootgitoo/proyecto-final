@@ -56,6 +56,7 @@ namespace zeroGluten.domain
 
         public string[] ListaAlergias { get => listaAlergias; set => listaAlergias = value; }
 
+        [JsonProperty("price")]
         public double Precio { get => precio; set => precio = value; }
 
     }
