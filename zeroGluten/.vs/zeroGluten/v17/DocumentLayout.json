@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\dam-2\\proyecto-final\\zerogluten\\",
+  "WorkspaceRootPath": "C:\\dam-2\\proyecto-final\\zeroGluten\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|d:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|c:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|solutionrelative:zerogluten\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|d:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\view\\registro.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|c:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\view\\registro.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|solutionrelative:zerogluten\\view\\registro.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -32,9 +32,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "registro.xaml",
-              "DocumentMoniker": "D:\\dam-2\\proyecto-final\\zerogluten\\zeroGluten\\view\\registro.xaml",
+              "DocumentMoniker": "C:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\view\\registro.xaml",
               "RelativeDocumentMoniker": "zeroGluten\\view\\registro.xaml",
-              "ToolTip": "D:\\dam-2\\proyecto-final\\zerogluten\\zeroGluten\\view\\registro.xaml",
+              "ToolTip": "C:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\view\\registro.xaml",
               "RelativeToolTip": "zeroGluten\\view\\registro.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-05-12T08:46:57.316Z"
@@ -43,9 +43,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\dam-2\\proyecto-final\\zerogluten\\zeroGluten\\view\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\view\\MainWindow.xaml",
               "RelativeDocumentMoniker": "zeroGluten\\view\\MainWindow.xaml",
-              "ToolTip": "D:\\dam-2\\proyecto-final\\zerogluten\\zeroGluten\\view\\MainWindow.xaml",
+              "ToolTip": "C:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\view\\MainWindow.xaml",
               "RelativeToolTip": "zeroGluten\\view\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-05-12T08:46:34.812Z",
