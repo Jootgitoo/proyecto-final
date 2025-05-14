@@ -80,31 +80,52 @@
                             <!-- Filtros productos -->
                             <Grid x:Name="filtrosProductos" Visibility="Visible">
                                 <TextBlock HorizontalAlignment="Left" Margin="10,5,0,0" Text="Nombre" Width="120" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                                <TextBox x:Name="tbNombreProd" HorizontalAlignment="Left" Margin="10,25,0,0" Width="120" FontFamily="pack://application:,,,/font/#Maxwell"/>
+                                <TextBox x:Name="tbNombreProd" HorizontalAlignment="Left" Margin="10,20,0,0" Width="115" Height="20" FontFamily="pack://application:,,,/font/#Maxwell"/>
 
                                 <TextBlock HorizontalAlignment="Left" Margin="170,5,0,0" Text="Calorias máximas" Width="120" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                                <TextBox Name="tbCaloriasMaximas" HorizontalAlignment="Left" Margin="170,25,0,0" Width="120" FontFamily="pack://application:,,,/font/#Maxwell"/>
+                                <ComboBox Name="cbCaloriasMax" HorizontalAlignment="Left" Margin="170,20,0,0" VerticalAlignment="Top" Width="115" Height="20">
+                                    <!-- Se rellena dinamicamente -->
+                                </ComboBox>
 
                                 <TextBlock HorizontalAlignment="Left" Margin="325,5,0,0" Text="Proteinas minimas" Width="120" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                                <TextBox Name="tbProteinas" HorizontalAlignment="Left" Margin="325,25,0,0" Width="120" FontFamily="pack://application:,,,/font/#Maxwell"/>
+                                <ComboBox Name="cbProteinasMin" HorizontalAlignment="Left" Margin="325,20,0,0" VerticalAlignment="Top" Width="115" Height="20">
+                                    <!-- Se rellena dinamicamente -->
+                                </ComboBox>
+
 
                                 <TextBlock HorizontalAlignment="Left" Margin="485,5,0,0" Text="Grasas maximas" Width="120" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                                <TextBox Name="tbGrasas" HorizontalAlignment="Left" Margin="485,25,0,0" Width="120" FontFamily="pack://application:,,,/font/#Maxwell"/>
+                                <ComboBox Name="cbGrasasMax" HorizontalAlignment="Left" Margin="485,20,0,0" VerticalAlignment="Top" Width="115" Height="20">
+                                    <!-- Se rellena dinamicamente -->
+                                </ComboBox>
                             </Grid>
 
                             <!-- Filtro recetas -->
                             <Grid x:Name="filtrosRecetas" Visibility="Collapsed">
                                 <TextBlock HorizontalAlignment="Left" Margin="10,5,0,0" Text="Nombre" Width="120"/>
-                                <TextBox x:Name="tbNombreRecet" HorizontalAlignment="Left" Margin="10,25,0,0" Width="120"/>
+                                <TextBox x:Name="tbNombreRecet" HorizontalAlignment="Left" Margin="10,25,0,0" Width="115" Height="20"/>
 
                                 <TextBlock HorizontalAlignment="Left" Margin="170,5,0,0" Text="Tiempo de preparacion" Width="120"/>
-                                <TextBox Name="tbTiempoRecet" HorizontalAlignment="Left" Margin="170,25,0,0" Width="120"/>
-
+                                <ComboBox Name="cbTiempoReceta" HorizontalAlignment="Left" Margin="170,20,0,0" VerticalAlignment="Top" Width="115" Height="20">
+                                    <!-- Se rellena dinamicamente -->
+                                </ComboBox>
+                                
                                 <TextBlock HorizontalAlignment="Left" Margin="325,5,0,0" Text="Intolerancias" Width="120"/>
-                                <TextBox Name="tbIntoleranciasRecet" HorizontalAlignment="Left" Margin="325,25,0,0" Width="120"/>
-
+                                <ComboBox Name="cbIntolerancias" HorizontalAlignment="Left" Margin="325,20,0,0" VerticalAlignment="Top" Width="115" Height="20">
+                                    <ComboBoxItem Content="Lacteo"/>
+                                    <ComboBoxItem Content="Huevo"/>
+                                    <ComboBoxItem Content="Gluten"/>
+                                    <ComboBoxItem Content="Marisco"/>
+                                    <ComboBoxItem Content="Soja"/>
+                                    <ComboBoxItem Content="Trigo"/>
+                                </ComboBox>
+                                
                                 <TextBlock HorizontalAlignment="Left" Margin="485,5,0,0" Text="Tipo de comida" Width="120"/>
-                                <TextBox Name="tbTipoComida" HorizontalAlignment="Left" Margin="485,25,0,0" Width="120"/>
+                                <ComboBox Name="cbTipoComida" HorizontalAlignment="Left" Margin="485,20,0,0" VerticalAlignment="Top" Width="115" Height="20">
+                                    <ComboBoxItem Content="Plato"/>
+                                    <ComboBoxItem Content="Postre"/>
+                                    <ComboBoxItem Content="Pan"/>
+                                    <ComboBoxItem Content="Bebida"/>
+                                </ComboBox>
                             </Grid>
 
                         </StackPanel>

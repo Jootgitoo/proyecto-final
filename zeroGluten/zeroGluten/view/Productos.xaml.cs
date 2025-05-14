@@ -33,7 +33,34 @@ namespace zeroGluten.view
             InitializeComponent();
             apiManager = new ApiManage();
 
+            // Rellenamos el comboBox de las calorias maximas
+            for (int caloria = 100; caloria <= 1000; caloria += 100)
+            {
+                cbCaloriasMax.Items.Add($"{caloria}");
+            }
+
+            //Rellenamos el comboBox de las proteinas
+            for (int proteina = 5; proteina <= 50; proteina += 5)
+            {
+                cbProteinasMin.Items.Add($"{proteina}");
+            }
+
+            //Rellenamos el comboBox de las grasas
+            for (int grasas = 5; grasas <= 50; grasas += 5)
+            {
+                cbGrasasMax.Items.Add($"{grasas}");
+            }
+
+
+            //Rellenamos el comboBox del tiempo de las recetas
+            for (int tiempo = 10; tiempo <= 90; tiempo += 5)
+            {
+                cbTiempoReceta.Items.Add($"{tiempo}");
+            }
+
+
             cargarTodosProductos();
+
         }
 
 
@@ -383,9 +410,9 @@ namespace zeroGluten.view
         public async void buscarProductosPorFiltros()
         {
             string nombre = tbNombreProd.Text;
-            string caloriasMaximas = tbCaloriasMaximas.Text;
-            string proteinasMinimas = tbProteinas.Text;
-            string grasasMaximas = tbGrasas.Text;
+            string caloriasMaximas = cbCaloriasMax.Text;
+            string proteinasMinimas = cbProteinasMin.Text;
+            string grasasMaximas = cbGrasasMax.Text;
 
             try
             {
@@ -493,165 +520,213 @@ namespace zeroGluten.view
         public async void buscarRecetasPorFiltros()
         {
             string nombre = tbNombreRecet.Text;
-            string tiempoPreparacion = tbTiempoRecet.Text;
-            string intolerancia = tbIntoleranciasRecet.Text;
-            string tipoComida = tbTipoComida.Text;
+            string tiempoPreparacion = cbTiempoReceta.Text;
+
+            string intolerancia = "";
+            string tipoComida = "";
+
+            if (cbIntolerancias.Text.Equals("Lacteo"))
+            {
+                intolerancia = "dairy";
+
+            }else if (cbIntolerancias.Text.Equals("Huevo"))
+            {
+                intolerancia = "egg";
+
+            }else if (cbIntolerancias.Text.Equals("Gluten"))
+            {
+                intolerancia = "gluten";
+
+            }
+            else if (cbIntolerancias.Text.Equals("Marisco"))
+            {
+                intolerancia = "seafood";
+
+            } else if (cbIntolerancias.Text.Equals("Soja"))
+            {
+                intolerancia = "soy";
+
+            } else if (cbIntolerancias.Text.Equals("Trigo"))
+            {
+                intolerancia = "wheat";
+            }
+
+
+            if (cbTipoComida.Text.Equals("Plato"))
+            {
+                intolerancia = "mainCourse";
+
+            }else if (cbTipoComida.Text.Equals("Postre"))
+            {
+                intolerancia = "dessert";
+
+            }
+            else if (cbTipoComida.Text.Equals("Pan"))
+            {
+                intolerancia = "bread";
+
+            }
+            else if (cbTipoComida.Text.Equals("Bebida"))
+            {
+                intolerancia = "drink";
+
+            }
 
             try
-            {
-                lbProductos.Items.Clear();
-                lbProductos.Items.Add("Buscando recetas que cumplan las siguientes caracteriasticas...");
-
-                //Obtenemos una lista de productos de la API
-                List<Receta> listaRecetas = await apiManager.obtenerRecetasConFiltros(nombre, tiempoPreparacion, intolerancia, tipoComida);
-
-                lbProductos.Items.Clear();
-
-                //Mostramos la lista
-                foreach (Receta r in listaRecetas)
                 {
+                    lbProductos.Items.Clear();
+                    lbProductos.Items.Add("Buscando recetas que cumplan las siguientes caracteriasticas...");
 
-                    Image image = new Image
+                    //Obtenemos una lista de productos de la API
+                    List<Receta> listaRecetas = await apiManager.obtenerRecetasConFiltros(nombre, tiempoPreparacion, intolerancia, tipoComida);
+
+                    lbProductos.Items.Clear();
+
+                    //Mostramos la lista
+                    foreach (Receta r in listaRecetas)
                     {
-                        Width = 100,
-                        Height = 100,
-                        Margin = new Thickness(10),
-                        Stretch = Stretch.UniformToFill
-                    };
 
-                    try
-                    {
-                        BitmapImage bitmap = new BitmapImage();
-                        bitmap.BeginInit();
-                        bitmap.UriSource = new Uri(r.UrlImagen);
-                        bitmap.CacheOption = BitmapCacheOption.OnLoad;
-                        bitmap.EndInit();
-
-                        image.Source = bitmap;
-                    }
-                    catch
-                    {
-                        //Imagen por si da error
-                    }
-
-
-                    StackPanel horizontalPanel = new StackPanel
-                    {
-                        Orientation = Orientation.Horizontal,
-                        Margin = new Thickness(5)
-                    };
-
-                    // Contenedor de texto (en vertical)
-                    StackPanel textPanel = new StackPanel
-                    {
-                        Orientation = Orientation.Vertical,
-                        VerticalAlignment = VerticalAlignment.Center
-                    };
-
-
-                    // Textos
-                    TextBlock nameText = new TextBlock
-                    {
-                        Text = $"Nombre: {r.NombreReceta}",
-                        FontWeight = FontWeights.Bold,
-                        FontSize = 14
-                    };
-                    textPanel.Children.Add(nameText);
-
-
-                    TextBlock tiempoText = new TextBlock
-                    {
-                        Text = $"Tiempo: {r.TiempoPreparacion} min", // Formato moneda
-                        FontSize = 12
-                    };
-                    textPanel.Children.Add(tiempoText);
-
-
-                    TextBlock descText = new TextBlock
-                    {
-                        Text = $"Descripcion: {r.Descripcion} ", // Formato moneda
-                        FontSize = 12
-                    };
-                    textPanel.Children.Add(descText);
-
-
-                    if (r.SinGluten.Equals("true"))
-                    {
-                        TextBlock sinGluten = new TextBlock
+                        Image image = new Image
                         {
-
-                            Text = "Sin gluten", // Formato moneda
-                            FontSize = 12
+                            Width = 100,
+                            Height = 100,
+                            Margin = new Thickness(10),
+                            Stretch = Stretch.UniformToFill
                         };
 
-                        textPanel.Children.Add(sinGluten);
+                        try
+                        {
+                            BitmapImage bitmap = new BitmapImage();
+                            bitmap.BeginInit();
+                            bitmap.UriSource = new Uri(r.UrlImagen);
+                            bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                            bitmap.EndInit();
 
-                    }
-                    else
-                    {
-                        TextBlock sinGluten = new TextBlock
+                            image.Source = bitmap;
+                        }
+                        catch
                         {
-                            Text = "Con gluten", // Formato moneda
-                            FontSize = 12
-                        };
-                        textPanel.Children.Add(sinGluten);
-                    }
+                            //Imagen por si da error
+                        }
 
-                    if (r.Vegano.Equals("true"))
-                    {
-                        TextBlock vegano = new TextBlock
+
+                        StackPanel horizontalPanel = new StackPanel
                         {
-                            Text = "Vegano", // Formato moneda
-                            FontSize = 12
-                        };
-                    }
-                    else
-                    {
-                        TextBlock vegano = new TextBlock
-                        {
-                            Text = "No vegano", // Formato moneda
-                            FontSize = 12
+                            Orientation = Orientation.Horizontal,
+                            Margin = new Thickness(5)
                         };
 
-                        textPanel.Children.Add(vegano);
-                    }
-
-                    if (r.Vegetariano.Equals("true"))
-                    {
-
-                        TextBlock vegetariano = new TextBlock
+                        // Contenedor de texto (en vertical)
+                        StackPanel textPanel = new StackPanel
                         {
-                            Text = "Vegetariano", // Formato moneda
-                            FontSize = 12
+                            Orientation = Orientation.Vertical,
+                            VerticalAlignment = VerticalAlignment.Center
                         };
 
-                        textPanel.Children.Add(vegetariano);
 
-                    }
-                    else
-                    {
-                        TextBlock vegetariano = new TextBlock
+                        // Textos
+                        TextBlock nameText = new TextBlock
                         {
-                            Text = "No vegetariano", // Formato moneda
+                            Text = $"Nombre: {r.NombreReceta}",
+                            FontWeight = FontWeights.Bold,
+                            FontSize = 14
+                        };
+                        textPanel.Children.Add(nameText);
+
+
+                        TextBlock tiempoText = new TextBlock
+                        {
+                            Text = $"Tiempo: {r.TiempoPreparacion} min", // Formato moneda
                             FontSize = 12
                         };
-                        textPanel.Children.Add(vegetariano);
+                        textPanel.Children.Add(tiempoText);
+
+
+                        TextBlock descText = new TextBlock
+                        {
+                            Text = $"Descripcion: {r.Descripcion} ", // Formato moneda
+                            FontSize = 12
+                        };
+                        textPanel.Children.Add(descText);
+
+
+                        if (r.SinGluten.Equals("true"))
+                        {
+                            TextBlock sinGluten = new TextBlock
+                            {
+
+                                Text = "Sin gluten", // Formato moneda
+                                FontSize = 12
+                            };
+
+                            textPanel.Children.Add(sinGluten);
+
+                        }
+                        else
+                        {
+                            TextBlock sinGluten = new TextBlock
+                            {
+                                Text = "Con gluten", // Formato moneda
+                                FontSize = 12
+                            };
+                            textPanel.Children.Add(sinGluten);
+                        }
+
+                        if (r.Vegano.Equals("true"))
+                        {
+                            TextBlock vegano = new TextBlock
+                            {
+                                Text = "Vegano", // Formato moneda
+                                FontSize = 12
+                            };
+                        }
+                        else
+                        {
+                            TextBlock vegano = new TextBlock
+                            {
+                                Text = "No vegano", // Formato moneda
+                                FontSize = 12
+                            };
+
+                            textPanel.Children.Add(vegano);
+                        }
+
+                        if (r.Vegetariano.Equals("true"))
+                        {
+
+                            TextBlock vegetariano = new TextBlock
+                            {
+                                Text = "Vegetariano", // Formato moneda
+                                FontSize = 12
+                            };
+
+                            textPanel.Children.Add(vegetariano);
+
+                        }
+                        else
+                        {
+                            TextBlock vegetariano = new TextBlock
+                            {
+                                Text = "No vegetariano", // Formato moneda
+                                FontSize = 12
+                            };
+                            textPanel.Children.Add(vegetariano);
+                        }
+
+
+
+                        horizontalPanel.Children.Add(image);
+                        horizontalPanel.Children.Add(textPanel);
+
+                        lbProductos.Items.Add(horizontalPanel);
                     }
 
-
-
-                    horizontalPanel.Children.Add(image);
-                    horizontalPanel.Children.Add(textPanel);
-
-                    lbProductos.Items.Add(horizontalPanel);
                 }
-
-            }
-            catch (Exception ex)
-            {
-                lbProductos.Items.Clear();
-                lbProductos.Items.Add($"Error al obtener datos: {ex.Message}");
-            }
+                catch (Exception ex)
+                {
+                    lbProductos.Items.Clear();
+                    lbProductos.Items.Add($"Error al obtener datos: {ex.Message}");
+                }
 
         }
             

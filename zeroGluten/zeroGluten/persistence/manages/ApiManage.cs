@@ -78,7 +78,7 @@ namespace zeroGluten.persistence.manages
             string apiUrl = $"https://api.spoonacular.com/food/products/search?";
 
             // Aplicar filtros
-            if (!string.IsNullOrEmpty(nombre))
+            if (!string.IsNullOrEmpty(nombre) )
             {
                 apiUrl += $"query={nombre}&";
             }
