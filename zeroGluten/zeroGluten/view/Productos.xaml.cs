@@ -730,8 +730,6 @@ namespace zeroGluten.view
 
         }
             
-    
-
 
         /// <summary>
         ///   Método que minimiza la ventana
@@ -752,6 +750,28 @@ namespace zeroGluten.view
         private void btnCerrar_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+
+        /// <summary>
+        ///   Borramos lo que haya en los filtros
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnLimpiarFiltros_Click(object sender, RoutedEventArgs e)
+        {
+            //Limpiamos los filtros de productos
+            tbNombreProd.Text = "";
+            cbCaloriasMax.SelectedIndex = -1;
+            cbProteinasMin.SelectedIndex = -1;
+            cbGrasasMax.SelectedIndex = -1;
+
+            //Limpiamos los filtros de recetas
+            tbNombreRecet.Text = "";
+            cbTiempoReceta.SelectedIndex = -1;
+            cbIntolerancias.SelectedIndex = -1;
+            cbTipoComida.SelectedIndex = -1;
+
         }
     }
 }

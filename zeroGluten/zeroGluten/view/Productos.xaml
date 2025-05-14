@@ -54,6 +54,14 @@
                         </Grid>
                     </Button>
 
+                    <!-- Botón limpiar filtros -->
+                    <Button x:Name="btnLimpiarFiltros" Margin="5, 5, 5, 0" Background="#442129" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" Width="130" Click="btnLimpiarFiltros_Click" >
+                        <Grid>
+                            <Image Source="/images/productos/ico-cancelar-filtros.png" Width="18" Height="19" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <TextBlock Text="Limpiar filtros" Margin="25,0,10,0" VerticalAlignment="Center" Background="Transparent" Foreground="#e9e4dd"/>
+                        </Grid>
+                    </Button>
+
                     <!-- Botón ajustes -->
                     <!--Button Margin="5, 170, 5, 0" Background="#442129" Height="23" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
                         <Grid>
@@ -74,27 +82,27 @@
                     </Grid.RowDefinitions>
 
                     <!-- Filtros -->
-                    <Expander Header="Filtros" ExpandDirection="Down" Background="#e9e4dd" Margin="0,10,10,361" Grid.RowSpan="2" IsExpanded="True"  FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
+                    <Expander Header="Filtros" ExpandDirection="Down" Background="#e9e4dd" Margin="0,10,10,358" Grid.RowSpan="2" IsExpanded="True"  FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
                         <StackPanel>
 
                             <!-- Filtros productos -->
                             <Grid x:Name="filtrosProductos" Visibility="Visible">
                                 <TextBlock HorizontalAlignment="Left" Margin="10,5,0,0" Text="Nombre" Width="120" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                                <TextBox x:Name="tbNombreProd" HorizontalAlignment="Left" Margin="10,20,0,0" Width="115" Height="20" FontFamily="pack://application:,,,/font/#Maxwell"/>
+                                <TextBox x:Name="tbNombreProd" HorizontalAlignment="Left" Margin="10,20,0,3" Width="115" FontFamily="pack://application:,,,/font/#Maxwell"/>
 
                                 <TextBlock HorizontalAlignment="Left" Margin="170,5,0,0" Text="Calorias máximas" Width="120" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                                <ComboBox Name="cbCaloriasMax" HorizontalAlignment="Left" Margin="170,20,0,0" VerticalAlignment="Top" Width="115" Height="20">
+                                <ComboBox Name="cbCaloriasMax" HorizontalAlignment="Left" Margin="170,20,0,0" VerticalAlignment="Top" Width="115" Height="17">
                                     <!-- Se rellena dinamicamente -->
                                 </ComboBox>
 
                                 <TextBlock HorizontalAlignment="Left" Margin="325,5,0,0" Text="Proteinas minimas" Width="120" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                                <ComboBox Name="cbProteinasMin" HorizontalAlignment="Left" Margin="325,20,0,0" VerticalAlignment="Top" Width="115" Height="20">
+                                <ComboBox Name="cbProteinasMin" HorizontalAlignment="Left" Margin="325,20,0,0" VerticalAlignment="Top" Width="115" Height="17">
                                     <!-- Se rellena dinamicamente -->
                                 </ComboBox>
 
 
                                 <TextBlock HorizontalAlignment="Left" Margin="485,5,0,0" Text="Grasas maximas" Width="120" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold"/>
-                                <ComboBox Name="cbGrasasMax" HorizontalAlignment="Left" Margin="485,20,0,0" VerticalAlignment="Top" Width="115" Height="20">
+                                <ComboBox Name="cbGrasasMax" HorizontalAlignment="Left" Margin="485,20,0,0" VerticalAlignment="Top" Width="115" Height="17">
                                     <!-- Se rellena dinamicamente -->
                                 </ComboBox>
                             </Grid>
@@ -102,13 +110,13 @@
                             <!-- Filtro recetas -->
                             <Grid x:Name="filtrosRecetas" Visibility="Collapsed">
                                 <TextBlock HorizontalAlignment="Left" Margin="10,5,0,0" Text="Nombre" Width="120"/>
-                                <TextBox x:Name="tbNombreRecet" HorizontalAlignment="Left" Margin="10,25,0,0" Width="115" Height="20"/>
+                                <TextBox x:Name="tbNombreRecet" HorizontalAlignment="Left" Margin="10,20,0,3" Width="115" FontFamily="pack://application:,,,/font/#Maxwell"/>
 
                                 <TextBlock HorizontalAlignment="Left" Margin="170,5,0,0" Text="Tiempo de preparacion" Width="120"/>
                                 <ComboBox Name="cbTiempoReceta" HorizontalAlignment="Left" Margin="170,20,0,0" VerticalAlignment="Top" Width="115" Height="20">
                                     <!-- Se rellena dinamicamente -->
                                 </ComboBox>
-                                
+
                                 <TextBlock HorizontalAlignment="Left" Margin="325,5,0,0" Text="Intolerancias" Width="120"/>
                                 <ComboBox Name="cbIntolerancias" HorizontalAlignment="Left" Margin="325,20,0,0" VerticalAlignment="Top" Width="115" Height="20">
                                     <ComboBoxItem Content="Lacteo"/>
@@ -118,7 +126,7 @@
                                     <ComboBoxItem Content="Soja"/>
                                     <ComboBoxItem Content="Trigo"/>
                                 </ComboBox>
-                                
+
                                 <TextBlock HorizontalAlignment="Left" Margin="485,5,0,0" Text="Tipo de comida" Width="120"/>
                                 <ComboBox Name="cbTipoComida" HorizontalAlignment="Left" Margin="485,20,0,0" VerticalAlignment="Top" Width="115" Height="20">
                                     <ComboBoxItem Content="Plato"/>

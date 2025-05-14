@@ -18,6 +18,7 @@
     <None Remove="images\menu\icono-menu.gif" />
     <None Remove="images\menu\icono-productos.png" />
     <None Remove="images\menu\icono-recetas.png" />
+    <None Remove="images\productos\ico-cancelar-filtros.png" />
     <None Remove="images\productos\icono-instagram.png" />
     <None Remove="images\productos\icono-x.png" />
     <None Remove="images\registrarse\icono-nombreUsuario.png" />
@@ -62,6 +63,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\menu\icono-recetas.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\productos\ico-cancelar-filtros.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\productos\icono-instagram.png">
