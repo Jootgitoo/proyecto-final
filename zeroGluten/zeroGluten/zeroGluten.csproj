@@ -21,8 +21,15 @@
     <None Remove="images\productos\ico-cancelar-filtros.png" />
     <None Remove="images\productos\icono-instagram.png" />
     <None Remove="images\productos\icono-x.png" />
+    <None Remove="images\productos\imagen-noEncontrada.webp" />
     <None Remove="images\registrarse\icono-nombreUsuario.png" />
     <None Remove="images\registrarse\icono-password.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\productos\imagen-noEncontrada.webp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>

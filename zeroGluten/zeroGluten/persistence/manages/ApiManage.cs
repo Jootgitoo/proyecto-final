@@ -25,7 +25,7 @@ namespace zeroGluten.persistence.manages
         public async Task<List<Producto>> obtenerTodosProductos()
         {
             string apiKey = "174c5ea2fee04cd99c92504eaeafffbe";
-            string apiUrl = $"https://api.spoonacular.com/food/products/search?apiKey={apiKey}&query=a&number=5";
+            string apiUrl = $"https://api.spoonacular.com/food/products/search?apiKey={apiKey}&query=b&number=5";
 
             HttpClient cliente = new HttpClient();
             HttpResponseMessage respuesta = await cliente.GetAsync(apiUrl);
@@ -99,7 +99,7 @@ namespace zeroGluten.persistence.manages
                 apiUrl += $"maxFat={grasasMaximas}&";
             }
 
-            apiUrl += $"apiKey={apiKey}&number=5"; // Limitar a 5 productos por solicitud
+            apiUrl += $"apiKey={apiKey}"; // Limitar a 5 productos por solicitud
 
             HttpClient cliente = new HttpClient();
             HttpResponseMessage respuesta = await cliente.GetAsync(apiUrl);
@@ -146,7 +146,7 @@ namespace zeroGluten.persistence.manages
         public async Task<List<Receta>> obtenerTodasRecetas()
         {
             string apiKey = "174c5ea2fee04cd99c92504eaeafffbe";
-            string apiUrl = $"https://api.spoonacular.com/recipes/complexSearch?apiKey={apiKey}&query=a&number=5";
+            string apiUrl = $"https://api.spoonacular.com/recipes/complexSearch?apiKey={apiKey}&query=a&number=1";
 
             HttpClient cliente = new HttpClient();
             HttpResponseMessage respuesta = await cliente.GetAsync(apiUrl);
@@ -239,13 +239,14 @@ namespace zeroGluten.persistence.manages
             if (!string.IsNullOrEmpty(tipoComida))
                 apiUrl += $"type={tipoComida}&";
 
-            apiUrl += $"apiKey={apiKey}&number=5"; // Puedes cambiar el número de resultados
+            apiUrl += $"apiKey={apiKey}&number=1"; // Puedes cambiar el número de resultados
 
             HttpClient cliente = new HttpClient();
             HttpResponseMessage respuesta = await cliente.GetAsync(apiUrl);
 
             if (respuesta.IsSuccessStatusCode)
             {
+
                 string jsonRespuesta = await respuesta.Content.ReadAsStringAsync();
                 var resultado = JsonConvert.DeserializeObject<RespuestaRecetas>(jsonRespuesta);
                 List<Receta> listaFinal = new List<Receta>();
@@ -260,6 +261,14 @@ namespace zeroGluten.persistence.manages
                     {
                         string jsonDetalle = await detalleResp.Content.ReadAsStringAsync();
                         var recetaCompleta = JsonConvert.DeserializeObject<Receta>(jsonDetalle);
+
+                        detalleResp = await cliente.GetAsync(recetaCompleta.UrlImagen);
+                        
+                        //if (!detalleResp.IsSuccessStatusCode)
+                        //{
+                        //    throw new Exception($"Error al obtener la imagen de la receta con ID {recetaCompleta.IdReceta}: {detalleResp.StatusCode}");
+                        //}
+
                         recetaCompleta.Descripcion = QuitarEtiquetasHTML(recetaCompleta.Descripcion);
 
 
