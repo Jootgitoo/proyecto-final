@@ -25,7 +25,7 @@ namespace zeroGluten.persistence.manages
         public async Task<List<Producto>> obtenerTodosProductos()
         {
             string apiKey = "174c5ea2fee04cd99c92504eaeafffbe";
-            string apiUrl = $"https://api.spoonacular.com/food/products/search?apiKey={apiKey}&query=b&number=5";
+            string apiUrl = $"https://api.spoonacular.com/food/products/search?apiKey={apiKey}&query=b&number=3";
 
             HttpClient cliente = new HttpClient();
             HttpResponseMessage respuesta = await cliente.GetAsync(apiUrl);
@@ -99,7 +99,7 @@ namespace zeroGluten.persistence.manages
                 apiUrl += $"maxFat={grasasMaximas}&";
             }
 
-            apiUrl += $"apiKey={apiKey}"; // Limitar a 5 productos por solicitud
+            apiUrl += $"apiKey={apiKey}&number=3"; // Limitar a 5 productos por solicitud
 
             HttpClient cliente = new HttpClient();
             HttpResponseMessage respuesta = await cliente.GetAsync(apiUrl);
@@ -146,7 +146,7 @@ namespace zeroGluten.persistence.manages
         public async Task<List<Receta>> obtenerTodasRecetas()
         {
             string apiKey = "174c5ea2fee04cd99c92504eaeafffbe";
-            string apiUrl = $"https://api.spoonacular.com/recipes/complexSearch?apiKey={apiKey}&query=a&number=1";
+            string apiUrl = $"https://api.spoonacular.com/recipes/complexSearch?apiKey={apiKey}&query=a&number=3";
 
             HttpClient cliente = new HttpClient();
             HttpResponseMessage respuesta = await cliente.GetAsync(apiUrl);
@@ -234,12 +234,19 @@ namespace zeroGluten.persistence.manages
                 apiUrl += $"maxReadyTime={tiempoPreparacion}&";
 
             if (!string.IsNullOrEmpty(intolerancia))
-                apiUrl += $"intolerances={intolerancia}&";
+                if (intolerancia.Equals("gluten"))
+                {
+                    apiUrl += "glutenFree=true&";
+                }
+                else
+                {
+                    apiUrl += $"intolerances={intolerancia}&";
+                }
 
             if (!string.IsNullOrEmpty(tipoComida))
                 apiUrl += $"type={tipoComida}&";
 
-            apiUrl += $"apiKey={apiKey}&number=1"; // Puedes cambiar el número de resultados
+            apiUrl += $"apiKey={apiKey}&number=3"; // Puedes cambiar el número de resultados
 
             HttpClient cliente = new HttpClient();
             HttpResponseMessage respuesta = await cliente.GetAsync(apiUrl);
@@ -263,11 +270,6 @@ namespace zeroGluten.persistence.manages
                         var recetaCompleta = JsonConvert.DeserializeObject<Receta>(jsonDetalle);
 
                         detalleResp = await cliente.GetAsync(recetaCompleta.UrlImagen);
-                        
-                        //if (!detalleResp.IsSuccessStatusCode)
-                        //{
-                        //    throw new Exception($"Error al obtener la imagen de la receta con ID {recetaCompleta.IdReceta}: {detalleResp.StatusCode}");
-                        //}
 
                         recetaCompleta.Descripcion = QuitarEtiquetasHTML(recetaCompleta.Descripcion);
 
@@ -285,6 +287,14 @@ namespace zeroGluten.persistence.manages
             }
         }
 
+
+        /// <summary>
+        ///     Método para quitar etiquetas HTML de un texto
+        /// </summary>
+        /// <param name="texto"></param>
+        /// <returns>
+        ///     Devuelve un string sin las etiquetas HTML
+        /// </returns>
         public static string QuitarEtiquetasHTML(string texto)
         {
             return Regex.Replace(texto, "<.*?>", string.Empty);

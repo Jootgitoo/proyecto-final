@@ -9,6 +9,7 @@ namespace zeroGluten.domain
 {
     class RespuestaRecetas
     {
+        //Clase para deserializar la respuesta de la API de recetas
         [JsonProperty("results")]
         public List<Receta> listaRecetas { get; set; }
     }

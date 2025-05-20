@@ -121,11 +121,22 @@ public partial class MainWindow : Window
         }
     }
 
+    /// <summary>
+    ///     Método que minimiza la ventana actual al hacer click 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void btnMinimizar_Click(object sender, RoutedEventArgs e)
     {
         WindowState = WindowState.Minimized;
     }
 
+
+    /// <summary>
+    ///    Método que cierra la ventana actual al hacer click
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void btnCerrar_Click(object sender, RoutedEventArgs e)
     {
         Application.Current.Shutdown();

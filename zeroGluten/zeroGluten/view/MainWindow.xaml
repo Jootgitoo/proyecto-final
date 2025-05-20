@@ -21,7 +21,7 @@
 
             <!-- Parte iniciar sesion -->
             <PasswordBox x:Name="pwBox" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Margin="466,215,0,0" VerticalAlignment="Top" Width="289" Height="20"/>
-            <TextBox Name="txtBlockNombreUsuario" HorizontalAlignment="Left" Margin="466,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="289" BorderBrush="Transparent" Background="Transparent" FontFamily="pack://application:,,,/font/#Maxwell" GotFocus="TextBox_GotFocusUsuario"/>
+            <TextBox Name="txtBlockNombreUsuario" HorizontalAlignment="Left" Margin="466,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="289" BorderBrush="Transparent" Background="Transparent" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold" GotFocus="TextBox_GotFocusUsuario"/>
             <Rectangle Fill="Black" Height="1" Width="289" VerticalAlignment="Top" Margin="466,135,0,0" HorizontalAlignment="Left"/>
             <Rectangle Fill="Black" Height="1" Width="289" VerticalAlignment="Top" Margin="466,235,0,0" HorizontalAlignment="Left"/>
 

@@ -96,6 +96,8 @@ namespace zeroGluten.persistence
                 DBBroker.conexion.Open();
             }
         }
+
+
         /// <summary>
         ///     Desconectar la conexion
         /// </summary>

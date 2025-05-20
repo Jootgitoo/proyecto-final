@@ -21,15 +21,9 @@
     <None Remove="images\productos\ico-cancelar-filtros.png" />
     <None Remove="images\productos\icono-instagram.png" />
     <None Remove="images\productos\icono-x.png" />
-    <None Remove="images\productos\imagen-noEncontrada.webp" />
+    <None Remove="images\productos\img-no-encontrada.jpg" />
     <None Remove="images\registrarse\icono-nombreUsuario.png" />
     <None Remove="images\registrarse\icono-password.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="images\productos\imagen-noEncontrada.webp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -83,6 +77,9 @@
     </Resource>
     <Resource Include="images\productos\icono-tiktok.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\productos\img-no-encontrada.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\registrarse\icono-nombreUsuario.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

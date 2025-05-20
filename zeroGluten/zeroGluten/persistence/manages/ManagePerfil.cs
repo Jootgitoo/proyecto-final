@@ -9,13 +9,22 @@ namespace zeroGluten.persistence.manages
 {
     class ManagePerfil
     {
+        //ATRIBUTOS
+
         DBBroker dBBroker;
         int lastId;
+
+
+//----------------------------------------------------------------------------------------------------------------
+        //CONSTRUCTORES
 
         public ManagePerfil()
         {
             dBBroker = DBBroker.obtenerAgente();
         }
+
+//----------------------------------------------------------------------------------------------------------------
+        //MÉTODOS
 
 
         /// <summary>

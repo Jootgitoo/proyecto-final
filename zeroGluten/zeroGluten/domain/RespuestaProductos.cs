@@ -10,8 +10,7 @@ namespace zeroGluten.domain
     class RespuestaProductos
     {
 
-        //La respuesta de la API viene en formato JSON, cone esta clase
-        // "transformamos" ese JSON a una lista de producto 
+        //Clase para deserializar la respuesta de la API de productos
         [JsonProperty("products")]
         public List<Producto> listaProductos { get; set; }
         

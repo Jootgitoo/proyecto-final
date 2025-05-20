@@ -61,16 +61,6 @@
                             <TextBlock Text="Limpiar filtros" Margin="25,0,10,0" VerticalAlignment="Center" Background="Transparent" Foreground="#e9e4dd"/>
                         </Grid>
                     </Button>
-
-                    <!-- Botón ajustes -->
-                    <!--Button Margin="5, 170, 5, 0" Background="#442129" Height="23" FontFamily="pack://application:,,,/font/#Maxwell" FontWeight="Bold">
-                        <Grid>
-                            <Image Source="/images/menu/icono-ajustes.png" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-8,0,0,0"/>
-                            <TextBlock Text="Ajustes" Margin="25,0,10,0" VerticalAlignment="Center" Background="Transparent" Foreground="#e9e4dd"/>
-                        </Grid>
-                    </Button-->
-
-
                 </StackPanel>
 
 

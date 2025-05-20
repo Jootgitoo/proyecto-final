@@ -13,13 +13,21 @@ namespace zeroGluten.persistence.manages
 {
     class ManageUsuario
     {
+        //ATRIBUTOS
         DBBroker dBBroker;
         int lastId;
 
+
+//----------------------------------------------------------------------------------------------------------------
+        //CONSTRUCTORES
         public ManageUsuario()
         {
             dBBroker = DBBroker.obtenerAgente();
         }
+
+
+//----------------------------------------------------------------------------------------------------------------
+        //MÉTODOS
 
 
         /// <summary>

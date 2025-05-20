@@ -386,88 +386,79 @@ namespace zeroGluten.view
             string caloriasMaximas = cbCaloriasMax.Text;
             string proteinasMinimas = cbProteinasMin.Text;
             string grasasMaximas = cbGrasasMax.Text;
+           
+            lbProductos.Items.Clear();
+            lbProductos.Items.Add("Buscando productos que cumplan las siguientes caracteriasticas...");
 
-            try
+            //Obtenemos una lista de productos de la API
+            List<Producto> listaProductos = await apiManager.obtenerProductosConFiltros(nombre, caloriasMaximas, proteinasMinimas, grasasMaximas);
+
+            lbProductos.Items.Clear();
+
+            //Mostramos la lista
+            foreach (Producto p in listaProductos)
             {
-                lbProductos.Items.Clear();
-                lbProductos.Items.Add("Buscando productos que cumplan las siguientes caracteriasticas...");
-
-                //Obtenemos una lista de productos de la API
-                List<Producto> listaProductos = await apiManager.obtenerProductosConFiltros(nombre, caloriasMaximas, proteinasMinimas, grasasMaximas);
-
-                lbProductos.Items.Clear();
-
-                //Mostramos la lista
-                foreach (Producto p in listaProductos)
+                Image image = new Image
                 {
-                    Image image = new Image
+                    Width = 100,
+                    Height = 100,
+                    Margin = new Thickness(10),
+                    Stretch = Stretch.UniformToFill
+                };
+
+                image.Source = CargarImagen(p.UrlImagen);
+
+                StackPanel horizontalPanel = new StackPanel
+                {
+                    Orientation = Orientation.Horizontal,
+                    Margin = new Thickness(5)
+                };
+
+                // Contenedor de texto (en vertical)
+                StackPanel textPanel = new StackPanel
+                {
+                    Orientation = Orientation.Vertical,
+                    VerticalAlignment = VerticalAlignment.Center
+                };
+
+                // Textos
+                TextBlock nameText = new TextBlock
+                {
+                    Text = $"Nombre: {p.Nombre}",
+                    FontWeight = FontWeights.Bold,
+                    FontSize = 14
+                };
+                textPanel.Children.Add(nameText);
+
+                if (p.Precio.Equals("0.00"))
+                {
+                    TextBlock precioText = new TextBlock
                     {
-                        Width = 100,
-                        Height = 100,
-                        Margin = new Thickness(10),
-                        Stretch = Stretch.UniformToFill
+                        Text = "Precio no disponible",
+                        FontSize = 12
                     };
-
-                    image.Source = CargarImagen(p.UrlImagen);
-
-                    StackPanel horizontalPanel = new StackPanel
-                    {
-                        Orientation = Orientation.Horizontal,
-                        Margin = new Thickness(5)
-                    };
-
-                    // Contenedor de texto (en vertical)
-                    StackPanel textPanel = new StackPanel
-                    {
-                        Orientation = Orientation.Vertical,
-                        VerticalAlignment = VerticalAlignment.Center
-                    };
-
-                    // Textos
-                    TextBlock nameText = new TextBlock
-                    {
-                        Text = $"Nombre: {p.Nombre}",
-                        FontWeight = FontWeights.Bold,
-                        FontSize = 14
-                    };
-                    textPanel.Children.Add(nameText);
-
-                    if (p.Precio.Equals("0.00"))
-                    {
-                        TextBlock precioText = new TextBlock
-                        {
-                            Text = "Precio no disponible",
-                            FontSize = 12
-                        };
-                        textPanel.Children.Add(precioText);
-
-                    }
-                    else
-                    {
-                        TextBlock precioText = new TextBlock
-                        {
-                            Text = $"Precio: {p.Precio:C}",
-                            FontSize = 12
-                        };
-                        textPanel.Children.Add(precioText);
-                    }
-
-                    // Añadir textos al panel de texto
-
-                    // Añadir imagen y panel de texto al panel horizontal
-                    horizontalPanel.Children.Add(image);
-                    horizontalPanel.Children.Add(textPanel);
-
-                    // Añadir todo al ListBox
-                    lbProductos.Items.Add(horizontalPanel);
+                    textPanel.Children.Add(precioText);
 
                 }
+                else
+                {
+                    TextBlock precioText = new TextBlock
+                    {
+                        Text = $"Precio: {p.Precio:C}",
+                        FontSize = 12
+                    };
+                    textPanel.Children.Add(precioText);
+                }
 
-            }
-            catch (Exception ex)
-            {
-                lbProductos.Items.Clear();
-                lbProductos.Items.Add($"Error al obtener datos: {ex.Message}");
+                // Añadir textos al panel de texto
+
+                // Añadir imagen y panel de texto al panel horizontal
+                horizontalPanel.Children.Add(image);
+                horizontalPanel.Children.Add(textPanel);
+
+                // Añadir todo al ListBox
+                lbProductos.Items.Add(horizontalPanel);
+
             }
 
         }
@@ -494,8 +485,7 @@ namespace zeroGluten.view
 
             }else if (cbIntolerancias.Text.Equals("Gluten"))
             {
-                intolerancia = "glutenFree";
-
+                intolerancia = "gluten";
             }
             else if (cbIntolerancias.Text.Equals("Marisco"))
             {
@@ -513,21 +503,21 @@ namespace zeroGluten.view
 
             if (cbTipoComida.Text.Equals("Plato"))
             {
-                intolerancia = "mainCourse";
+                tipoComida = "main course";
 
             }else if (cbTipoComida.Text.Equals("Postre"))
             {
-                intolerancia = "dessert";
+                tipoComida = "dessert";
 
             }
             else if (cbTipoComida.Text.Equals("Pan"))
             {
-                intolerancia = "bread";
+                tipoComida = "bread";
 
             }
             else if (cbTipoComida.Text.Equals("Bebida"))
             {
-                intolerancia = "drink";
+                tipoComida = "drink";
 
             }
 
@@ -729,6 +719,7 @@ namespace zeroGluten.view
         /// <returns></returns>
         private BitmapImage CargarImagen(string url)
         {
+            BitmapImage imagen = new BitmapImage();
             try
             {
                 // Validamos que la imagen realmente exista (HEAD evita descargar todo el contenido)
@@ -738,23 +729,27 @@ namespace zeroGluten.view
                 {
                     if (response.StatusCode == HttpStatusCode.OK)
                     {
-                        BitmapImage bitmap = new BitmapImage();
-                        bitmap.BeginInit();
-                        bitmap.UriSource = new Uri(url);
-                        bitmap.CacheOption = BitmapCacheOption.OnLoad;
-                        bitmap.EndInit();
-                        return bitmap;
+                        imagen = new BitmapImage();
+                        imagen.BeginInit();
+                        imagen.UriSource = new Uri(url);
+                        imagen.CacheOption = BitmapCacheOption.OnLoad;
+                        imagen.EndInit();
                     }
                 }
             }
-            catch { }
+            catch
+            {
 
-            // Imagen por defecto si la URL falla
-            BitmapImage imagenPorDefecto = new BitmapImage();
-            imagenPorDefecto.BeginInit();
-            imagenPorDefecto.UriSource = new Uri("/images/productos/imagen-noEncontrada.webp"); // Asegúrate de tenerla añadida
-            imagenPorDefecto.EndInit();
-            return imagenPorDefecto;
+                // Imagen por defecto si la URL falla
+                imagen = new BitmapImage();
+                imagen.BeginInit();
+                imagen.UriSource = new Uri("pack://application:,,,/images/productos/img-no-encontrada.jpg");
+                imagen.EndInit();
+
+            }
+
+            return imagen;
+
         }
 
     }
