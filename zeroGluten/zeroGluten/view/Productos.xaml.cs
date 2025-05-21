@@ -388,7 +388,7 @@ namespace zeroGluten.view
             string grasasMaximas = cbGrasasMax.Text;
            
             lbProductos.Items.Clear();
-            lbProductos.Items.Add("Buscando productos que cumplan las siguientes caracteriasticas...");
+            lbProductos.Items.Add("Buscando productos que cumplan las siguientes características...");
 
             //Obtenemos una lista de productos de la API
             List<Producto> listaProductos = await apiManager.obtenerProductosConFiltros(nombre, caloriasMaximas, proteinasMinimas, grasasMaximas);
@@ -524,7 +524,7 @@ namespace zeroGluten.view
             try
             {
                 lbProductos.Items.Clear();
-                lbProductos.Items.Add("Buscando recetas que cumplan las siguientes caracteriasticas...");
+                lbProductos.Items.Add("Buscando recetas que cumplan las siguientes características...");
 
                 //Obtenemos una lista de productos de la API
 
