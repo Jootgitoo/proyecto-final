@@ -1,11 +1,5 @@
-D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\zeroGluten.csproj.AssemblyReference.cache
-D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\view\MainWindow.g.cs
-D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\view\Productos.g.cs
-D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\view\registro.g.cs
-D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\App.g.cs
-D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\zeroGluten_MarkupCompile.cache
-D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\zeroGluten_MarkupCompile.lref
 D:\dam-2\proyecto-final\zeroGluten\zeroGluten\bin\Debug\net8.0-windows\zeroGluten.exe
+D:\dam-2\proyecto-final\zeroGluten\zeroGluten\bin\Debug\net8.0-windows\config.json
 D:\dam-2\proyecto-final\zeroGluten\zeroGluten\bin\Debug\net8.0-windows\zeroGluten.deps.json
 D:\dam-2\proyecto-final\zeroGluten\zeroGluten\bin\Debug\net8.0-windows\zeroGluten.runtimeconfig.json
 D:\dam-2\proyecto-final\zeroGluten\zeroGluten\bin\Debug\net8.0-windows\zeroGluten.dll
@@ -27,6 +21,14 @@ D:\dam-2\proyecto-final\zeroGluten\zeroGluten\bin\Debug\net8.0-windows\runtimes\
 D:\dam-2\proyecto-final\zeroGluten\zeroGluten\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
 D:\dam-2\proyecto-final\zeroGluten\zeroGluten\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
 D:\dam-2\proyecto-final\zeroGluten\zeroGluten\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\zeroGluten.csproj.AssemblyReference.cache
+D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\view\MainWindow.g.cs
+D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\view\Productos.g.cs
+D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\view\registro.g.cs
+D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\App.g.cs
+D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\zeroGluten_Content.g.cs
+D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\zeroGluten_MarkupCompile.cache
+D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\zeroGluten_MarkupCompile.lref
 D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\view\MainWindow.baml
 D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\view\Productos.baml
 D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Debug\net8.0-windows\view\registro.baml

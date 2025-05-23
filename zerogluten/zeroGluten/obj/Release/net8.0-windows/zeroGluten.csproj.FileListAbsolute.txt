@@ -42,3 +42,5 @@ D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Release\net8.0-windows\refint\
 D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Release\net8.0-windows\zeroGluten.pdb
 D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Release\net8.0-windows\zeroGluten.genruntimeconfig.cache
 D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Release\net8.0-windows\ref\zeroGluten.dll
+D:\dam-2\proyecto-final\zeroGluten\zeroGluten\bin\Release\net8.0-windows\config.json
+D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Release\net8.0-windows\zeroGluten_Content.g.cs

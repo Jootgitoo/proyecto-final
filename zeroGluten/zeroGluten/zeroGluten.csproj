@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="config.json" />
     <None Remove="font\MAXWELL-BOLD.ttf" />
     <None Remove="font\MAXWELL-LIGHT.ttf" />
     <None Remove="font\MAXWELL-REGULAR.ttf" />
@@ -27,6 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="font\MAXWELL-BOLD.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

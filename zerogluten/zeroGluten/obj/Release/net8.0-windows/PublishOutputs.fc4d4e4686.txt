@@ -1,3 +1,4 @@
+D:\dam-2\proyecto-final\exe-app\config.json
 D:\dam-2\proyecto-final\exe-app\zeroGluten.exe
 D:\dam-2\proyecto-final\exe-app\zeroGluten.dll
 D:\dam-2\proyecto-final\exe-app\zeroGluten.deps.json

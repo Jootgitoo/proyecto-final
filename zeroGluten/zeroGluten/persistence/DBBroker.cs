@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +13,7 @@ namespace zeroGluten.persistence
         //ATRIBUTOS
         private static DBBroker _instancia;
         private static MySql.Data.MySqlClient.MySqlConnection conexion;
-        private const String cadenaConexion = "server=localhost;database=zeroglutendatabase;uid=root;pwd=mysql";
+        private String cadenaConexion;
 
 
         //--------------------------------------------------------------------------------------------------------------------------------------------------
@@ -19,7 +21,23 @@ namespace zeroGluten.persistence
 
         public DBBroker()
         {
-            DBBroker.conexion = new MySql.Data.MySqlClient.MySqlConnection(cadenaConexion);
+            try
+            {
+                if (cadenaConexion == null)
+                {
+                    string rutaConfig = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.json");
+                    string json = File.ReadAllText(rutaConfig);
+                    Config config = JsonConvert.DeserializeObject<Config>(json);
+
+                    cadenaConexion = $"server={config.server};database={config.database};uid={config.user};pwd={config.password}";
+                }
+
+                DBBroker.conexion = new MySql.Data.MySqlClient.MySqlConnection(cadenaConexion);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error al leer el archivo de configuración: " + e.Message);
+            }
         }
 
         //--------------------------------------------------------------------------------------------------------------------------------------------------
