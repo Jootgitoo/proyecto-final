@@ -13,6 +13,7 @@ namespace zeroGluten.persistence
         private static MySql.Data.MySqlClient.MySqlConnection conexion;
         private const String cadenaConexion = "server=localhost;database=zeroglutendatabase;uid=root;pwd=mysql";
 
+
         //--------------------------------------------------------------------------------------------------------------------------------------------------
         //CONSTRUCTORES
 
