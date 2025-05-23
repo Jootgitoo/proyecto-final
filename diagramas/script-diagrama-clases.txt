@@ -1,0 +1,158 @@
+@startuml
+
+class Usuario{
+  +idProducto: int
+  +nombreUsuario: string
+  +primerApellido: string
+  +email: string
+  +password: string
+  +fechaNacimiento: DateTime
+  +sexo: string
+  +obtenerTodosUsuarios(): List<Usuario>
+  +insertarUsuario(): void
+  +getters/setters()
+}
+
+class Receta{
+  +idReceta: int
+  +nombreReceta: string
+  +tiempoPreparacion: int
+  +urlImagen: string
+  +descripcion: string
+  +vegetariano: boolean
+  +vegano: boolean
+  +sinGluten: boolean
+  +instrucciones: string
+  +calorias: double 
+  +getters/setters()
+}
+
+class Producto{
+  +idProducto: int
+  +nombreProducto: string
+  +urlImagen: string
+  +alergias[]: string
+  +precio: double
+  +getters/setters()
+}
+
+class Perfil{
+  +idPerfil: int
+  + peso: double
+  + altura: double
+  +actividadFisica: bool
+  +frecuenciaActividad: string
+  +condicionMedica: string
+  +medicacion: boolean
+  +puntuacionAlimentacion: string
+  +fumador: boolean
+  +enfermedades: string
+  +intolerancias: string
+  +tipoDieta: string
+  +idUsuario: int
+  +obtenerTodosPerfiles(): List<Perfil>
+  +insertarPerfil(): void
+  +getters/setters()
+}
+
+class RespuestaRecetas{
+  +listaRecetas: List<Receta>
+  +getters/setters()
+}
+
+class RespuestaProductos{
+  +listaProductos: List<Productos>
+  +getters/setters()
+}
+
+class DBBroker{
+  +_instancia: DBBroker
+  +conexion: MySqlConnection
+  +cadenaConexion: string
+  +obtenerAgente(): DBBroker
+  +leer(string): List<Object>
+  +modifier(string): int
+  +conectar(): void
+  +desconectar(): void
+}
+
+class ManajeUsuario{
+  +dBBroker: DBBroker
+  +lastId: int
+  +getLastId(Usuario usuario): int
+  +obtenerTodosUsuarios(): List<Usuario>
+  +insertarUsuario(Usuario): void
+  +modificarUsuario(Usuario): void
+  +eliminarUsuario(Usuario): void
+  +EncryptSHA256(string): string
+}
+
+class ManajePerfil{
+  +dBBroker: DBBroker
+  +lastId: int
+  +getLastId(Perfil perfil): int
+  +obtenerTodosPerfiles(): List<Perfil>
+  +insertarPerfil(Perfil): void
+  +modificarPerfil(Perfil): void
+  +eliminarPErfil(Perfil): void
+}
+
+class ApiManaje{
+  +obtenerTodosProductos(): Task<List<Producto>>
+  +obtenerProductosConFiltros(string, string, string, string): Task<List<Producto>>
+  +obtenerTodasRecetas(): Task<List<Receta>>
+  +obtenerDetalleRecetaPorId(int): Task<Receta>
+  +obtenerRecetasConFiltros(string, string, string, string): Task<List<Receta>>
+  +quitarEtiquetasHTML(string): string
+}
+
+class Registro{
+  +btnDarAlta_Click(): void
+  +comprobarCamposRellenos(): boolean
+  +btnMinimizar_Click(): void
+  +btnCerrar_Click(): void
+  +btnVolver_Click(): void
+}
+
+class Productos(){
+  +cargarTodosProductos(): void
+  +cargarTodasRecetas(): void
+  +mostrarFiltrosProductos(): void
+  +mostrarFiltrosRecetas(): void
+  +btnProductos_Click(): void
+  +btnRecetas_Click(): void
+  +btnBuscar_Click(): void
+  +buscarProductosPorFiltros(): void
+  +buscarRecetasPorFiltros(): void
+  +btnMinimizar_Click(): void
+  +btnCerrar_Click(): void
+  +btnLimpiarFiltros_Click(): void
+  +cargarImagen(): BitmapImage
+}
+
+class MainWindow(){
+  +TextBox_GotFocusUsuario(): void
+  +TextBox_GotFocusPassword(): void
+  +btnRegistrarse_Click(): void
+  +btnIniciarSesion_Click(): void
+  +EncryptSHA256(string): string
+  +btnMinimizar_Click(): void
+  +btnCerrar_Click(): void
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@enduml
