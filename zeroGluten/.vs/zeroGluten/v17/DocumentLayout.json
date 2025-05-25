@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "zeroGluten\\persistence\\Config.cs",
               "ToolTip": "D:\\dam-2\\proyecto-final\\zerogluten\\zeroGluten\\persistence\\Config.cs",
               "RelativeToolTip": "zeroGluten\\persistence\\Config.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-24T09:09:20.363Z",
               "EditorCaption": ""
@@ -59,8 +59,7 @@
               "RelativeToolTip": "zeroGluten\\persistence\\manages\\ManageUsuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T09:08:24.795Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-24T09:08:24.795Z"
             },
             {
               "$type": "Document",
@@ -72,8 +71,7 @@
               "RelativeToolTip": "zeroGluten\\persistence\\manages\\ManagePerfil.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T09:08:24.211Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-24T09:08:24.211Z"
             },
             {
               "$type": "Document",
@@ -85,8 +83,7 @@
               "RelativeToolTip": "zeroGluten\\persistence\\DBBroker.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAqwBUAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T22:00:08.242Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T22:00:08.242Z"
             }
           ]
         }
