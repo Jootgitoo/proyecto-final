@@ -588,7 +588,7 @@ namespace zeroGluten.view
                     textPanel.Children.Add(descText);
 
 
-                    if (r.SinGluten.Equals("true"))
+                    if (r.SinGluten)
                     {
                         TextBlock sinGluten = new TextBlock
                         {
@@ -610,7 +610,7 @@ namespace zeroGluten.view
                         textPanel.Children.Add(sinGluten);
                     }
 
-                    if (r.Vegano.Equals("true"))
+                    if (r.Vegano)
                     {
                         TextBlock vegano = new TextBlock
                         {
@@ -629,7 +629,7 @@ namespace zeroGluten.view
                         textPanel.Children.Add(vegano);
                     }
 
-                    if (r.Vegetariano.Equals("true"))
+                    if (r.Vegetariano)
                     {
 
                         TextBlock vegetariano = new TextBlock

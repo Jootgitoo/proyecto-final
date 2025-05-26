@@ -25,7 +25,7 @@ namespace zeroGluten.persistence.manages
         public async Task<List<Producto>> obtenerTodosProductos()
         {
             string apiKey = "174c5ea2fee04cd99c92504eaeafffbe";
-            string apiUrl = $"https://api.spoonacular.com/food/products/search?apiKey={apiKey}&query=b&number=3";
+            string apiUrl = $"https://api.spoonacular.com/food/products/search?apiKey={apiKey}&query=b&number=5";
 
             HttpClient cliente = new HttpClient();
             HttpResponseMessage respuesta = await cliente.GetAsync(apiUrl);
@@ -99,7 +99,7 @@ namespace zeroGluten.persistence.manages
                 apiUrl += $"maxFat={grasasMaximas}&";
             }
 
-            apiUrl += $"apiKey={apiKey}&number=3"; // Limitar a 5 productos por solicitud
+            apiUrl += $"apiKey={apiKey}&number=5"; // Limitar a 5 productos por solicitud
 
             HttpClient cliente = new HttpClient();
             HttpResponseMessage respuesta = await cliente.GetAsync(apiUrl);
@@ -146,7 +146,7 @@ namespace zeroGluten.persistence.manages
         public async Task<List<Receta>> obtenerTodasRecetas()
         {
             string apiKey = "174c5ea2fee04cd99c92504eaeafffbe";
-            string apiUrl = $"https://api.spoonacular.com/recipes/complexSearch?apiKey={apiKey}&query=a&number=3";
+            string apiUrl = $"https://api.spoonacular.com/recipes/complexSearch?apiKey={apiKey}&query=a&number=5";
 
             HttpClient cliente = new HttpClient();
             HttpResponseMessage respuesta = await cliente.GetAsync(apiUrl);
@@ -246,7 +246,7 @@ namespace zeroGluten.persistence.manages
             if (!string.IsNullOrEmpty(tipoComida))
                 apiUrl += $"type={tipoComida}&";
 
-            apiUrl += $"apiKey={apiKey}&number=3"; // Puedes cambiar el número de resultados
+            apiUrl += $"apiKey={apiKey}&number=5"; // Puedes cambiar el número de resultados
 
             HttpClient cliente = new HttpClient();
             HttpResponseMessage respuesta = await cliente.GetAsync(apiUrl);

@@ -78,6 +78,7 @@ namespace zeroGluten.domain
         public bool Vegetariano { get => vegetariano; set => vegetariano = value; }
         [JsonProperty("vegan")]
         public bool Vegano { get => vegano; set => vegano = value; }
+
         [JsonProperty("glutenFree")]
         public bool SinGluten { get => sinGluten; set => sinGluten = value; }
         public string Instrucciones { get => instrucciones; set => instrucciones = value; }
