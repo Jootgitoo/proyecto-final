@@ -42,8 +42,7 @@
               "RelativeToolTip": "zeroGluten\\domain\\Receta.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAYwFAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T07:20:27.364Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-26T07:20:27.364Z"
             },
             {
               "$type": "Document",
@@ -55,8 +54,7 @@
               "RelativeToolTip": "zeroGluten\\view\\Productos.xaml.cs",
               "ViewState": "AgIAAIUCAAAAAAAAAIAywJMCAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T07:07:17.999Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-26T07:07:17.999Z"
             },
             {
               "$type": "Document",
@@ -66,7 +64,7 @@
               "RelativeDocumentMoniker": "zeroGluten\\persistence\\manages\\ApiManage.cs",
               "ToolTip": "D:\\dam-2\\proyecto-final\\zerogluten\\zeroGluten\\persistence\\manages\\ApiManage.cs",
               "RelativeToolTip": "zeroGluten\\persistence\\manages\\ApiManage.cs",
-              "ViewState": "AgIAAN8AAAAAAAAAAAAxwPgAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAO4AAAAAAAAAAAAxwP8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-26T07:07:21.016Z",
               "EditorCaption": ""
