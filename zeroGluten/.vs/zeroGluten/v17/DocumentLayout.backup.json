@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\dam-2\\proyecto-final\\zerogluten\\",
+  "WorkspaceRootPath": "C:\\dam-2\\proyecto-final\\zeroGluten\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|d:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\persistence\\manages\\apimanage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|c:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\persistence\\manages\\apimanage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|solutionrelative:zerogluten\\persistence\\manages\\apimanage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|d:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\view\\productos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|c:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\view\\productos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|solutionrelative:zerogluten\\view\\productos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|d:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\domain\\receta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|c:\\dam-2\\proyecto-final\\zerogluten\\zerogluten\\domain\\receta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AEA21B7F-7B9E-4121-81D9-A3069777A964}|zeroGluten\\zeroGluten.csproj|solutionrelative:zerogluten\\domain\\receta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -36,9 +36,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Receta.cs",
-              "DocumentMoniker": "D:\\dam-2\\proyecto-final\\zerogluten\\zeroGluten\\domain\\Receta.cs",
+              "DocumentMoniker": "C:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\domain\\Receta.cs",
               "RelativeDocumentMoniker": "zeroGluten\\domain\\Receta.cs",
-              "ToolTip": "D:\\dam-2\\proyecto-final\\zerogluten\\zeroGluten\\domain\\Receta.cs",
+              "ToolTip": "C:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\domain\\Receta.cs",
               "RelativeToolTip": "zeroGluten\\domain\\Receta.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAYwFAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -48,9 +48,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Productos.xaml.cs",
-              "DocumentMoniker": "D:\\dam-2\\proyecto-final\\zerogluten\\zeroGluten\\view\\Productos.xaml.cs",
+              "DocumentMoniker": "C:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\view\\Productos.xaml.cs",
               "RelativeDocumentMoniker": "zeroGluten\\view\\Productos.xaml.cs",
-              "ToolTip": "D:\\dam-2\\proyecto-final\\zerogluten\\zeroGluten\\view\\Productos.xaml.cs",
+              "ToolTip": "C:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\view\\Productos.xaml.cs",
               "RelativeToolTip": "zeroGluten\\view\\Productos.xaml.cs",
               "ViewState": "AgIAAIUCAAAAAAAAAIAywJMCAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -60,11 +60,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ApiManage.cs",
-              "DocumentMoniker": "D:\\dam-2\\proyecto-final\\zerogluten\\zeroGluten\\persistence\\manages\\ApiManage.cs",
+              "DocumentMoniker": "C:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\persistence\\manages\\ApiManage.cs",
               "RelativeDocumentMoniker": "zeroGluten\\persistence\\manages\\ApiManage.cs",
-              "ToolTip": "D:\\dam-2\\proyecto-final\\zerogluten\\zeroGluten\\persistence\\manages\\ApiManage.cs",
+              "ToolTip": "C:\\dam-2\\proyecto-final\\zeroGluten\\zeroGluten\\persistence\\manages\\ApiManage.cs",
               "RelativeToolTip": "zeroGluten\\persistence\\manages\\ApiManage.cs",
-              "ViewState": "AgIAAO4AAAAAAAAAAAAxwP8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAO4AAAAAAAAAAAAxwPQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-26T07:07:21.016Z",
               "EditorCaption": ""

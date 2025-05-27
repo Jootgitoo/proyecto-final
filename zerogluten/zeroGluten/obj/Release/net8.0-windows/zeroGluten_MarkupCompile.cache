@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Release\net8.0-windows\
+C:\dam-2\proyecto-final\zeroGluten\zeroGluten\obj\Release\net8.0-windows\
 zeroGluten
 none
 false
 TRACE;RELEASE;NET;NET8_0;NETCOREAPP
-D:\dam-2\proyecto-final\zeroGluten\zeroGluten\App.xaml
+C:\dam-2\proyecto-final\zeroGluten\zeroGluten\App.xaml
 3147861325
 1-502528605
 17-782540146
-207-1464764233
+207-1411503373
 view\MainWindow.xaml;view\Productos.xaml;view\registro.xaml;
 
 False
